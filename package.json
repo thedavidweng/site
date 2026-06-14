@@ -8,9 +8,12 @@
     "build:agent-files": "node scripts/build-money-agent-files.mjs",
     "build": "pnpm build:agent-files && vitepress build",
     "preview": "vitepress preview",
-    "sync-docs": "node scripts/sync-docs.mjs"
+    "sync-docs": "node scripts/sync-docs.mjs",
+    "lint": "oxlint .vitepress scripts",
+    "lint:fix": "oxlint .vitepress scripts --fix"
   },
   "devDependencies": {
+    "oxlint": "^1.69.0",
     "vitepress": "^1.6.4"
   }
 }
