@@ -12,26 +12,28 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = resolve(__dirname, '..')
 const defaultSource = '/tmp/cli-docs-sync'
 
+const ROOT_FILES = ['COMMANDS.md', 'JSON_SCHEMA.md', 'CONTEXT.md']
+
 const PROJECTS = {
   'canvas-cli': {
     repo: 'canvas-cli',
-    rootFiles: ['COMMANDS.md', 'JSON_SCHEMA.md'],
+    rootFiles: ROOT_FILES,
   },
   'zenodo-cli': {
     repo: 'zenodo-cli',
-    rootFiles: [],
+    rootFiles: ROOT_FILES,
   },
   'monarchmoney-cli': {
     repo: 'monarchmoney-cli',
-    rootFiles: ['COMMANDS.md', 'JSON_SCHEMA.md'],
+    rootFiles: ROOT_FILES,
   },
   'flickr-cli': {
     repo: 'flickr-cli',
-    rootFiles: ['COMMANDS.md', 'JSON_SCHEMA.md'],
+    rootFiles: ROOT_FILES,
   },
   money: {
     repo: 'money',
-    rootFiles: [],
+    rootFiles: ROOT_FILES,
   },
 }
 
