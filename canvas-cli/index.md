@@ -7,7 +7,7 @@ hero:
   tagline: Agent-friendly command-line interface for Canvas LMS. 50+ commands, stable JSON output, mutation safety gates.
   actions:
     - theme: brand
-      text: Install
+      text: Guide
       link: /canvas-cli/docs/auth
     - theme: alt
       text: GitHub

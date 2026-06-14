@@ -7,7 +7,7 @@ hero:
   tagline: Agent-friendly command-line interface for Zenodo. Record management, file upload, and full InvenioRDM API access.
   actions:
     - theme: brand
-      text: Install
+      text: Guide
       link: /zenodo-cli/docs/auth
     - theme: alt
       text: GitHub

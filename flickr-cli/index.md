@@ -7,7 +7,7 @@ hero:
   tagline: Agent-friendly command-line interface for Flickr. Photo management, backup, upload, albums, and full API access.
   actions:
     - theme: brand
-      text: Install
+      text: Guide
       link: /flickr-cli/docs/auth
     - theme: alt
       text: GitHub

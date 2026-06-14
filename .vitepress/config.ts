@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { projects } from './projects'
 
 const projectSidebars = {
   '/canvas-cli/': [
@@ -204,20 +205,19 @@ export default defineConfig({
   base: '/site/',
   srcExclude: ['**/README.md'],
 
+  transformPageData(pageData) {
+    const project = projects.find((item) => {
+      const rel = pageData.relativePath
+      return rel === `${item.slug}/index.md` || rel.startsWith(`${item.slug}/`)
+    })
+
+    if (project && !pageData.frontmatter.title && pageData.relativePath !== 'index.md') {
+      pageData.title = project.title
+    }
+  },
+
   themeConfig: {
-    nav: [
-      { text: 'Home', link: '/' },
-      {
-        text: 'Tools',
-        items: [
-          { text: 'canvas-cli', link: '/canvas-cli/' },
-          { text: 'zenodo-cli', link: '/zenodo-cli/' },
-          { text: 'monarchmoney-cli', link: '/monarchmoney-cli/' },
-          { text: 'flickr-cli', link: '/flickr-cli/' },
-          { text: 'money', link: '/money/' },
-        ],
-      },
-    ],
+    nav: [{ component: 'ProjectNavMenu' }],
 
     sidebar: projectSidebars,
 

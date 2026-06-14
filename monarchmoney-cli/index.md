@@ -7,7 +7,7 @@ hero:
   tagline: Agent-friendly command-line interface for Monarch Money. Accounts, transactions, budgets, and cashflow from your terminal.
   actions:
     - theme: brand
-      text: Install
+      text: Guide
       link: /monarchmoney-cli/docs/auth
     - theme: alt
       text: GitHub

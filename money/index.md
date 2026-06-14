@@ -7,7 +7,7 @@ hero:
   tagline: Local-first, agent-friendly personal finance backend. Encrypted SQLite, multi-provider sync, AI-agent friendly.
   actions:
     - theme: brand
-      text: Install
+      text: Guide
       link: /money/docs/GETTING_STARTED
     - theme: alt
       text: GitHub
