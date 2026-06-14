@@ -3,19 +3,19 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'CLI Tools',
   description: 'Agent-friendly CLI tools for modern workflows',
-  base: '/docs/',
+  base: '/site/',
 
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/docs/' },
+      { text: 'Home', link: '/site/' },
       {
         text: 'Tools',
         items: [
-          { text: 'canvas-cli', link: '/docs/canvas-cli/' },
-          { text: 'zenodo-cli', link: '/docs/zenodo-cli/' },
-          { text: 'monarchmoney-cli', link: '/docs/monarchmoney-cli/' },
-          { text: 'flickr-cli', link: '/docs/flickr-cli/' },
-          { text: 'money', link: '/docs/money/' },
+          { text: 'canvas-cli', link: '/site/canvas-cli/' },
+          { text: 'zenodo-cli', link: '/site/zenodo-cli/' },
+          { text: 'monarchmoney-cli', link: '/site/monarchmoney-cli/' },
+          { text: 'flickr-cli', link: '/site/flickr-cli/' },
+          { text: 'money', link: '/site/money/' },
         ]
       }
     ],
