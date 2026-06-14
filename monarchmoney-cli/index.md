@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Install
-      link: /docs/monarchmoney-cli/guide/install
+      link: /monarchmoney-cli/docs/auth
     - theme: alt
       text: GitHub
       link: https://github.com/thedavidweng/monarchmoney-cli

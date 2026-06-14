@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Install
-      link: /docs/canvas-cli/guide/install
+      link: /canvas-cli/docs/auth
     - theme: alt
       text: GitHub
       link: https://github.com/thedavidweng/canvas-cli

@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Install
-      link: /docs/zenodo-cli/guide/install
+      link: /zenodo-cli/docs/auth
     - theme: alt
       text: GitHub
       link: https://github.com/thedavidweng/zenodo-cli

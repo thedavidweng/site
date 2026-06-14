@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Install
-      link: /docs/money/guide/install
+      link: /money/docs/GETTING_STARTED
     - theme: alt
       text: GitHub
       link: https://github.com/thedavidweng/money

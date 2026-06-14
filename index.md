@@ -17,27 +17,27 @@ features:
   - icon: 🎓
     title: canvas-cli
     details: Canvas LMS CLI. 50+ commands for courses, assignments, submissions, grading, and more.
-    link: /docs/canvas-cli/
+    link: /canvas-cli/
     linkText: Get started
   - icon: 🔬
     title: zenodo-cli
     details: Zenodo/InvenioRDM CLI. Record management, file upload, and full API access.
-    link: /docs/zenodo-cli/
+    link: /zenodo-cli/
     linkText: Get started
   - icon: 💰
     title: monarchmoney-cli
     details: Monarch Money CLI. Accounts, transactions, budgets, and cashflow from your terminal.
-    link: /docs/monarchmoney-cli/
+    link: /monarchmoney-cli/
     linkText: Get started
   - icon: 📷
     title: flickr-cli
     details: Flickr CLI. Photo management, backup, upload, albums, and full API access.
-    link: /docs/flickr-cli/
+    link: /flickr-cli/
     linkText: Get started
   - icon: 🏦
     title: money
     details: Local-first personal finance backend. Encrypted SQLite, multi-provider sync, AI-agent friendly.
-    link: /docs/money/
+    link: /money/
     linkText: Get started
 ---
 

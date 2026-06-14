@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Install
-      link: /docs/flickr-cli/guide/install
+      link: /flickr-cli/docs/auth
     - theme: alt
       text: GitHub
       link: https://github.com/thedavidweng/flickr-cli
