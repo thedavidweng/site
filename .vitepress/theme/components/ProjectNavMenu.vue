@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useData, useRoute } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import VPNavBarMenuGroup from 'vitepress/dist/client/theme-default/components/VPNavBarMenuGroup.vue'
+import VPNavScreenMenuGroup from 'vitepress/dist/client/theme-default/components/VPNavScreenMenuGroup.vue'
 import { isActive } from 'vitepress/dist/client/shared.js'
 import { isHubPath, projects, resolveProject } from '../../projects'
 
@@ -23,18 +25,17 @@ type NavLink = {
   rel?: string
 }
 
-type NavGroup = {
-  text: string
-  items: NavLink[]
-}
-
 const toolMenuItems: NavLink[] = projects.map((project) => ({
   text: project.name,
   link: project.overview,
 }))
 
-const hubLinks: Array<NavLink | NavGroup> = [
-  { text: 'Tools', items: toolMenuItems },
+const toolsDropdown = {
+  text: 'Tools',
+  items: toolMenuItems,
+}
+
+const hubLinks: NavLink[] = [
   {
     text: 'Homebrew Tap',
     link: 'https://github.com/thedavidweng/homebrew-tap',
@@ -64,8 +65,6 @@ const projectLinks: NavLink[] = currentProject
     ]
   : []
 
-const links = onHub ? hubLinks : projectLinks
-
 function linkIsActive(item: NavLink) {
   if (!item.activeMatch) return false
   return isActive(page.value.relativePath, item.activeMatch, true)
@@ -74,29 +73,32 @@ function linkIsActive(item: NavLink) {
 
 <template>
   <nav
-    v-if="links.length"
+    v-if="onHub || projectLinks.length"
     :class="screenMenu ? 'ProjectNavMenu screen' : 'ProjectNavMenu desktop'"
-    :aria-labelledby="screenMenu ? undefined : 'project-nav-aria-label'"
   >
-    <span v-if="!screenMenu" id="project-nav-aria-label" class="visually-hidden">
-      Main Navigation
-    </span>
+    <template v-if="onHub">
+      <!-- Desktop: official VitePress dropdown -->
+      <VPNavBarMenuGroup v-if="!screenMenu" :item="toolsDropdown" />
 
-    <template v-for="item in links" :key="item.text">
-      <details v-if="'items' in item" class="menu-group" :open="screenMenu">
-        <summary>{{ item.text }}</summary>
-        <VPLink
-          v-for="child in item.items"
-          :key="child.link"
-          class="screen-link"
-          :href="child.link"
-        >
-          <span>{{ child.text }}</span>
-        </VPLink>
-      </details>
+      <!-- Mobile: official VitePress screen menu group -->
+      <VPNavScreenMenuGroup v-if="screenMenu" text="Tools" :items="toolMenuItems" />
 
       <VPLink
-        v-else
+        v-for="item in hubLinks"
+        :key="item.link"
+        :class="screenMenu ? 'screen-link' : 'desktop-link'"
+        :href="item.link"
+        :target="item.target"
+        :rel="item.rel"
+      >
+        <span>{{ item.text }}</span>
+      </VPLink>
+    </template>
+
+    <template v-else>
+      <VPLink
+        v-for="item in projectLinks"
+        :key="item.link"
         :class="[
           screenMenu ? 'screen-link' : 'desktop-link',
           { active: linkIsActive(item) },
@@ -153,34 +155,5 @@ function linkIsActive(item: NavLink) {
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-text-1);
-}
-
-.menu-group {
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-.menu-group summary {
-  padding: 12px 0 8px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--vp-c-text-1);
-  cursor: pointer;
-  list-style: none;
-}
-
-.menu-group summary::-webkit-details-marker {
-  display: none;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 </style>
