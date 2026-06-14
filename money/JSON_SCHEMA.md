@@ -13,7 +13,6 @@ The current schema version is `0.1`.
     "command": "transactions.list",
     "schema_version": "0.1",
     "generated_at": "2026-05-10T00:00:00Z",
-    "demo": false,
     "pagination": {
       "limit": 50,
       "offset": 0,
@@ -43,12 +42,11 @@ The current schema version is `0.1`.
 ```json
 {
   "ok": false,
-  "data": null,
+  "data": { ... },  // omitted when empty (omitempty)
   "meta": {
     "command": "sync",
     "schema_version": "0.1",
-    "generated_at": "2026-05-10T00:00:00Z",
-    "demo": false
+    "generated_at": "2026-05-10T00:00:00Z"
   },
   "warnings": [],
   "errors": [
@@ -56,7 +54,7 @@ The current schema version is `0.1`.
       "code": "SYNC_PARTIAL_FAILURE",
       "message": "One or more provider items failed to sync",
       "category": "api",
-      "retryable": false
+      "retryable": true
     }
   ]
 }
@@ -94,8 +92,9 @@ Provider errors are classified as:
 | `API_KEYS_FETCH_REQUIRED` | auth | true | 3 | Dashboard auth exists but API keys need fetching |
 | `DASHBOARD_TOKEN_REFRESH_FAILED` | auth | false | 3 | Refresh token expired |
 | `READ_ONLY_VIOLATION` | safety | false | 4 | Mutation blocked by read-only mode |
-| `CONFIRMATION_REQUIRED` | safety | false | 10 | Destructive op without `--confirm` |
-| `SYNC_PARTIAL_FAILURE` | api | false | 6 | Some provider items failed |
+| `CONFIRMATION_REQUIRED` | validation | false | 2 | JSON write without `--confirm` or `--dry-run` |
+| `CONFIRMATION_REQUIRED` | safety | false | 10 | Destructive op without `--confirm` (via requireConfirm) |
+| `SYNC_PARTIAL_FAILURE` | api | true | 6 | Some provider items failed |
 | `CONFIG_WRITE_FAILED` | config | false | 1 | Config/env file write failure |
 | `DB_BACKUP_FAILED` | safety | false | 1 | Pre-repair DB backup failure |
 
@@ -108,7 +107,6 @@ Provider errors are classified as:
 | 2 | Invalid command arguments |
 | 3 | Authentication or provider authorization required |
 | 4 | Read-only violation |
-| 5 | Network failure |
 | 6 | Provider/API/schema/feature failure |
 | 7 | Validation failure |
 | 10 | Confirmation required |

@@ -7,7 +7,7 @@ Use `money <command> --help` for full flag details.
 
 | Command | Description |
 |---------|-------------|
-| `version` | Show version, commit, date, and Go version |
+| `version` | Show version and commit |
 | `doctor` | Check configuration, store, providers, and connectivity |
 | `setup` | Guided first-time setup (config, encryption key, database) |
 | `completion` | Generate shell completion scripts (bash, zsh, fish, powershell) |
@@ -69,6 +69,15 @@ Read local account data.
 
 ```bash
 money accounts list --json
+```
+
+## accounts create-manual
+
+Create a local manual account (not linked to a provider).
+
+```bash
+money accounts create-manual --name Savings --type depository --balance 5000.00 --currency USD --confirm
+money accounts create-manual --name "Credit Card" --type credit --balance 500.00 --dry-run
 ```
 
 ## transactions
@@ -166,7 +175,7 @@ Manage linked provider items.
 money items list --json
 money items get pi_xxx --json
 money items rename pi_xxx "My Bank" --json
-money items remove pi_xxx --confirm --json
+money items remove pi_xxx --json
 ```
 
 ## demo
@@ -179,6 +188,73 @@ money demo transactions list --json --merchant Coffee --pending true --limit 10
 money demo transactions search coffee --json --limit 5
 ```
 
+## cashflow
+
+Show income and expenses over time.
+
+```bash
+money cashflow --from 2024-01-01 --to 2024-12-31
+money cashflow --from 2024-01-01 --to 2024-12-31 --period yearly --json
+```
+
+## net-worth
+
+Show current net worth across all visible accounts.
+
+```bash
+money net-worth
+money net-worth --json
+```
+
+## budgets
+
+Manage budgets.
+
+```bash
+money budgets list --json
+money budgets create --name Groceries --period monthly --start-date 2024-01-01 --end-date 2024-12-31 --confirm
+money budgets get <id> --json
+money budgets delete <id>
+```
+
+## rules
+
+Manage auto-categorization rules.
+
+```bash
+money rules list --json
+money rules create --name "Mark Uber" --condition-field merchant_name --condition-op contains --condition-value uber --action-type set_category --action-value transport --confirm
+money rules apply
+money rules delete <id>
+```
+
+## budgets categories
+
+Manage budget categories.
+
+```bash
+money budgets categories create --budget-id <id> --name Groceries --limit 50000 --confirm
+money budgets categories delete <id>
+```
+
+## import
+
+Import accounts and transactions from external sources.
+
+```bash
+money import monarch transactions.csv
+money import csv transactions.csv --dry-run
+money import monarch data.csv --batch-id 20240101 --confirm
+```
+
+## feedback
+
+Submit feedback.
+
+```bash
+money feedback
+```
+
 ## Global Flags
 
 | Flag | Default | Description |
@@ -186,4 +262,3 @@ money demo transactions search coffee --json --limit 5
 | `--config` | | Config file path |
 | `--profile` | `default` | Configuration profile |
 | `-j, --json` | `false` | JSON envelope to stdout |
-| `--read-only` | `false` | Block all mutations (also `MONEY_READ_ONLY=1`) |
