@@ -12,7 +12,7 @@ Published at **https://thedavidweng.github.io/site/**
 | [zenodo-cli](https://github.com/thedavidweng/zenodo-cli) | Zenodo/InvenioRDM CLI |
 | [monarchmoney-cli](https://github.com/thedavidweng/monarchmoney-cli) | Monarch Money CLI |
 | [flickr-cli](https://github.com/thedavidweng/flickr-cli) | Flickr CLI |
-| [money](https://github.com/thedavidweng/money) | Personal finance backend |
+| [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
 ## Development
 
@@ -46,6 +46,7 @@ node scripts/sync-docs.mjs --source=/path/to/parent/containing/repos
 ## Build
 
 ```bash
+pnpm build:agent-files   # regenerate money llms.txt / agent.json
 pnpm build
 pnpm preview
 ```

@@ -206,12 +206,21 @@ export default defineConfig({
   srcExclude: ['**/README.md'],
 
   transformPageData(pageData) {
+    const rel = pageData.relativePath
+    const isMoney = rel === 'money/index.md' || rel.startsWith('money/')
+
+    if (isMoney) {
+      const existing = pageData.frontmatter.pageClass ?? ''
+      pageData.frontmatter.pageClass = `${existing} money-zone`.trim()
+    }
+
     const project = projects.find((item) => {
-      const rel = pageData.relativePath
       return rel === `${item.slug}/index.md` || rel.startsWith(`${item.slug}/`)
     })
 
-    if (project && !pageData.frontmatter.title && pageData.relativePath !== 'index.md') {
+    if (rel === 'money/index.md') {
+      pageData.title = 'money'
+    } else if (project && !pageData.frontmatter.title && rel !== 'index.md') {
       pageData.title = project.title
     }
   },

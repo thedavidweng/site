@@ -1,6 +1,14 @@
 <script setup lang="ts">
+import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import { projects } from '../projects'
+
+const { site } = useData()
+
+function projectIconSrc(src: string) {
+  const base = site.value.base.endsWith('/') ? site.value.base : `${site.value.base}/`
+  return `${base}${src.replace(/^\//, '')}`
+}
 </script>
 
 <template>
@@ -37,7 +45,18 @@ import { projects } from '../projects'
         <div class="hub-grid">
           <article v-for="project in projects" :key="project.slug" class="hub-card">
             <div class="hub-card-top">
-              <span class="hub-card-icon" aria-hidden="true">{{ project.icon }}</span>
+              <span
+                class="hub-card-icon"
+                :class="{ 'hub-card-icon--image': project.iconSrc }"
+                aria-hidden="true"
+              >
+                <img
+                  v-if="project.iconSrc"
+                  :src="projectIconSrc(project.iconSrc)"
+                  :alt="`${project.name} logo`"
+                />
+                <template v-else>{{ project.icon }}</template>
+              </span>
               <div>
                 <h3>{{ project.name }}</h3>
                 <p class="hub-card-tagline">{{ project.tagline }}</p>
@@ -222,6 +241,20 @@ import { projects } from '../projects'
   border-radius: 14px;
   background: var(--hub-accent-soft);
   font-size: 24px;
+  flex-shrink: 0;
+}
+
+.hub-card-icon--image {
+  background: transparent;
+  padding: 0;
+}
+
+.hub-card-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
 }
 
 .hub-card h3 {

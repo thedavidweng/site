@@ -4,7 +4,7 @@ layout: home
 hero:
   name: money
   text: Personal Finance Backend
-  tagline: Local-first, agent-friendly personal finance backend. Encrypted SQLite, multi-provider sync, AI-agent friendly.
+  tagline: Local-first finance data your agent can rely on. Encrypted SQLite, stable CLI + JSON contracts, BYOK providers — no embedded AI, no required server.
   actions:
     - theme: brand
       text: Guide
@@ -15,49 +15,35 @@ hero:
 
 features:
   - icon: 🔒
-    title: Encrypted at Rest
-    details: SQLite with Adiantum VFS encryption. Your financial data never leaves your machine unencrypted.
-  - icon: 🔄
-    title: Multi-Provider Sync
-    details: Sync with Plaid and other financial providers. Automatic transaction import.
-  - icon: 📊
-    title: Accounts & Transactions
-    details: Full account management, transaction search, categorization, and rules.
-  - icon: 💰
-    title: Budgets & Cashflow
-    details: Budget tracking, cashflow analysis, and net worth calculations.
-  - icon: 🤖
-    title: Agent-First
-    details: JSON output, stable contracts, designed for AI agent integration.
-  - icon: 🔐
-    title: BYOK Credentials
-    details: You own your API keys. No telemetry, no server, no data leaves your machine.
+    title: Encrypted SQLite
+    details: Financial data at rest in an encrypted local file you control — not plaintext SQLite, not someone else's cloud.
+  - icon: 🔌
+    title: BYOK Providers
+    details: Plaid, Bridge, and more as adapters. You bring credentials; no managed proxy or subscription.
+  - icon: 📋
+    title: Stable JSON Contracts
+    details: Versioned envelopes, deterministic sorting and pagination — built for scripts, cron, and agents.
+  - icon: 💻
+    title: CLI-First
+    details: Human output by default; --json when you need parseable stdout. No web server required.
+  - icon: 🛡️
+    title: Explicit Sync Boundary
+    details: Read commands use local data only. Network I/O happens when you link or sync — not on every query.
+  - icon: ▶️
+    title: Demo Mode
+    details: money demo … runs against bundled sample data — no credentials required.
 ---
-
-## Quick Start
-
-```bash
-# Install
-brew tap thedavidweng/tap
-brew install --cask money
-
-# Verify environment
-money doctor
-
-# Use
-money accounts list --json
-money transactions list --json
-money cashflow --json
-```
 
 ## Key Commands
 
 | Command | Description |
 |---------|-------------|
+| `money demo accounts list --json` | Try with sample data (no credentials) |
+| `money setup` | Initialize config and encrypted database |
+| `money link` | Link a financial institution |
+| `money sync` | Sync linked provider data |
 | `money accounts list` | List all accounts |
-| `money transactions list` | List transactions |
-| `money cashflow` | Cashflow analysis |
-| `money net-worth` | Net worth calculation |
-| `money budgets list` | List budgets |
+| `money transactions search` | Search transactions |
 | `money doctor` | Diagnose environment |
-| `money sync` | Sync with providers |
+
+Read the [architecture guide](/money/docs/ARCHITECTURE) for data flow and module boundaries.

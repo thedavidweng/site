@@ -1,0 +1,80 @@
+{
+  "identity": {
+    "name": "money",
+    "description": "A local-first, self-hostable personal finance backend for AI agents and power users.",
+    "url": "https://thedavidweng.github.io/site/money",
+    "repository": "https://github.com/thedavidweng/money",
+    "license": "Apache-2.0",
+    "version": "0.x (pre-release)"
+  },
+  "services": [
+    {
+      "name": "CLI tool",
+      "description": "Command-line interface for personal finance data management",
+      "commands": [
+        "accounts list",
+        "accounts create-manual",
+        "transactions list",
+        "transactions search",
+        "categories list",
+        "tags list",
+        "recurring list",
+        "link",
+        "sync",
+        "setup",
+        "doctor",
+        "demo"
+      ],
+      "interface": "CLI + JSON contracts",
+      "outputFormat": "Versioned JSON envelope with meta, data, errors"
+    }
+  ],
+  "content": {
+    "overview": "money pulls account and transaction data from user-configured financial providers, stores it in a user-owned encrypted SQLite database, and exposes stable CLI + JSON contracts for external agents, scripts, and cron jobs.",
+    "features": [
+      "Encrypted SQLite — data at rest in an encrypted local file",
+      "BYOK providers — Plaid, Bridge, and more as replaceable adapters",
+      "Stable JSON contracts — versioned envelopes, deterministic ordering",
+      "CLI-first — human output by default, --json for automation",
+      "Explicit sync boundary — read uses local data only",
+      "Demo mode — try without credentials against sample data",
+      "Apache 2.0 licensed, single Go binary, no telemetry"
+    ],
+    "documentation": [
+      {
+        "name": "Getting Started",
+        "url": "https://thedavidweng.github.io/site/money/docs/GETTING_STARTED"
+      },
+      {
+        "name": "Architecture",
+        "url": "https://thedavidweng.github.io/site/money/docs/ARCHITECTURE"
+      },
+      {
+        "name": "Contracts",
+        "url": "https://thedavidweng.github.io/site/money/docs/CONTRACTS"
+      },
+      {
+        "name": "Schema",
+        "url": "https://thedavidweng.github.io/site/money/docs/SCHEMA"
+      },
+      {
+        "name": "Config",
+        "url": "https://thedavidweng.github.io/site/money/docs/CONFIG"
+      },
+      {
+        "name": "Roadmap",
+        "url": "https://thedavidweng.github.io/site/money/docs/ROADMAP"
+      }
+    ]
+  },
+  "contact": {
+    "issues": "https://github.com/thedavidweng/money/issues",
+    "repository": "https://github.com/thedavidweng/money"
+  },
+  "meta": {
+    "schema": "1.0.0",
+    "generated": "2026-06-14T04:28:29.886Z",
+    "deploy": "GitHub Pages (site repo)",
+    "framework": "VitePress"
+  }
+}
