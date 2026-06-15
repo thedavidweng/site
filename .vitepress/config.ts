@@ -200,8 +200,8 @@ const projectSidebars = {
 }
 
 export default defineConfig({
-  title: 'CLI Tools',
-  description: 'Agent-friendly CLI tools for modern workflows',
+  title: 'Apps',
+  description: 'Developer tools by David Weng — CLI utilities, desktop apps, and more',
   base: '/site/',
   srcExclude: ['**/README.md'],
 

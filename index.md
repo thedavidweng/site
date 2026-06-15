@@ -1,6 +1,6 @@
 ---
 layout: Hub
 pageClass: tools-hub
-title: CLI Tools
-description: Agent-friendly command-line tools for modern workflows
+title: Apps
+description: Developer tools by David Weng — CLI utilities, desktop apps, and more
 ---

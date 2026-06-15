@@ -16,10 +16,10 @@ function projectIconSrc(src: string) {
     <section class="hub-hero">
       <div class="hub-hero-inner">
         <p class="hub-eyebrow">Developer tools by David Weng</p>
-        <h1>Tools</h1>
+        <h1>Apps</h1>
         <p class="hub-lead">
           A growing collection of developer tools — CLI utilities, desktop apps, and more.
-          Each tool has its own landing page, documentation, and source code.
+          Each app has its own landing page, documentation, and source code.
         </p>
         <div class="hub-hero-actions">
           <VPLink class="hub-btn primary" href="https://github.com/thedavidweng">

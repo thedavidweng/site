@@ -22,14 +22,14 @@ type NavLink = {
   activeMatch?: string
 }
 
-const toolMenuItems: NavLink[] = projects.map((project) => ({
+const appMenuItems: NavLink[] = projects.map((project) => ({
   text: project.name,
   link: project.overview,
 }))
 
-const toolsDropdown = {
-  text: 'Tools',
-  items: toolMenuItems,
+const appsDropdown = {
+  text: 'Apps',
+  items: appMenuItems,
 }
 
 const guideLink: NavLink | null = currentProject
@@ -60,9 +60,9 @@ function linkIsActive(item: NavLink) {
       <span>{{ guideLink.text }}</span>
     </VPLink>
 
-    <!-- Tools dropdown: always visible -->
-    <VPNavBarMenuGroup v-if="!screenMenu" :item="toolsDropdown" />
-    <VPNavScreenMenuGroup v-if="screenMenu" text="Tools" :items="toolMenuItems" />
+    <!-- Apps dropdown: always visible -->
+    <VPNavBarMenuGroup v-if="!screenMenu" :item="appsDropdown" />
+    <VPNavScreenMenuGroup v-if="screenMenu" text="Apps" :items="appMenuItems" />
   </nav>
 </template>
 

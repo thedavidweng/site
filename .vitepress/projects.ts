@@ -9,6 +9,8 @@ export interface Project {
   docsEntry: string
   overview: string
   github: string
+  /** When true, overview and docsEntry are external URLs — not part of the site repo. */
+  external?: boolean
 }
 
 export interface Category {
@@ -75,6 +77,19 @@ export const projects: Project[] = [
     overview: '/money/',
     github: 'https://github.com/thedavidweng/money',
   },
+  {
+    slug: 'openkara',
+    name: 'OpenKara',
+    title: 'OpenKara',
+    tagline: 'Karaoke',
+    description: 'Turn your music library into a karaoke stage. AI stem separation, lyrics sync, cross-platform desktop app.',
+    icon: '🎤',
+    iconSrc: 'openkara-icon.png',
+    docsEntry: 'https://openkara.103279.xyz/',
+    overview: 'https://openkara.103279.xyz/',
+    github: 'https://github.com/thedavidweng/OpenKara',
+    external: true,
+  },
 ]
 
 export const categories: Category[] = [
@@ -82,7 +97,13 @@ export const categories: Category[] = [
     id: 'cli',
     label: 'CLI Tools',
     description: 'Agent-friendly command-line tools — stable JSON output, safety gates, single binaries.',
-    projects: projects,
+    projects: projects.filter((p) => !p.external),
+  },
+  {
+    id: 'desktop',
+    label: 'Desktop Apps',
+    description: 'Native desktop applications built with Tauri.',
+    projects: projects.filter((p) => p.external),
   },
 ]
 
@@ -96,6 +117,7 @@ export function stripBase(path: string, base = '/site/'): string {
 export function resolveProject(path: string, base = '/site/'): Project | null {
   const route = stripBase(path, base)
   return projects.find((project) => {
+    if (project.external) return false
     if (route === project.overview || route === project.overview.replace(/\/$/, '')) return true
     return route.startsWith(`/${project.slug}/`)
   }) ?? null
