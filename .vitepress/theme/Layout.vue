@@ -56,7 +56,7 @@ const isMoneyRoute = computed(() => {
     <template v-if="isMoneyHome" #home-hero-info-before>
       <img
         class="money-hero-logo"
-        :src="`${base}money/Golden-Toad-logo.webp`"
+        :src="`${base}money-icon.webp`"
         alt="money"
         width="52"
         height="52"

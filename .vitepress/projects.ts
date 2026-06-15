@@ -77,7 +77,7 @@ export const projects: Project[] = [
     tagline: 'money',
     description: 'Local-first backend with encrypted SQLite, multi-provider sync, and agent-friendly JSON.',
     icon: '🏦',
-    iconSrc: 'money/Golden-Toad-logo.webp',
+    iconSrc: 'money-icon.webp',
     docsEntry: '/money/docs/GETTING_STARTED',
     overview: '/money/',
     github: 'https://github.com/thedavidweng/money',

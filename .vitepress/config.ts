@@ -216,7 +216,7 @@ export default defineConfig({
       pageData.frontmatter.head ??= []
       pageData.frontmatter.head.push([
         'link',
-        { rel: 'icon', type: 'image/png', href: '/site/favicon.png' },
+        { rel: 'icon', type: 'image/png', href: '/site/money-favicon.png' },
       ])
     }
 
@@ -225,7 +225,7 @@ export default defineConfig({
       pageData.frontmatter.head ??= []
       pageData.frontmatter.head.push([
         'link',
-        { rel: 'icon', type: 'image/png', href: '/site/avatar-favicon.png' },
+        { rel: 'icon', type: 'image/png', href: '/site/hub-favicon.png' },
       ])
     }
 
