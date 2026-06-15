@@ -212,6 +212,12 @@ export default defineConfig({
     if (isMoney) {
       const existing = pageData.frontmatter.pageClass ?? ''
       pageData.frontmatter.pageClass = `${existing} money-zone`.trim()
+
+      pageData.frontmatter.head ??= []
+      pageData.frontmatter.head.push([
+        'link',
+        { rel: 'icon', type: 'image/png', href: '/site/favicon.png' },
+      ])
     }
 
     const project = projects.find((item) => {
