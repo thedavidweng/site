@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 import { useRoute, useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import { resolveProject } from '../projects'
 import TerminalHighlight from './components/TerminalHighlight.vue'
 import MoneyIntroVideo from './components/MoneyIntroVideo.vue'
 import MoneyQuickStart from './components/MoneyQuickStart.vue'
@@ -11,27 +13,37 @@ const { Layout: DefaultLayout } = DefaultTheme
 const route = useRoute()
 const { frontmatter, site } = useData()
 
+const base = computed(() => site.value.base)
+const currentProject = computed(() => resolveProject(route.path, base.value))
+
 const isMoneyHome = computed(() => {
   if (frontmatter.value.layout !== 'home') return false
-  const base = site.value.base.replace(/\/$/, '')
+  const b = base.value.replace(/\/$/, '')
   const path = route.path.replace(/\/$/, '') || '/'
-  const normalized = path.startsWith(base) ? path.slice(base.length).replace(/\/$/, '') || '/' : path
+  const normalized = path.startsWith(b) ? path.slice(b.length).replace(/\/$/, '') || '/' : path
   return normalized === '/money'
 })
 
 const isMoneyRoute = computed(() => {
-  const base = site.value.base.replace(/\/$/, '')
+  const b = base.value.replace(/\/$/, '')
   const path = route.path
-  return path.startsWith(`${base}/money`) || path === `${base}/money`
+  return path.startsWith(`${b}/money`) || path === `${b}/money`
 })
 </script>
 
 <template>
   <DefaultLayout>
+    <!-- Project title: replaces default "Apps" title on project pages -->
+    <template v-if="currentProject" #nav-bar-title-before>
+      <VPLink class="project-nav-title" :href="currentProject.overview">
+        {{ currentProject.name }}
+      </VPLink>
+    </template>
+
     <template v-if="isMoneyHome" #home-hero-info-before>
       <img
         class="money-hero-logo"
-        :src="`${site.base}money/Golden-Toad-logo.webp`"
+        :src="`${base}money/Golden-Toad-logo.webp`"
         alt="money"
         width="52"
         height="52"
@@ -47,14 +59,30 @@ const isMoneyRoute = computed(() => {
       <MoneyQuickStart />
       <MoneyDocsCards />
     </template>
-    <template v-if="isMoneyRoute && !isMoneyHome" #nav-bar-title-after>
-      <img
-        :src="`${site.base}money/Golden-Toad-logo.webp`"
-        alt=""
-        width="22"
-        height="22"
-        style="margin-left: 0.35rem; border-radius: 6px; vertical-align: middle;"
-      />
-    </template>
   </DefaultLayout>
 </template>
+
+<style>
+/* Hide default site title when project-specific title is present */
+.project-nav-title + .VPNavBarTitle {
+  display: none;
+}
+</style>
+
+<style scoped>
+.project-nav-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: var(--vp-nav-height);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.project-nav-title:hover {
+  opacity: 0.7;
+}
+</style>

@@ -48,11 +48,10 @@ function linkIsActive(item: NavLink) {
 
 <template>
   <nav :class="screenMenu ? 'ProjectNavMenu screen' : 'ProjectNavMenu desktop'">
-    <!-- Guide link (project pages only) -->
     <VPLink
       v-if="guideLink"
       :class="[
-        screenMenu ? 'screen-link' : 'desktop-link',
+        screenMenu ? 'screen-link' : 'guide-btn',
         { active: linkIsActive(guideLink) },
       ]"
       :href="guideLink.link"
@@ -60,7 +59,6 @@ function linkIsActive(item: NavLink) {
       <span>{{ guideLink.text }}</span>
     </VPLink>
 
-    <!-- Apps dropdown: always visible -->
     <VPNavBarMenuGroup v-if="!screenMenu" :item="appsDropdown" />
     <VPNavScreenMenuGroup v-if="screenMenu" text="Apps" :items="appMenuItems" />
   </nav>
@@ -83,20 +81,23 @@ function linkIsActive(item: NavLink) {
   margin-bottom: 8px;
 }
 
-.desktop-link {
-  display: flex;
+.guide-btn {
+  display: inline-flex;
   align-items: center;
-  padding: 0 12px;
-  line-height: var(--vp-nav-height);
-  font-size: 14px;
+  padding: 0 14px;
+  margin-right: 4px;
+  height: 30px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 15px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--vp-c-text-1);
-  transition: color 0.25s;
+  color: var(--vp-c-text-2);
+  transition: border-color 0.25s, color 0.25s;
 }
 
-.desktop-link.active,
-.desktop-link:hover,
-.screen-link:hover {
+.guide-btn.active,
+.guide-btn:hover {
+  border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
 }
 

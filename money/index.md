@@ -7,7 +7,7 @@ hero:
   tagline: Local-first finance data your agent can rely on. Encrypted SQLite, stable CLI + JSON contracts, BYOK providers — no embedded AI, no required server.
   actions:
     - theme: brand
-      text: Get Started
+      text: Guide
       link: /money/docs/GETTING_STARTED
     - theme: alt
       text: GitHub
