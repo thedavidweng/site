@@ -4,7 +4,7 @@ layout: home
 hero:
   name: canvas-cli
   image:
-    src: /canvas-cli-icon.png
+    src: /canvas-cli-icon.webp
     alt: canvas-cli
   text: Canvas LMS CLI
   tagline: Agent-friendly command-line interface for Canvas LMS. 50+ commands, stable JSON output, mutation safety gates.
