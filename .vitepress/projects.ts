@@ -11,6 +11,13 @@ export interface Project {
   github: string
 }
 
+export interface Category {
+  id: string
+  label: string
+  description: string
+  projects: Project[]
+}
+
 export const projects: Project[] = [
   {
     slug: 'canvas-cli',
@@ -67,6 +74,15 @@ export const projects: Project[] = [
     docsEntry: '/money/docs/GETTING_STARTED',
     overview: '/money/',
     github: 'https://github.com/thedavidweng/money',
+  },
+]
+
+export const categories: Category[] = [
+  {
+    id: 'cli',
+    label: 'CLI Tools',
+    description: 'Agent-friendly command-line tools — stable JSON output, safety gates, single binaries.',
+    projects: projects,
   },
 ]
 

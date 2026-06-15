@@ -220,6 +220,15 @@ export default defineConfig({
       ])
     }
 
+    // Hub page: personal avatar favicon
+    if (rel === 'index.md') {
+      pageData.frontmatter.head ??= []
+      pageData.frontmatter.head.push([
+        'link',
+        { rel: 'icon', type: 'image/png', href: '/site/avatar-favicon.png' },
+      ])
+    }
+
     const project = projects.find((item) => {
       return rel === `${item.slug}/index.md` || rel.startsWith(`${item.slug}/`)
     })

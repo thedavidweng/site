@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { projects } from '../projects'
+import { categories } from '../projects'
 
 const { site } = useData()
 
@@ -16,10 +16,10 @@ function projectIconSrc(src: string) {
     <section class="hub-hero">
       <div class="hub-hero-inner">
         <p class="hub-eyebrow">Developer tools by David Weng</p>
-        <h1>CLI Tools</h1>
+        <h1>Tools</h1>
         <p class="hub-lead">
-          A family of agent-friendly command-line tools — stable JSON output, safety gates,
-          single binaries. Pick a tool to explore its landing page or jump straight into the docs.
+          A growing collection of developer tools — CLI utilities, desktop apps, and more.
+          Each tool has its own landing page, documentation, and source code.
         </p>
         <div class="hub-hero-actions">
           <VPLink class="hub-btn primary" href="https://github.com/thedavidweng">
@@ -35,46 +35,48 @@ function projectIconSrc(src: string) {
       </div>
     </section>
 
-    <section id="tools" class="hub-tools">
-      <div class="hub-tools-inner">
-        <div class="hub-section-head">
-          <h2>Choose a tool</h2>
-          <p>Each project has its own landing page, documentation, and GitHub repository.</p>
-        </div>
+    <template v-for="category in categories" :key="category.id">
+      <section class="hub-category">
+        <div class="hub-category-inner">
+          <div class="hub-section-head">
+            <h2>{{ category.label }}</h2>
+            <p>{{ category.description }}</p>
+          </div>
 
-        <div class="hub-grid">
-          <article v-for="project in projects" :key="project.slug" class="hub-card">
-            <div class="hub-card-top">
-              <span
-                class="hub-card-icon"
-                :class="{ 'hub-card-icon--image': project.iconSrc }"
-                aria-hidden="true"
-              >
-                <img
-                  v-if="project.iconSrc"
-                  :src="projectIconSrc(project.iconSrc)"
-                  :alt="`${project.name} logo`"
-                />
-                <template v-else>{{ project.icon }}</template>
-              </span>
-              <div>
-                <h3>{{ project.name }}</h3>
-                <p class="hub-card-tagline">{{ project.tagline }}</p>
+          <div class="hub-grid">
+            <article v-for="project in category.projects" :key="project.slug" class="hub-card">
+              <div class="hub-card-top">
+                <span
+                  class="hub-card-icon"
+                  :class="{ 'hub-card-icon--image': project.iconSrc }"
+                  aria-hidden="true"
+                >
+                  <img
+                    v-if="project.iconSrc"
+                    :src="projectIconSrc(project.iconSrc)"
+                    :alt="`${project.name} logo`"
+                  />
+                  <template v-else>{{ project.icon }}</template>
+                </span>
+                <div>
+                  <h3>{{ project.name }}</h3>
+                  <p class="hub-card-tagline">{{ project.tagline }}</p>
+                </div>
               </div>
-            </div>
-            <p class="hub-card-copy">{{ project.description }}</p>
-            <div class="hub-card-actions">
-              <VPLink class="hub-btn primary" :href="project.overview">
-                Overview
-              </VPLink>
-              <VPLink class="hub-btn secondary" :href="project.docsEntry">
-                Guide
-              </VPLink>
-            </div>
-          </article>
+              <p class="hub-card-copy">{{ project.description }}</p>
+              <div class="hub-card-actions">
+                <VPLink class="hub-btn primary" :href="project.overview">
+                  Overview
+                </VPLink>
+                <VPLink class="hub-btn secondary" :href="project.docsEntry">
+                  Guide
+                </VPLink>
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </template>
 
     <section class="hub-principles">
       <div class="hub-principles-inner">
@@ -113,7 +115,7 @@ function projectIconSrc(src: string) {
 }
 
 .hub-hero-inner,
-.hub-tools-inner,
+.hub-category-inner,
 .hub-principles-inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -189,8 +191,9 @@ function projectIconSrc(src: string) {
   color: var(--hub-accent);
 }
 
-.hub-tools {
-  padding: 56px 24px 72px;
+/* Category sections */
+.hub-category {
+  padding: 56px 24px 24px;
 }
 
 .hub-section-head h2,
@@ -276,7 +279,7 @@ function projectIconSrc(src: string) {
 }
 
 .hub-principles {
-  padding: 0 24px 96px;
+  padding: 48px 24px 96px;
 }
 
 .hub-principles-inner {
