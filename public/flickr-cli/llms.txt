@@ -1,0 +1,36 @@
+# flickr-cli
+
+> Photo management, backup, upload, albums, and full Flickr API access.
+
+## Overview
+
+Photo management, backup, upload, albums, and full Flickr API access.
+
+## Key features
+
+- Full Flickr API access — photos, albums, galleries, favorites
+- Backup and restore
+- Bulk upload with album assignment
+- Piwigo migration support
+- OAuth1 authentication
+- Single Go binary
+
+## Documentation
+
+- Authentication: https://thedavidweng.github.io/site/flickr-cli/docs/auth
+- Capabilities: https://thedavidweng.github.io/site/flickr-cli/docs/capabilities
+- Upload: https://thedavidweng.github.io/site/flickr-cli/docs/upload
+- Backup: https://thedavidweng.github.io/site/flickr-cli/docs/backup
+- Safety: https://thedavidweng.github.io/site/flickr-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/flickr-cli/docs/agent-guide
+- Piwigo Import: https://thedavidweng.github.io/site/flickr-cli/docs/piwigo
+- Architecture: https://thedavidweng.github.io/site/flickr-cli/docs/ARCHITECTURE
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/flickr-cli
+- Site: https://thedavidweng.github.io/site/flickr-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/flickr-cli/

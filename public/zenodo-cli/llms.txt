@@ -1,0 +1,32 @@
+# zenodo-cli
+
+> Record management, file upload, and full InvenioRDM API access for Zenodo.
+
+## Overview
+
+Record management, file upload, and full InvenioRDM API access for Zenodo.
+
+## Key features
+
+- Full Zenodo/InvenioRDM API access — records, deposits, files, communities
+- JSON output via --json
+- API token authentication
+- Read-only default, --confirm on uploads
+- Single Go binary
+
+## Documentation
+
+- Authentication: https://thedavidweng.github.io/site/zenodo-cli/docs/auth
+- Capabilities: https://thedavidweng.github.io/site/zenodo-cli/docs/capabilities
+- Safety: https://thedavidweng.github.io/site/zenodo-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/zenodo-cli/docs/agent-guide
+- Architecture: https://thedavidweng.github.io/site/zenodo-cli/docs/ARCHITECTURE
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/zenodo-cli
+- Site: https://thedavidweng.github.io/site/zenodo-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/zenodo-cli/

@@ -1,0 +1,32 @@
+# canvas-cli
+
+> 50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
+
+## Overview
+
+50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
+
+## Key features
+
+- Full Canvas LMS API coverage — courses, assignments, submissions, enrollments
+- JSON output on all commands via --json
+- Safety gates — --dry-run, --confirm on mutations
+- OAuth2 authentication
+- Single Go binary, no runtime dependencies
+
+## Documentation
+
+- Authentication: https://thedavidweng.github.io/site/canvas-cli/docs/auth
+- Command Reference: https://thedavidweng.github.io/site/canvas-cli/docs/command-spec
+- JSON Contract: https://thedavidweng.github.io/site/canvas-cli/docs/json-contract
+- Safety Model: https://thedavidweng.github.io/site/canvas-cli/docs/safety-model
+- Architecture: https://thedavidweng.github.io/site/canvas-cli/docs/architecture
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/canvas-cli
+- Site: https://thedavidweng.github.io/site/canvas-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/canvas-cli/

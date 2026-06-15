@@ -199,11 +199,40 @@ const projectSidebars = {
   ],
 }
 
+const siteUrl = 'https://thedavidweng.github.io/site'
+
 export default defineConfig({
-  title: 'Apps',
-  description: 'Apps by David Weng — CLI tools, desktop apps, and more',
+  title: 'David Weng — Developer Tools',
+  description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
   base: '/site/',
   srcExclude: ['**/README.md'],
+
+  head: [
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'David Weng — Developer Tools' }],
+    ['meta', { property: 'og:description', content: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend.' }],
+    ['meta', { property: 'og:url', content: siteUrl }],
+    ['meta', { property: 'og:site_name', content: 'David Weng — Developer Tools' }],
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    ['meta', { name: 'twitter:title', content: 'David Weng — Developer Tools' }],
+    ['meta', { name: 'twitter:description', content: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend.' }],
+    ['link', { rel: 'sitemap', type: 'application/xml', href: `${siteUrl}/sitemap.xml` }],
+    ['link', { rel: 'alternate', type: 'text/plain', href: `${siteUrl}/llms.txt`, title: 'LLMs.txt' }],
+    ['script', { type: 'application/ld+json' }, JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'David Weng — Developer Tools',
+      url: siteUrl,
+      description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
+      inLanguage: 'en',
+      author: {
+        '@type': 'Person',
+        name: 'David Weng',
+        url: 'https://github.com/thedavidweng',
+        sameAs: ['https://github.com/thedavidweng'],
+      },
+    })],
+  ],
 
   transformPageData(pageData) {
     const rel = pageData.relativePath

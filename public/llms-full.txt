@@ -1,0 +1,117 @@
+# David Weng — Developer Tools (Full Reference)
+
+> Agent-friendly CLI tools, desktop apps, and a personal finance backend. All open-source, all single-binary where possible.
+
+## Projects
+
+### canvas-cli
+50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
+- Docs: https://thedavidweng.github.io/site/canvas-cli/
+- GitHub: https://github.com/thedavidweng/canvas-cli
+- Authentication: OAuth2 token via canvas-cli auth
+- JSON output: --json flag on all commands
+- Safety: --dry-run, --confirm on mutations
+- Key commands: courses list, assignments list, submissions list, grade, enroll
+
+### zenodo-cli
+Record management, file upload, and full InvenioRDM API access for Zenodo.
+- Docs: https://thedavidweng.github.io/site/zenodo-cli/
+- GitHub: https://github.com/thedavidweng/zenodo-cli
+- Authentication: API token via zenodo-cli auth
+- Capabilities: records, deposits, files, communities, grants
+- Safety: read-only default, --confirm on uploads
+
+### monarchmoney-cli
+Accounts, transactions, budgets, and cashflow from your terminal.
+- Docs: https://thedavidweng.github.io/site/monarchmoney-cli/
+- GitHub: https://github.com/thedavidweng/monarchmoney-cli
+- Authentication: session token via monarchmoney-cli auth
+- JSON output: --json flag, versioned JSON envelope
+- Key commands: accounts list, transactions list, budgets list, cashflow
+
+### flickr-cli
+Photo management, backup, upload, albums, and full Flickr API access.
+- Docs: https://thedavidweng.github.io/site/flickr-cli/
+- GitHub: https://github.com/thedavidweng/flickr-cli
+- Authentication: OAuth1 via flickr-cli auth
+- Capabilities: photos, albums, galleries, favorites, backup, upload
+- Piwigo import: migrate from Flickr to self-hosted Piwigo
+- Safety: --dry-run on bulk operations
+
+### money
+Local-first, self-hostable personal finance backend for AI agents and power users.
+- Docs: https://thedavidweng.github.io/site/money/
+- GitHub: https://github.com/thedavidweng/money
+- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
+- Install: brew install --cask thedavidweng/tap/money
+- Go install: go install github.com/thedavidweng/money/cmd/money@latest
+- Features: encrypted SQLite, BYOK providers (Plaid, Bridge), stable JSON contracts, CLI-first, demo mode
+- Key commands: accounts list, transactions list, transactions search, categories list, tags list, recurring list, link, sync, setup, doctor, demo
+- License: Apache 2.0
+
+### OpenKara
+Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
+- Site: https://openkara.103279.xyz/
+- GitHub: https://github.com/thedavidweng/OpenKara
+- Built with: Tauri (Rust + web frontend)
+- Features: AI stem separation (Demucs), lyrics sync, cross-platform
+
+## Documentation Pages
+
+### canvas-cli
+- Overview: https://thedavidweng.github.io/site/canvas-cli/
+- Auth: https://thedavidweng.github.io/site/canvas-cli/docs/auth
+- Commands: https://thedavidweng.github.io/site/canvas-cli/docs/command-spec
+- JSON Contract: https://thedavidweng.github.io/site/canvas-cli/docs/json-contract
+- Safety: https://thedavidweng.github.io/site/canvas-cli/docs/safety-model
+- Architecture: https://thedavidweng.github.io/site/canvas-cli/docs/architecture
+- Agent Domain: https://thedavidweng.github.io/site/canvas-cli/docs/agents/domain
+
+### zenodo-cli
+- Overview: https://thedavidweng.github.io/site/zenodo-cli/
+- Auth: https://thedavidweng.github.io/site/zenodo-cli/docs/auth
+- Capabilities: https://thedavidweng.github.io/site/zenodo-cli/docs/capabilities
+- Safety: https://thedavidweng.github.io/site/zenodo-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/zenodo-cli/docs/agent-guide
+- Architecture: https://thedavidweng.github.io/site/zenodo-cli/docs/ARCHITECTURE
+
+### monarchmoney-cli
+- Overview: https://thedavidweng.github.io/site/monarchmoney-cli/
+- Capabilities: https://thedavidweng.github.io/site/monarchmoney-cli/docs/capabilities
+- Auth: https://thedavidweng.github.io/site/monarchmoney-cli/docs/auth
+- Safety: https://thedavidweng.github.io/site/monarchmoney-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/monarchmoney-cli/docs/agent-guide
+- JSON Schema: https://thedavidweng.github.io/site/monarchmoney-cli/docs/json-schema
+
+### flickr-cli
+- Overview: https://thedavidweng.github.io/site/flickr-cli/
+- Auth: https://thedavidweng.github.io/site/flickr-cli/docs/auth
+- Capabilities: https://thedavidweng.github.io/site/flickr-cli/docs/capabilities
+- Upload: https://thedavidweng.github.io/site/flickr-cli/docs/upload
+- Backup: https://thedavidweng.github.io/site/flickr-cli/docs/backup
+- Safety: https://thedavidweng.github.io/site/flickr-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/flickr-cli/docs/agent-guide
+- Piwigo: https://thedavidweng.github.io/site/flickr-cli/docs/piwigo
+- Architecture: https://thedavidweng.github.io/site/flickr-cli/docs/ARCHITECTURE
+
+### money
+- Overview: https://thedavidweng.github.io/site/money/
+- Getting Started: https://thedavidweng.github.io/site/money/docs/GETTING_STARTED
+- Architecture: https://thedavidweng.github.io/site/money/docs/ARCHITECTURE
+- Contracts: https://thedavidweng.github.io/site/money/docs/CONTRACTS
+- Schema: https://thedavidweng.github.io/site/money/docs/SCHEMA
+- Config: https://thedavidweng.github.io/site/money/docs/CONFIG
+- Roadmap: https://thedavidweng.github.io/site/money/docs/ROADMAP
+
+## Design Principles
+
+- Agent-friendly — stable JSON output, predictable exit codes, distinct stdout/stderr
+- Safety first — --read-only, --dry-run, --confirm gates on mutations
+- Single binary — no runtime, no containers, no dependencies
+- Cross-platform — Linux, macOS, Windows (amd64/arm64)
+- Homebrew distribution — brew install --cask thedavidweng/tap/<tool>
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng
+- Site: https://thedavidweng.github.io/site/

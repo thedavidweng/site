@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.33.3",
   "scripts": {
     "dev": "vitepress dev",
-    "build:agent-files": "node scripts/build-money-agent-files.mjs",
+    "build:agent-files": "node scripts/build-money-agent-files.mjs && node scripts/build-project-llms.mjs && node scripts/build-sitemap.mjs",
     "build": "pnpm build:agent-files && vitepress build",
     "preview": "vitepress preview",
     "sync-docs": "node scripts/sync-docs.mjs",

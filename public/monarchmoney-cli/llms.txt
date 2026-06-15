@@ -1,0 +1,31 @@
+# monarchmoney-cli
+
+> Accounts, transactions, budgets, and cashflow from your terminal.
+
+## Overview
+
+Accounts, transactions, budgets, and cashflow from your terminal.
+
+## Key features
+
+- Monarch Money API access — accounts, transactions, budgets, cashflow
+- Versioned JSON envelope output
+- Session token authentication
+- Single Go binary, no runtime dependencies
+
+## Documentation
+
+- Capabilities: https://thedavidweng.github.io/site/monarchmoney-cli/docs/capabilities
+- Authentication: https://thedavidweng.github.io/site/monarchmoney-cli/docs/auth
+- Safety Model: https://thedavidweng.github.io/site/monarchmoney-cli/docs/safety
+- Agent Guide: https://thedavidweng.github.io/site/monarchmoney-cli/docs/agent-guide
+- JSON Schema: https://thedavidweng.github.io/site/monarchmoney-cli/docs/json-schema
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/monarchmoney-cli
+- Site: https://thedavidweng.github.io/site/monarchmoney-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/monarchmoney-cli/

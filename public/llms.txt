@@ -1,0 +1,55 @@
+# David Weng — Developer Tools
+
+> Agent-friendly CLI tools, desktop apps, and a personal finance backend. All open-source, all single-binary where possible.
+
+## Projects
+
+### canvas-cli
+50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
+- Docs: https://thedavidweng.github.io/site/canvas-cli/
+- GitHub: https://github.com/thedavidweng/canvas-cli
+
+### zenodo-cli
+Record management, file upload, and full InvenioRDM API access for Zenodo.
+- Docs: https://thedavidweng.github.io/site/zenodo-cli/
+- GitHub: https://github.com/thedavidweng/zenodo-cli
+
+### monarchmoney-cli
+Accounts, transactions, budgets, and cashflow from your terminal.
+- Docs: https://thedavidweng.github.io/site/monarchmoney-cli/
+- GitHub: https://github.com/thedavidweng/monarchmoney-cli
+
+### flickr-cli
+Photo management, backup, upload, albums, and full Flickr API access.
+- Docs: https://thedavidweng.github.io/site/flickr-cli/
+- GitHub: https://github.com/thedavidweng/flickr-cli
+
+### money
+Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.
+- Docs: https://thedavidweng.github.io/site/money/
+- GitHub: https://github.com/thedavidweng/money
+- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
+
+### OpenKara
+Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
+- Site: https://openkara.103279.xyz/
+- GitHub: https://github.com/thedavidweng/OpenKara
+
+## Design Principles
+
+- Agent-friendly — stable JSON output, predictable exit codes, distinct stdout/stderr
+- Safety first — --read-only, --dry-run, --confirm gates on mutations
+- Single binary — no runtime, no containers, no dependencies
+- Cross-platform — Linux, macOS, Windows (amd64/arm64)
+- Homebrew distribution — brew install --cask thedavidweng/tap/<tool>
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng
+- Site: https://thedavidweng.github.io/site/
+
+## Machine-Readable Endpoints
+
+- Full content: https://thedavidweng.github.io/site/llms-full.txt
+- Sitemap: https://thedavidweng.github.io/site/sitemap.xml
+- money agent JSON: https://thedavidweng.github.io/site/money/agent.json
