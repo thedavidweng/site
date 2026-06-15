@@ -37,6 +37,7 @@
         </div>
       </article>
     </div>
+    <p class="money-qs-foot">All commands accept <code>--json</code>. Write operations require <code>--dry-run</code> or <code>--confirm</code>.</p>
   </div>
 </template>
 

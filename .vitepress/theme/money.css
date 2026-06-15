@@ -223,6 +223,13 @@
   overflow-x: auto;
 }
 
+.money-qs-foot {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  text-align: center;
+}
+
 /* Intro video */
 .money-intro-video {
   max-width: 1152px;

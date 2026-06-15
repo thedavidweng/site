@@ -34,44 +34,6 @@ features:
     details: money demo … runs against bundled sample data — no credentials required.
 ---
 
-## Quick Start
-
-Two paths: try with sample data, or connect a real provider.
-
-### Step 1 — Demo mode {#demo-mode}
-
-Bundled in-memory sample data; safe to run anywhere. `meta.demo: true` on every envelope.
-
-```sh
-# Install via Homebrew Cask
-$ brew install --cask thedavidweng/tap/money
-
-# Or via Go
-$ go install github.com/thedavidweng/money/cmd/money@latest
-
-# Try with sample data
-$ money demo accounts list --json
-$ money demo transactions search "coffee"
-```
-
-### Step 2 — Real sync (BYOK) {#real-sync}
-
-Bring your own Plaid / Bridge credentials. `money` stores them in your encrypted local DB.
-
-```sh
-# Interactive setup — config, key, database
-$ money setup
-
-# Link an institution, then sync
-$ money link
-$ money sync
-$ money accounts list --json
-```
-
-::: info
-All commands accept `--json`. Write operations require `--dry-run` or `--confirm`.
-:::
-
 ## Why money
 
 Many personal finance workflows depend on a single SaaS for truth, on products that bundle AI advisors, or on a full web app you must keep online. That conflicts with owning your data, choosing providers, and giving an *external* agent predictable, deterministic primitives.
