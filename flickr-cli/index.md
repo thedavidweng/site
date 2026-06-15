@@ -3,6 +3,9 @@ layout: home
 
 hero:
   name: flickr-cli
+  image:
+    src: /flickr-cli-icon.png
+    alt: flickr-cli
   text: Flickr CLI
   tagline: Agent-friendly command-line interface for Flickr. Photo management, backup, upload, albums, and full API access.
   actions:

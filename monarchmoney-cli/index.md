@@ -3,6 +3,9 @@ layout: home
 
 hero:
   name: monarchmoney-cli
+  image:
+    src: /monarchmoney-cli-icon.png
+    alt: monarchmoney-cli
   text: Monarch Money CLI
   tagline: Agent-friendly command-line interface for Monarch Money. Accounts, transactions, budgets, and cashflow from your terminal.
   actions:

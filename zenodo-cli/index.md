@@ -3,6 +3,9 @@ layout: home
 
 hero:
   name: zenodo-cli
+  image:
+    src: /zenodo-cli-icon.png
+    alt: zenodo-cli
   text: Zenodo/InvenioRDM CLI
   tagline: Agent-friendly command-line interface for Zenodo. Record management, file upload, and full InvenioRDM API access.
   actions:
