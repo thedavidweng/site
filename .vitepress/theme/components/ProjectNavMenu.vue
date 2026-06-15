@@ -4,7 +4,7 @@ import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
 import VPNavBarMenuGroup from 'vitepress/dist/client/theme-default/components/VPNavBarMenuGroup.vue'
 import VPNavScreenMenuGroup from 'vitepress/dist/client/theme-default/components/VPNavScreenMenuGroup.vue'
 import { isActive } from 'vitepress/dist/client/shared.js'
-import { isHubPath, projects, resolveProject } from '../../projects'
+import { projects, resolveProject } from '../../projects'
 
 defineProps<{
   screenMenu?: boolean
@@ -15,14 +15,11 @@ const { page, site } = useData()
 
 const base = site.value.base
 const currentProject = resolveProject(route.path, base)
-const onHub = isHubPath(route.path, base)
 
 type NavLink = {
   text: string
   link: string
   activeMatch?: string
-  target?: string
-  rel?: string
 }
 
 const toolMenuItems: NavLink[] = projects.map((project) => ({
@@ -35,35 +32,13 @@ const toolsDropdown = {
   items: toolMenuItems,
 }
 
-const hubLinks: NavLink[] = [
-  {
-    text: 'Homebrew Tap',
-    link: 'https://github.com/thedavidweng/homebrew-tap',
-    target: '_blank',
-    rel: 'noopener',
-  },
-]
-
-const projectLinks: NavLink[] = currentProject
-  ? [
-      {
-        text: 'Overview',
-        link: currentProject.overview,
-        activeMatch: `^/${currentProject.slug}$`,
-      },
-      {
-        text: 'Guide',
-        link: currentProject.docsEntry,
-        activeMatch: `^/${currentProject.slug}/(?:docs|COMMANDS|JSON_SCHEMA)`,
-      },
-      {
-        text: 'GitHub',
-        link: currentProject.github,
-        target: '_blank',
-        rel: 'noopener',
-      },
-    ]
-  : []
+const guideLink: NavLink | null = currentProject
+  ? {
+      text: 'Guide',
+      link: currentProject.docsEntry,
+      activeMatch: `^/${currentProject.slug}/(?:docs|COMMANDS|JSON_SCHEMA)`,
+    }
+  : null
 
 function linkIsActive(item: NavLink) {
   if (!item.activeMatch) return false
@@ -72,44 +47,22 @@ function linkIsActive(item: NavLink) {
 </script>
 
 <template>
-  <nav
-    v-if="onHub || projectLinks.length"
-    :class="screenMenu ? 'ProjectNavMenu screen' : 'ProjectNavMenu desktop'"
-  >
-    <template v-if="onHub">
-      <!-- Desktop: official VitePress dropdown -->
-      <VPNavBarMenuGroup v-if="!screenMenu" :item="toolsDropdown" />
+  <nav :class="screenMenu ? 'ProjectNavMenu screen' : 'ProjectNavMenu desktop'">
+    <!-- Guide link (project pages only) -->
+    <VPLink
+      v-if="guideLink"
+      :class="[
+        screenMenu ? 'screen-link' : 'desktop-link',
+        { active: linkIsActive(guideLink) },
+      ]"
+      :href="guideLink.link"
+    >
+      <span>{{ guideLink.text }}</span>
+    </VPLink>
 
-      <!-- Mobile: official VitePress screen menu group -->
-      <VPNavScreenMenuGroup v-if="screenMenu" text="Tools" :items="toolMenuItems" />
-
-      <VPLink
-        v-for="item in hubLinks"
-        :key="item.link"
-        :class="screenMenu ? 'screen-link' : 'desktop-link'"
-        :href="item.link"
-        :target="item.target"
-        :rel="item.rel"
-      >
-        <span>{{ item.text }}</span>
-      </VPLink>
-    </template>
-
-    <template v-else>
-      <VPLink
-        v-for="item in projectLinks"
-        :key="item.link"
-        :class="[
-          screenMenu ? 'screen-link' : 'desktop-link',
-          { active: linkIsActive(item) },
-        ]"
-        :href="item.link"
-        :target="item.target"
-        :rel="item.rel"
-      >
-        <span>{{ item.text }}</span>
-      </VPLink>
-    </template>
+    <!-- Tools dropdown: always visible -->
+    <VPNavBarMenuGroup v-if="!screenMenu" :item="toolsDropdown" />
+    <VPNavScreenMenuGroup v-if="screenMenu" text="Tools" :items="toolMenuItems" />
   </nav>
 </template>
 
