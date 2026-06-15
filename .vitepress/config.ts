@@ -233,6 +233,15 @@ export default defineConfig({
       return rel === `${item.slug}/index.md` || rel.startsWith(`${item.slug}/`)
     })
 
+    // Per-project favicon (skip money — already handled above, skip external projects)
+    if (project && !isMoney && !project.external) {
+      pageData.frontmatter.head ??= []
+      pageData.frontmatter.head.push([
+        'link',
+        { rel: 'icon', type: 'image/png', href: `/site/${project.slug}-favicon.png` },
+      ])
+    }
+
     if (rel === 'money/index.md') {
       pageData.title = 'money'
     } else if (project && !pageData.frontmatter.title && rel !== 'index.md') {
