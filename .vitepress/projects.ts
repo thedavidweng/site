@@ -110,7 +110,7 @@ export const categories: Category[] = [
   {
     id: 'desktop',
     label: 'Desktop Apps',
-    description: 'Native desktop applications built with Tauri.',
+    description: 'Cross-platform desktop applications built with Tauri.',
     projects: projects.filter((p) => p.external),
   },
 ]
