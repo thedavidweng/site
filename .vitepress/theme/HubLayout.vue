@@ -15,11 +15,10 @@ function projectIconSrc(src: string) {
   <div class="HubLayout">
     <section class="hub-hero">
       <div class="hub-hero-inner">
-        <p class="hub-eyebrow">Developer tools by David Weng</p>
+        <p class="hub-eyebrow">By David Weng</p>
         <h1>Apps</h1>
         <p class="hub-lead">
-          A growing collection of developer tools — CLI utilities, desktop apps, and more.
-          Each app has its own landing page, documentation, and source code.
+          A collection of apps across different platforms — each with its own landing page, documentation, and source code.
         </p>
         <div class="hub-hero-actions">
           <VPLink class="hub-btn primary" href="https://github.com/thedavidweng">
@@ -74,22 +73,15 @@ function projectIconSrc(src: string) {
               </div>
             </article>
           </div>
+
+          <div v-if="category.principles?.length" class="hub-principles">
+            <ul>
+              <li v-for="(p, i) in category.principles" :key="i" v-html="p" />
+            </ul>
+          </div>
         </div>
       </section>
     </template>
-
-    <section class="hub-principles">
-      <div class="hub-principles-inner">
-        <h2>Shared principles</h2>
-        <ul>
-          <li><strong>Agent-friendly</strong> — stable JSON output, predictable exit codes, distinct stdout/stderr</li>
-          <li><strong>Safety first</strong> — <code>--read-only</code>, <code>--dry-run</code>, <code>--confirm</code> gates on mutations</li>
-          <li><strong>Single binary</strong> — no runtime, no containers, no dependencies</li>
-          <li><strong>Cross-platform</strong> — Linux, macOS, Windows (amd64/arm64)</li>
-          <li><strong>Homebrew distribution</strong> — <code>brew install --cask thedavidweng/tap/&lt;tool&gt;</code></li>
-        </ul>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -115,8 +107,7 @@ function projectIconSrc(src: string) {
 }
 
 .hub-hero-inner,
-.hub-category-inner,
-.hub-principles-inner {
+.hub-category-inner {
   max-width: 1120px;
   margin: 0 auto;
 }
@@ -193,11 +184,10 @@ function projectIconSrc(src: string) {
 
 /* Category sections */
 .hub-category {
-  padding: 56px 24px 24px;
+  padding: 56px 24px 72px;
 }
 
-.hub-section-head h2,
-.hub-principles h2 {
+.hub-section-head h2 {
   margin: 0;
   font-size: 28px;
   letter-spacing: -0.02em;
@@ -278,19 +268,17 @@ function projectIconSrc(src: string) {
   color: var(--vp-c-text-2);
 }
 
+/* Per-category principles */
 .hub-principles {
-  padding: 48px 24px 96px;
-}
-
-.hub-principles-inner {
-  padding: 28px 30px;
+  margin-top: 28px;
+  padding: 24px 28px;
   border: 1px solid var(--hub-border);
-  border-radius: 24px;
+  border-radius: 16px;
   background: var(--hub-surface);
 }
 
 .hub-principles ul {
-  margin: 18px 0 0;
+  margin: 0;
   padding-left: 20px;
   color: var(--vp-c-text-2);
   line-height: 1.8;

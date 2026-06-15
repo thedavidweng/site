@@ -18,6 +18,7 @@ export interface Category {
   label: string
   description: string
   projects: Project[]
+  principles?: string[]
 }
 
 export const projects: Project[] = [
@@ -98,6 +99,13 @@ export const categories: Category[] = [
     label: 'CLI Tools',
     description: 'Agent-friendly command-line tools — stable JSON output, safety gates, single binaries.',
     projects: projects.filter((p) => !p.external),
+    principles: [
+      '<strong>Agent-friendly</strong> — stable JSON output, predictable exit codes, distinct stdout/stderr',
+      '<strong>Safety first</strong> — <code>--read-only</code>, <code>--dry-run</code>, <code>--confirm</code> gates on mutations',
+      '<strong>Single binary</strong> — no runtime, no containers, no dependencies',
+      '<strong>Cross-platform</strong> — Linux, macOS, Windows (amd64/arm64)',
+      '<strong>Homebrew distribution</strong> — <code>brew install --cask thedavidweng/tap/&lt;tool&gt;</code>',
+    ],
   },
   {
     id: 'desktop',
