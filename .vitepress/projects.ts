@@ -134,8 +134,3 @@ export function resolveProject(path: string, base = '/site/'): Project | null {
     return route.startsWith(`/${project.slug}/`)
   }) ?? null
 }
-
-export function isHubPath(path: string, base = '/site/'): boolean {
-  const route = stripBase(path, base)
-  return route === '/' || route === ''
-}
