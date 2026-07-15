@@ -13,6 +13,7 @@
     "lint:fix": "oxlint .vitepress scripts --fix"
   },
   "devDependencies": {
+    "knip": "^6.26.0",
     "oxlint": "^1.69.0",
     "vitepress": "^1.6.4"
   }
