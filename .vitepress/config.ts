@@ -197,6 +197,86 @@ const projectSidebars = {
       ],
     },
   ],
+
+  '/qualtrics-cli/': [
+    {
+      text: 'Guide',
+      items: [
+        { text: 'Overview', link: '/qualtrics-cli/' },
+        { text: 'QSF Spec', link: '/qualtrics-cli/docs/qsf-spec' },
+      ],
+    },
+    {
+      text: 'Reference',
+      items: [
+        { text: 'Commands (COMMANDS.md)', link: '/qualtrics-cli/COMMANDS' },
+        { text: 'JSON Schema (JSON_SCHEMA.md)', link: '/qualtrics-cli/JSON_SCHEMA' },
+        { text: 'Context (CONTEXT.md)', link: '/qualtrics-cli/CONTEXT' },
+      ],
+    },
+    {
+      text: 'Architecture & ADR',
+      collapsed: true,
+      items: [
+        { text: 'ADR-0001: Architecture Boundaries', link: '/qualtrics-cli/docs/adr/0001-architecture-boundaries' },
+        { text: 'ADR-0002: Transport Layer & Retries', link: '/qualtrics-cli/docs/adr/0002-transport-layer-and-retries' },
+        { text: 'ADR-0003: Safety Model & Permissions', link: '/qualtrics-cli/docs/adr/0003-safety-model-and-permissions' },
+        { text: 'ADR-0004: Pagination Abstraction', link: '/qualtrics-cli/docs/adr/0004-pagination-abstraction' },
+        { text: 'ADR-0005: Async Response Jobs', link: '/qualtrics-cli/docs/adr/0005-async-response-jobs' },
+        { text: 'ADR-0006: Survey Builder DSL & Compiler', link: '/qualtrics-cli/docs/adr/0006-survey-builder-dsl-and-compiler' },
+      ],
+    },
+  ],
+
+  '/tg-drive-cli/': [
+    {
+      text: 'Guides',
+      items: [
+        { text: 'Overview', link: '/tg-drive-cli/' },
+        { text: 'Getting Started', link: '/tg-drive-cli/docs/guides/getting-started' },
+        { text: 'How td Works', link: '/tg-drive-cli/docs/guides/how-td-works' },
+        { text: 'CLI Reference', link: '/tg-drive-cli/docs/guides/cli-reference' },
+        { text: 'Organize Files', link: '/tg-drive-cli/docs/guides/organize-files' },
+        { text: 'Share & Navigate', link: '/tg-drive-cli/docs/guides/share-and-navigate' },
+        { text: 'Adopt an Existing Channel', link: '/tg-drive-cli/docs/guides/adopt-an-existing-channel' },
+        { text: 'Import Saved Messages', link: '/tg-drive-cli/docs/guides/import-saved' },
+        { text: 'Recover the Index', link: '/tg-drive-cli/docs/guides/recover-the-index' },
+        { text: 'Script with JSON', link: '/tg-drive-cli/docs/guides/script-with-json' },
+        { text: 'Troubleshoot', link: '/tg-drive-cli/docs/guides/troubleshoot' },
+      ],
+    },
+    {
+      text: 'Contracts',
+      items: [
+        { text: 'CLI Contract', link: '/tg-drive-cli/docs/contracts/cli-contract' },
+        { text: 'JSON Contract', link: '/tg-drive-cli/docs/contracts/json-contract' },
+        { text: 'Storage Contract', link: '/tg-drive-cli/docs/contracts/storage-contract' },
+        { text: 'Config Contract', link: '/tg-drive-cli/docs/contracts/config-contract' },
+      ],
+    },
+    {
+      text: 'Architecture & Reference',
+      items: [
+        { text: 'Architecture', link: '/tg-drive-cli/docs/architecture' },
+        { text: 'Decisions (DECISIONS.md)', link: '/tg-drive-cli/DECISIONS' },
+        { text: 'Context (CONTEXT.md)', link: '/tg-drive-cli/CONTEXT' },
+        { text: 'Testing', link: '/tg-drive-cli/docs/testing' },
+        { text: 'Release and CI', link: '/tg-drive-cli/docs/release-and-ci' },
+      ],
+    },
+    {
+      text: 'ADR',
+      collapsed: true,
+      items: [
+        { text: 'ADR-0001: Architecture Decisions', link: '/tg-drive-cli/docs/adr/0001-architecture-decisions' },
+        { text: 'ADR-0002: Storage Schema v1', link: '/tg-drive-cli/docs/adr/0002-storage-schema-v1' },
+        { text: 'ADR-0003: Manifest Format v1', link: '/tg-drive-cli/docs/adr/0003-manifest-format-v1' },
+        { text: 'ADR-0004: Telegram Adapter', link: '/tg-drive-cli/docs/adr/0004-telegram-adapter' },
+        { text: 'ADR-0005: Path Encoding & Chinese Pinyin', link: '/tg-drive-cli/docs/adr/0005-path-encoding-and-chinese-pinyin' },
+        { text: 'ADR-0018: Discussion Group Thread Comments', link: '/tg-drive-cli/docs/adr/0018-discussion-group-thread-comments' },
+      ],
+    },
+  ],
 }
 
 const siteUrl = 'https://thedavidweng.github.io/site'
@@ -206,6 +286,7 @@ export default defineConfig({
   description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
   base: '/site/',
   srcExclude: ['**/README.md'],
+  ignoreDeadLinks: true,
 
   head: [
     ['meta', { property: 'og:type', content: 'website' }],

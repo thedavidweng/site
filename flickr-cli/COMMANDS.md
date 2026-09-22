@@ -349,11 +349,20 @@ Piwigo migration tools.
 ```bash
 flickr piwigo import --url https://photos.example.com --user admin --password secret
 flickr piwigo import --url https://photos.example.com --user admin --password secret --json
+flickr piwigo import --dry-run --url https://photos.example.com --user admin --password secret
 ```
+
+**Dry-run planning:** `--dry-run` walks the Piwigo category/image tree read-only
+and reports what would be imported without any Flickr mutation. The `--json`
+envelope adds these count fields under `data`:
+
+- `planned_photos` — number of photos that would be uploaded
+- `planned_albums` — number of distinct albums that would be created
+- `skipped` — number of photos skipped by checksum deduplication
 
 **Safety gates:**
 
-- `piwigo import` — requires `--confirm`; blocked by `--read-only`; supports `--dry-run`
+- `piwigo import` — requires `--confirm`; blocked by `--read-only`; supports `--dry-run` (read-only Piwigo scan, no Flickr mutation)
 
 ## Global Flags
 
@@ -376,7 +385,7 @@ These flags are available on every command:
 | `--concurrency` | `4` | Concurrent upload/download workers |
 | `--no-color` | `false` | Disable ANSI color |
 | `--verbose` | `false` | Diagnostics to stderr |
-| `--debug` | `false` | Debug diagnostics with secrets redacted |
+| `--debug` | `false` | Debug diagnostics to stderr |
 | `--quiet` | `false` | Suppress progress output |
 
 ## Environment Variables

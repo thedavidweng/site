@@ -92,6 +92,49 @@ const projectDetails = [
       ['Architecture', '/docs/ARCHITECTURE'],
     ],
   },
+  {
+    slug: 'qualtrics-cli',
+    name: 'qualtrics-cli',
+    description: 'Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.',
+    github: 'https://github.com/thedavidweng/qualtrics-cli',
+    overview: 'Query surveys, definitions, asynchronous response exports and imports, distributions, contacts, webhooks, compile offline survey specifications to QSF, and call unmapped APIs directly.',
+    features: [
+      'Offline plain-text survey spec to .qsf compiler (qualtrics definitions build)',
+      'Full Qualtrics XM REST API coverage with stable JSON envelope',
+      'Async response exports and imports with automatic polling and extraction',
+      'Safety gates — --read-only, --dry-run, --confirm on mutations',
+      'Single Go binary, no runtime dependencies',
+    ],
+    docs: [
+      ['QSF Spec', '/docs/qsf-spec'],
+      ['Commands', '/COMMANDS'],
+      ['JSON Schema', '/JSON_SCHEMA'],
+      ['Context', '/CONTEXT'],
+    ],
+  },
+  {
+    slug: 'tg-drive-cli',
+    name: 'tg-drive-cli',
+    description: 'Turn a Telegram channel into a recoverable, scriptable file tree.',
+    github: 'https://github.com/thedavidweng/tg-drive-cli',
+    overview: 'Upload local files as ordinary Telegram media, stamp each message with machine-readable metadata, and maintain a rebuildable SQLite index. Telegram remains the source of truth.',
+    features: [
+      'Virtual file tree with exact ls and tree over local SQLite cache',
+      'Telegram channel as source of truth — td scan --full recovers from database loss',
+      'Native hashtag navigation in official Telegram clients',
+      'Mirror Saved Messages into channel folders with provenance and deduplication',
+      'Operation locks, DB transactions, and safety gates on mutations',
+      'Single Go binary, cross-platform with WASM support',
+    ],
+    docs: [
+      ['Getting Started', '/docs/guides/getting-started'],
+      ['How td Works', '/docs/guides/how-td-works'],
+      ['CLI Reference', '/docs/guides/cli-reference'],
+      ['Organize Files', '/docs/guides/organize-files'],
+      ['Scripting with JSON', '/docs/guides/script-with-json'],
+      ['Architecture', '/docs/architecture'],
+    ],
+  },
 ]
 
 for (const project of projectDetails) {

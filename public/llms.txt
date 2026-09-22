@@ -24,6 +24,16 @@ Photo management, backup, upload, albums, and full Flickr API access.
 - Docs: https://thedavidweng.github.io/site/flickr-cli/
 - GitHub: https://github.com/thedavidweng/flickr-cli
 
+### qualtrics-cli
+Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
+- Docs: https://thedavidweng.github.io/site/qualtrics-cli/
+- GitHub: https://github.com/thedavidweng/qualtrics-cli
+
+### tg-drive-cli
+Turn a Telegram channel into a recoverable, scriptable file tree.
+- Docs: https://thedavidweng.github.io/site/tg-drive-cli/
+- GitHub: https://github.com/thedavidweng/tg-drive-cli
+
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.
 - Docs: https://thedavidweng.github.io/site/money/

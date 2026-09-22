@@ -38,6 +38,24 @@ Photo management, backup, upload, albums, and full Flickr API access.
 - Piwigo import: migrate from Flickr to self-hosted Piwigo
 - Safety: --dry-run on bulk operations
 
+### qualtrics-cli
+Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
+- Docs: https://thedavidweng.github.io/site/qualtrics-cli/
+- GitHub: https://github.com/thedavidweng/qualtrics-cli
+- Authentication: API token via qualtrics auth
+- Capabilities: surveys, definitions, async response export/import, distributions, contacts, webhooks, raw API
+- Offline QSF: compile Markdown survey specs to .qsf without API credentials
+- Safety: --read-only, --dry-run, --confirm gates
+
+### tg-drive-cli
+Turn a Telegram channel into a recoverable, scriptable file tree.
+- Docs: https://thedavidweng.github.io/site/tg-drive-cli/
+- GitHub: https://github.com/thedavidweng/tg-drive-cli
+- Authentication: MTProto user login via td auth login
+- Capabilities: virtual file tree (ls, tree, cp, mv, rm), disaster recovery (scan --full), Saved Messages import
+- Storage: Telegram messages as source of truth, local SQLite cache
+- Safety: operation locks, DB transactions, --confirm on mutations
+
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users.
 - Docs: https://thedavidweng.github.io/site/money/
@@ -102,6 +120,21 @@ Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
 - Schema: https://thedavidweng.github.io/site/money/docs/SCHEMA
 - Config: https://thedavidweng.github.io/site/money/docs/CONFIG
 - Roadmap: https://thedavidweng.github.io/site/money/docs/ROADMAP
+
+### qualtrics-cli
+- Overview: https://thedavidweng.github.io/site/qualtrics-cli/
+- QSF Spec: https://thedavidweng.github.io/site/qualtrics-cli/docs/qsf-spec
+- Commands: https://thedavidweng.github.io/site/qualtrics-cli/COMMANDS
+- JSON Schema: https://thedavidweng.github.io/site/qualtrics-cli/JSON_SCHEMA
+- Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
+
+### tg-drive-cli
+- Overview: https://thedavidweng.github.io/site/tg-drive-cli/
+- Getting Started: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/getting-started
+- How td Works: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/how-td-works
+- CLI Reference: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/cli-reference
+- Contracts: https://thedavidweng.github.io/site/tg-drive-cli/docs/contracts/cli-contract
+- Architecture: https://thedavidweng.github.io/site/tg-drive-cli/docs/architecture
 
 ## Design Principles
 

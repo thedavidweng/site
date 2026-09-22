@@ -1,0 +1,34 @@
+# tg-drive-cli
+
+> Turn a Telegram channel into a recoverable, scriptable file tree.
+
+## Overview
+
+Upload local files as ordinary Telegram media, stamp each message with machine-readable metadata, and maintain a rebuildable SQLite index. Telegram remains the source of truth.
+
+## Key features
+
+- Virtual file tree with exact ls and tree over local SQLite cache
+- Telegram channel as source of truth — td scan --full recovers from database loss
+- Native hashtag navigation in official Telegram clients
+- Mirror Saved Messages into channel folders with provenance and deduplication
+- Operation locks, DB transactions, and safety gates on mutations
+- Single Go binary, cross-platform with WASM support
+
+## Documentation
+
+- Getting Started: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/getting-started
+- How td Works: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/how-td-works
+- CLI Reference: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/cli-reference
+- Organize Files: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/organize-files
+- Scripting with JSON: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/script-with-json
+- Architecture: https://thedavidweng.github.io/site/tg-drive-cli/docs/architecture
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/tg-drive-cli
+- Site: https://thedavidweng.github.io/site/tg-drive-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/tg-drive-cli/

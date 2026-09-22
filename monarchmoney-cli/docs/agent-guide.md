@@ -49,6 +49,17 @@ monarch analyze burn-rate --month 2026-05 --json
 The analysis commands are deterministic and read-only. They do not use AI, make
 subjective recommendations, or mutate Monarch data.
 
+### Plain-Text Export
+
+`monarch hledger backup` regenerates a complete hledger journal from the local
+cache with no network access — useful when an agent should snapshot or analyze
+financial history offline:
+
+```bash
+monarch hledger backup /tmp/snapshot.journal --json
+hledger bal -f /tmp/snapshot.journal -O json
+```
+
 ### Mutation with User Gate
 **Goal**: Categorize a transaction.
 **Flow**:
@@ -56,14 +67,30 @@ subjective recommendations, or mutate Monarch data.
 2. Agent presents the dry-run plan to the user.
 3. If user approves, Agent runs: `monarch transactions update tx_123 --category cat_food --confirm --json`
 
+### Receipt matching
+**Goal**: Match an unmatched receipt whose amount differs from the transaction (discounts, tips, tax misreads).
+**Flow**:
+1. `monarch receipts list --unmatched --json`, then `monarch receipts show <receipt-id> --json` for merchant/date/total.
+2. `monarch transactions search "<merchant>" --from <date-3d> --to <date+3d> --json`; compare amounts client-side with a tolerance.
+3. `monarch receipts match <receipt-id> --transaction <tx-id> --dry-run --json`, present the plan, then re-run with `--confirm`. Manual matching ignores amount differences. Undo with `monarch receipts unmatch <receipt-id> --confirm`.
+Note: `receipts list` has no server-side merchant/amount search; filter `orders` locally.
+
 ## Error Handling
 
 Agents should check the `ok` field in the JSON envelope and the process exit code.
 
+The full scheme is defined in [JSON_SCHEMA.md](/monarchmoney-cli/JSON_SCHEMA#exit-codes).
+
 | Exit Code | Category | Agent Action |
 |---|---|---|
-| 3 | Auth Error | Prompt user to run `monarch auth login` |
+| 0 | Success | Parse `data` from stdout |
+| 1 | Internal / not found | Report the unexpected failure; do not retry |
+| 2 | Invalid arguments | Fix the command-line arguments and retry |
+| 3 | Auth | Prompt user to run `monarch auth login` |
 | 4 | Read-only | Explain that the operation is blocked by security settings |
+| 5 | Network | Retry with backoff; the error is transient |
+| 6 | API | Surface the API message; do not retry blindly |
+| 7 | Validation | Correct the input values and retry |
 | 10 | Confirmation | Ask user for explicit permission to use `--confirm` |
 
 ## Environment Configuration
@@ -102,4 +129,4 @@ Commands are organized into groups shown in `--help`:
 
 - **Core Commands**: `accounts`, `transactions`, `budgets`, `cashflow`, `rules`, `categories`, `tags`, `goals`, `investments`, `institutions`, `recurring`, `credit`, `subscription`
 - **Analysis & Insights**: `analyze`
-- **Utilities**: `auth`, `doctor`, `cache`, `audit`, `completion`, `version`
+- **Utilities**: `auth`, `doctor`, `cache`, `hledger`, `audit`, `completion`, `version`

@@ -1,41 +1,106 @@
 # JSON Output Schema
 
-All commands supporting the `--json` flag wrap their results in a standard envelope.
+`monarchmoney-cli` uses a standardized JSON envelope for all structured output. This ensures that AI Agents and automated scripts can reliably parse the results. Enable it with `--json` (add `--pretty` for indented output).
 
 ## Success Envelope
+
 ```json
 {
   "ok": true,
   "data": { ... },
   "meta": {
-    "command": "command.name",
+    "command": "accounts.list",
     "profile": "default",
-    "duration_ms": 123,
+    "duration_ms": 125,
     "schema_version": "2026-05-08",
-    "request_id": "uuid"
+    "warnings": ["optional deprecation or migration notice"]
   }
 }
 ```
 
+- `ok`: Always `true` for successful operations.
+- `data`: The command-specific results (object or array).
+- `meta`: Diagnostic information about the request.
+- `meta.request_id`: A UUID generated per invocation, identical across every envelope emitted by a single command run.
+- `meta.warnings` (optional): Non-fatal notices about deprecated fields or migration advice. Emitted by commands that interact with legacy API fields (e.g., `transactions list`, `accounts history`), and by `cache sync` when automatic ledger-backup regeneration fails (the sync itself still succeeds).
+
+## Command-Specific Data
+
+### `hledger backup`
+
+```json
+{
+  "status": "backup complete",
+  "file": "./monarch.journal",
+  "accounts": 69,
+  "transactions": 3394,
+  "holdings": 3
+}
+```
+
+- `file`: The journal path written (the positional `[FILE]` argument, or the `./monarch.journal` default).
+- `accounts` / `transactions` / `holdings`: Row counts read from the cache and rendered into the journal.
+
+### `cache sync`
+
+With no `backup_path` configured, `data` contains only `status`, `accounts`, `transactions`, and `holdings`. When `backup_path` is set and a successful sync regenerates the ledger backup, `data.backup` holds the journal path. If regeneration fails, `data.backup` is absent and `meta.warnings` explains the failure while the command still exits `0`.
+
 ## Error Envelope
+
 ```json
 {
   "ok": false,
   "error": {
-    "code": "ERROR_CODE",
-    "message": "Human readable message",
-    "category": "category",
-    "retryable": true
+    "code": "AUTH_REQUIRED",
+    "message": "not logged in",
+    "category": "auth",
+    "retryable": false
   },
-  "meta": { ... }
+  "meta": {
+    "command": "accounts.list",
+    "profile": "default",
+    "duration_ms": 10,
+    "schema_version": "2026-05-08"
+  }
 }
 ```
 
-## Error Codes
-- `AUTH_REQUIRED`: Not logged in or session expired.
-- `READ_ONLY_VIOLATION`: Mutation attempted in read-only mode.
-- `CONFIRMATION_REQUIRED`: Mutation attempted without `--confirm`.
-- `API_ERROR`: Monarch API returned an error or unexpected status.
-- `NETWORK_UNREACHABLE`: Could not connect to Monarch servers.
-- `VALIDATION_FAILED`: Input arguments or flag values are invalid.
-- `RESOURCE_NOT_FOUND`: Specified ID does not exist.
+- `ok`: Always `false` when an error occurs.
+- `error.code`: A machine-readable string (e.g., `API_ERROR`, `READ_ONLY_VIOLATION`).
+- `error.message`: A human-readable description of the error.
+- `error.category`: High-level error grouping (`auth`, `network`, `api`, `validation`, `safety`, `internal`).
+- `error.retryable`: Boolean indicating if the operation can be safely retried.
+- `error.retry_after_ms`: Present on `RATE_LIMITED` and retryable 5xx errors when the server supplies a `Retry-After` header. Milliseconds to wait before retrying.
+
+## Exit Codes
+
+The process exit code is derived from `error.code` (see `internal/errors`). A successful command exits `0`.
+
+| Exit code | Error code | Category |
+|---|---|---|
+| 0 | (success) | — |
+| 1 | `INTERNAL_ERROR` | internal |
+| 1 | `RESOURCE_NOT_FOUND` | api |
+| 2 | `INVALID_ARGUMENTS` | validation |
+| 3 | `AUTH_REQUIRED` | auth |
+| 3 | `AUTH_SESSION_EXPIRED` | auth |
+| 3 | `AUTH_MFA_REQUIRED` | auth |
+| 3 | `AUTH_MFA_INVALID` | auth |
+| 4 | `READ_ONLY_VIOLATION` | safety |
+| 5 | `NETWORK_UNREACHABLE` | network |
+| 5 | `NETWORK_TIMEOUT` | network |
+| 5 | `RATE_LIMITED` | api |
+| 6 | `API_ERROR` | api |
+| 6 | `API_SCHEMA_CHANGED` | api |
+| 7 | `VALIDATION_FAILED` | validation |
+| 10 | `CONFIRMATION_REQUIRED` | safety |
+
+## Event Stream (NDJSON)
+
+For `accounts refresh --wait`, the CLI emits a stream of progress events when the `--events` flag is set. Each line in the stream is a valid JSON envelope.
+
+```json
+{"ok":true,"data":{"status":"syncing","percent":20},"meta":{"command":"accounts.refresh.progress"}}
+{"ok":true,"data":{"status":"syncing","percent":80},"meta":{"command":"accounts.refresh.progress"}}
+{"ok":true,"data":{"status":"complete"},"meta":{"command":"accounts.refresh"}}
+```

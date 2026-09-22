@@ -31,6 +31,19 @@ Once authenticated, a session token is stored locally. This token is used for al
 - **Security**: The file is saved with `0600` permissions (read/write by owner only).
 - **Contents**: The session file stores the token, account email, timestamps, and profile metadata needed for `auth status`.
 
+### Secret Indirection (`env:NAME`)
+
+The stored `token` value may be a literal token or the indirection form `env:NAME`. When the token is `env:NAME`, it is resolved from the environment variable `NAME` each time the session is loaded, so the real secret never has to sit in the file. If `NAME` is unset, the CLI fails with an explicit error rather than proceeding unauthenticated.
+
+This is the agent-first alternative to an OS keychain (which cannot be used unattended). For example, write a `0600` session file containing `"token": "env:MONARCH_TOKEN"` and supply the secret from the environment or a secret manager at run time:
+
+```bash
+export MONARCH_TOKEN="..."
+monarch accounts list --json
+```
+
+See `docs/adr/0006-secrets-storage.md` for the full rationale.
+
 ### Checking Status
 To check if you have a valid local session:
 ```bash
@@ -49,7 +62,7 @@ monarch auth logout
 
 - The session token is stored at `~/.monarchmoney-cli/session.json` by default.
 - `auth status` reports the stored email, the last login time, and whether the session is still valid.
-- Cache-backed commands such as `cache stats`, `cache search`, and `networth` continue to work from local data without requiring a live session check.
+- Cache-backed commands such as `cache stats`, `cache search`, and `hledger backup` work entirely from local data without a session or network access. Everything else talks to the Monarch API and requires a valid session.
 
 ## Local Cache Database
 
@@ -58,8 +71,9 @@ The local cache lives at `~/.monarchmoney-cli/cache/monarch.sqlite`.
 - It is a standard SQLite database, not AES-256 encrypted.
 - The cache file is created with `0600` permissions and the directory is created with `0700` permissions.
 - It may contain cached account and transaction data, so treat it as sensitive local data.
-- `cache sync` is manual. It upserts all accounts and up to the latest 1000 transactions, optionally filtered with `--from YYYY-MM-DD`.
+- `cache sync` is manual. It upserts all accounts, up to the latest 1000 transactions (optionally filtered with `--from YYYY-MM-DD`), and replaces the investment-holdings snapshot on every run.
 - The transaction cache is cumulative: rows returned by later syncs replace matching IDs and add new IDs, but old cached rows are not removed automatically.
+- The cache stores archive-grade detail (tags, splits, review state, category groups, raw merchant names, account lifecycle flags, holdings, closing balances) so offline commands and ledger backups never need the API. A cache created by an older version of the CLI is rejected with a prompt to re-run `cache sync`, which rebuilds it.
 - The cache is not a complete mirror of Monarch. Remote deletions are not reconciled locally; use `cache cleanup --before YYYY-MM-DD` to explicitly prune old cached transactions.
 - If you want stronger at-rest protection, rely on full-disk encryption such as FileVault or store the profile on an encrypted volume.
 

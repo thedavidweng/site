@@ -1,6 +1,6 @@
 # Safety Model
 
-`canvas-cli` is intended to perform real Canvas writes eventually. Safety must be designed before write commands are implemented.
+`canvas-cli` performs real Canvas writes (submissions, discussion replies, inbox messages, grading, content edits, raw API). Every write command enforces the safety gates below.
 
 ## Safety levels
 
@@ -60,23 +60,9 @@ Requirements:
 - preserve Canvas response metadata
 - show partial failures clearly
 
-### Destructive operations
-
-Destructive operations require `--confirm-delete`.
-
-Examples:
-
-- delete page
-- delete discussion
-- delete file
-- delete module item
-
-Requirements:
-
-- require `--confirm-delete`
-- require exact resource ID
-- disallow wildcard deletes in v1/v2
-- audit log mandatory
+There is no separate destructive tier: the CLI has no dedicated `delete`
+subcommands, so deletes (when needed) go through `canvas api delete` and are
+gated as high-risk writes. See the amendment in `docs/adr/0002` for the history.
 
 ## Global safety flags
 

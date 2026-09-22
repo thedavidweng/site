@@ -1,0 +1,31 @@
+# qualtrics-cli
+
+> Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
+
+## Overview
+
+Query surveys, definitions, asynchronous response exports and imports, distributions, contacts, webhooks, compile offline survey specifications to QSF, and call unmapped APIs directly.
+
+## Key features
+
+- Offline plain-text survey spec to .qsf compiler (qualtrics definitions build)
+- Full Qualtrics XM REST API coverage with stable JSON envelope
+- Async response exports and imports with automatic polling and extraction
+- Safety gates — --read-only, --dry-run, --confirm on mutations
+- Single Go binary, no runtime dependencies
+
+## Documentation
+
+- QSF Spec: https://thedavidweng.github.io/site/qualtrics-cli/docs/qsf-spec
+- Commands: https://thedavidweng.github.io/site/qualtrics-cli/COMMANDS
+- JSON Schema: https://thedavidweng.github.io/site/qualtrics-cli/JSON_SCHEMA
+- Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
+
+## Contact
+
+- GitHub: https://github.com/thedavidweng/qualtrics-cli
+- Site: https://thedavidweng.github.io/site/qualtrics-cli/
+
+## Machine-Readable Endpoints
+
+- Site: https://thedavidweng.github.io/site/qualtrics-cli/

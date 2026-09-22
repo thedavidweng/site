@@ -12,6 +12,8 @@ Published at **https://thedavidweng.github.io/site/**
 | [zenodo-cli](https://github.com/thedavidweng/zenodo-cli) | Zenodo/InvenioRDM CLI |
 | [monarchmoney-cli](https://github.com/thedavidweng/monarchmoney-cli) | Monarch Money CLI |
 | [flickr-cli](https://github.com/thedavidweng/flickr-cli) | Flickr CLI |
+| [qualtrics-cli](https://github.com/thedavidweng/qualtrics-cli) | Qualtrics XM & Offline Survey Compiler CLI |
+| [tg-drive-cli](https://github.com/thedavidweng/tg-drive-cli) | Telegram Drive CLI (td) |
 | [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
 ## Development
@@ -30,7 +32,7 @@ Documentation is synced from each CLI repository's `docs/` directory (not hand-w
 ```bash
 # Clone or update CLI repos (example)
 mkdir -p /tmp/cli-docs-sync
-for repo in canvas-cli zenodo-cli monarchmoney-cli flickr-cli money; do
+for repo in canvas-cli zenodo-cli monarchmoney-cli flickr-cli qualtrics-cli tg-drive-cli money; do
   gh repo clone thedavidweng/$repo /tmp/cli-docs-sync/$repo -- --depth=1
 done
 

@@ -35,6 +35,14 @@ const PROJECTS = {
     repo: 'money',
     rootFiles: ROOT_FILES,
   },
+  'qualtrics-cli': {
+    repo: 'qualtrics-cli',
+    rootFiles: ROOT_FILES,
+  },
+  'tg-drive-cli': {
+    repo: 'tg-drive-cli',
+    rootFiles: ['CONTEXT.md', 'DECISIONS.md'],
+  },
 }
 
 const sourceArg = process.argv.find((arg) => arg.startsWith('--source='))
@@ -86,6 +94,10 @@ function rewriteMarkdownLinks(content, projectSlug, currentRepoPath) {
     if (!rel.toLowerCase().endsWith('.md')) {
       const github = `https://github.com/thedavidweng/${PROJECTS[projectSlug].repo}/blob/main/${rel}`
       return `[${text}](${github}${hash ? `#${hash}` : ''})`
+    }
+
+    if (rel.toLowerCase() === 'readme.md' || rel.toLowerCase().endsWith('/readme.md')) {
+      return `[${text}](/${projectSlug}/${hash ? `#${hash}` : ''})`
     }
 
     const sitePath = toSitePath(projectSlug, rel)

@@ -58,6 +58,8 @@ The README must also state that broad multi-user applications should use OAuth2.
 
 **Warning**: Session cookie auth is experimental and fallback-only. Use token auth or OAuth2 when possible.
 
+For a task-oriented walkthrough, see [Log in with a session cookie](/canvas-cli/docs/how-to/log-in-with-a-session-cookie).
+
 Session cookie auth is intended for students whose schools disable access token generation. It reads your browser's Canvas login cookie, which grants full account access and bypasses SSO/2FA boundaries.
 
 ### Limitations
@@ -124,20 +126,12 @@ Re-run `canvas auth login` to get a fresh cookie.
 
 - Cookie values are stored in the config file with the same permissions model as tokens (0600).
 - `env:VAR_NAME` references are supported to avoid storing cookies in plaintext.
-- Cookie values are never displayed in `auth status`, `--json`, `--verbose`, `--debug`, or doctor output.
+- Cookie values are never displayed in `auth status`, `--json`, or doctor output.
 - Cross-origin redirects strip all auth headers (Cookie, Authorization, X-CSRF-Token).
 
 ## OAuth2
 
-OAuth2 is planned for multi-user distribution. The following commands are under consideration:
-
-```bash
-canvas auth oauth login
-canvas auth oauth callback
-canvas auth refresh
-```
-
-OAuth tokens would use OS keychain storage when feasible.
+OAuth2 login for multi-user distribution is tracked in [#16](https://github.com/thedavidweng/canvas-cli/issues/16). Not yet implemented.
 
 ## Auth commands
 
