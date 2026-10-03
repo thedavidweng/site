@@ -39,14 +39,16 @@ const PROJECTS = {
     repo: 'qualtrics-cli',
     rootFiles: ROOT_FILES,
   },
-  'tg-drive-cli': {
-    repo: 'tg-drive-cli',
+  'tg-drive': {
+    repo: 'tg-drive',
     rootFiles: ['CONTEXT.md', 'DECISIONS.md'],
   },
 }
 
 const sourceArg = process.argv.find((arg) => arg.startsWith('--source='))
 const sourceRoot = sourceArg ? sourceArg.split('=')[1] : defaultSource
+const onlyArg = process.argv.find((arg) => arg.startsWith('--only='))
+const only = onlyArg ? onlyArg.split('=')[1] : ''
 
 function collectMarkdownFiles(dir) {
   const files = []
@@ -147,6 +149,7 @@ function syncProject(projectSlug, { repo, rootFiles }) {
 mkdirSync(join(siteRoot, 'scripts'), { recursive: true })
 
 for (const [slug, config] of Object.entries(PROJECTS)) {
+  if (only && slug !== only) continue
   syncProject(slug, config)
 }
 

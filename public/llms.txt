@@ -29,10 +29,10 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - Docs: https://thedavidweng.github.io/site/qualtrics-cli/
 - GitHub: https://github.com/thedavidweng/qualtrics-cli
 
-### tg-drive-cli
+### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree.
-- Docs: https://thedavidweng.github.io/site/tg-drive-cli/
-- GitHub: https://github.com/thedavidweng/tg-drive-cli
+- Docs: https://thedavidweng.github.io/site/tg-drive/
+- GitHub: https://github.com/thedavidweng/tg-drive
 
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.

@@ -47,10 +47,10 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - Offline QSF: compile Markdown survey specs to .qsf without API credentials
 - Safety: --read-only, --dry-run, --confirm gates
 
-### tg-drive-cli
+### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree.
-- Docs: https://thedavidweng.github.io/site/tg-drive-cli/
-- GitHub: https://github.com/thedavidweng/tg-drive-cli
+- Docs: https://thedavidweng.github.io/site/tg-drive/
+- GitHub: https://github.com/thedavidweng/tg-drive
 - Authentication: MTProto user login via td auth login
 - Capabilities: virtual file tree (ls, tree, cp, mv, rm), disaster recovery (scan --full), Saved Messages import
 - Storage: Telegram messages as source of truth, local SQLite cache
@@ -128,13 +128,13 @@ Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
 - JSON Schema: https://thedavidweng.github.io/site/qualtrics-cli/JSON_SCHEMA
 - Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
 
-### tg-drive-cli
-- Overview: https://thedavidweng.github.io/site/tg-drive-cli/
-- Getting Started: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/getting-started
-- How td Works: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/how-td-works
-- CLI Reference: https://thedavidweng.github.io/site/tg-drive-cli/docs/guides/cli-reference
-- Contracts: https://thedavidweng.github.io/site/tg-drive-cli/docs/contracts/cli-contract
-- Architecture: https://thedavidweng.github.io/site/tg-drive-cli/docs/architecture
+### tg-drive
+- Overview: https://thedavidweng.github.io/site/tg-drive/
+- Getting Started: https://thedavidweng.github.io/site/tg-drive/docs/guides/getting-started
+- How td Works: https://thedavidweng.github.io/site/tg-drive/docs/guides/how-td-works
+- CLI Reference: https://thedavidweng.github.io/site/tg-drive/docs/guides/cli-reference
+- Contracts: https://thedavidweng.github.io/site/tg-drive/docs/contracts/cli-contract
+- Architecture: https://thedavidweng.github.io/site/tg-drive/docs/architecture
 
 ## Design Principles
 

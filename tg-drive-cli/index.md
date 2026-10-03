@@ -1,72 +1,9 @@
 ---
-layout: home
-
-hero:
-  name: tg-drive-cli
-  image:
-    src: /tg-drive-cli-icon.webp
-    alt: tg-drive-cli
-  text: Telegram Drive CLI (td)
-  tagline: Turn a Telegram channel into a recoverable, scriptable file tree. Local SQLite cache with Telegram source of truth.
-  actions:
-    - theme: brand
-      text: Guide
-      link: /tg-drive-cli/docs/guides/getting-started
-    - theme: alt
-      text: GitHub
-      link: https://github.com/thedavidweng/tg-drive-cli
-
-features:
-  - icon: 🌲
-    title: Virtual File Tree
-    details: Upload and download files and recursive trees with exact ls and tree over local cache.
-  - icon: 🔄
-    title: Disaster Recovery
-    details: Telegram messages are the source of truth. Rebuild the local index from channel metadata after database loss.
-  - icon: 🏷️
-    title: Native Hashtags
-    details: Channel posts stay human-readable with native hashtag navigation in official Telegram apps.
-  - icon: 📥
-    title: Saved Messages Import
-    details: Mirror Telegram Saved Messages into structured channel folders with provenance and deduplication.
-  - icon: 🛡️
-    title: Safety & Locks
-    details: Remote writes use operation locks, DB transactions, and --confirm on destructive operations.
-  - icon: 🤖
-    title: Agent-Friendly
-    details: Stable --json outputs, machine-readable manifests (td-manifest:v1), and distinct stdout/stderr.
+title: Moved
+head:
+  - - meta
+    - http-equiv: refresh
+      content: "0; url=/site/tg-drive/"
 ---
 
-## Quick Start
-
-```bash
-# Install
-brew tap thedavidweng/tap
-brew install --cask tg-drive-cli
-
-# Login to Telegram
-td auth setup
-td auth login
-
-# Bind channel and upload
-td init ~/Pictures --create-channel
-td cp ~/Pictures/beach.jpg /2024/beach.jpg
-td ls /
-td tree /
-
-# Disaster recovery
-td scan --full
-```
-
-## Key Commands
-
-| Command | Description |
-|---------|-------------|
-| `td auth login` | Authenticate with Telegram API credentials |
-| `td init <root>` | Bind a local folder to a Telegram channel |
-| `td cp` / `td get` | Upload or download files and folders |
-| `td ls` / `td tree` | Browse cached directory tree |
-| `td mv` / `td rm` | Rename, move, or delete files |
-| `td scan --full` | Rebuild local index from Telegram channel |
-| `td import saved` | Mirror Telegram Saved Messages |
-| `td share` | Generate invite link and folder hashtag |
+This project moved to [tg-drive](/tg-drive/).

@@ -13,7 +13,7 @@ const pages = [
   { path: '/flickr-cli/', changefreq: 'monthly', priority: '0.8' },
   { path: '/money/', changefreq: 'monthly', priority: '0.8' },
   { path: '/qualtrics-cli/', changefreq: 'monthly', priority: '0.8' },
-  { path: '/tg-drive-cli/', changefreq: 'monthly', priority: '0.8' },
+  { path: '/tg-drive/', changefreq: 'monthly', priority: '0.8' },
 ]
 
 const urls = pages
