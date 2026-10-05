@@ -16,7 +16,7 @@ Published at **https://thedavidweng.github.io/site/**
 | [tg-drive](https://github.com/thedavidweng/tg-drive) | Telegram Drive (`td`, `td-gui`) |
 | [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
-The hub also links to desktop apps with their own landing pages: [OpenKara](https://thedavidweng.github.io/OpenKara/), [Sukiru](https://thedavidweng.github.io/sukiru/), and [Apple Say](https://thedavidweng.github.io/apple-say/). tg-drive also ships a desktop app; see [its site](https://thedavidweng.github.io/tg-drive/).
+The hub also links to desktop apps with their own landing pages: [OpenKara](https://thedavidweng.github.io/OpenKara/), [Sukiru](https://thedavidweng.github.io/sukiru/), [Apple Say](https://thedavidweng.github.io/apple-say/), and [SDF Flash GUI](https://thedavidweng.github.io/sdf-flash-gui/). tg-drive also ships a desktop app; see [its site](https://thedavidweng.github.io/tg-drive/).
 
 ## Development
 

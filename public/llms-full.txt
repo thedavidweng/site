@@ -98,6 +98,17 @@ Native macOS speech synthesis and timed text.
 - Features: Plain Text, LRC, and Enhanced LRC (word-level) with automatic rate scaling; System Voice, Siri Natural, and Personal Voice; export AAC, AIFF, WAV, or CAF
 - Privacy: fully local, no network calls or telemetry
 
+### SDF Flash GUI
+Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware.
+- Site: https://thedavidweng.github.io/sdf-flash-gui/
+- GitHub: https://github.com/thedavidweng/sdf-flash-gui
+- Install: brew install --cask thedavidweng/tap/sdf-flash-gui
+- Built with: Rust and egui; the site embeds the real UI compiled to WebAssembly with simulated drives
+- Platforms: macOS, Windows, Linux
+- Safety: MT1959-only platform check, form-factor cross-flash acknowledgement, SHA-256 firmware identity, exclusive flash modes, typed confirmation, dry-run
+- Features: drive probe, firmware dump, flash with progress, boot-token recovery, sdf.bin parser, sdftool or makemkvcon backends, argv-only backend calls
+- License: GPL-2.0-or-later
+
 ## Documentation Pages
 
 ### canvas-cli

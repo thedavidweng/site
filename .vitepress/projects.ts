@@ -185,6 +185,22 @@ export const projects: Project[] = [
     screenshot: { src: 'hub/apple-say.webp', width: 1600, height: 1155 },
     external: true,
   },
+  {
+    slug: 'sdf-flash-gui',
+    name: 'SDF Flash GUI',
+    title: 'SDF Flash GUI',
+    tagline: 'Drive firmware',
+    description: 'Dump, flash, and recover MT1959 Blu-ray drive firmware, behind safety gates that refuse the mistakes that brick drives.',
+    kinds: ['desktop'],
+    iconSrc: 'sdf-flash-gui-icon.webp',
+    docsEntry: 'https://github.com/thedavidweng/sdf-flash-gui#readme',
+    overview: 'https://thedavidweng.github.io/sdf-flash-gui/',
+    github: 'https://github.com/thedavidweng/sdf-flash-gui',
+    platforms: 'macOS, Windows, Linux',
+    install: 'brew install --cask thedavidweng/tap/sdf-flash-gui',
+    screenshot: { src: 'hub/sdf-flash-gui.webp', width: 1040, height: 1588 },
+    external: true,
+  },
 ]
 
 export function stripBase(path: string, base = '/site/'): string {

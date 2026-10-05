@@ -691,7 +691,7 @@ h2 {
 
 @media (min-width: 768px) {
   .shots {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .shot-wide {
@@ -704,8 +704,9 @@ h2 {
 }
 
 .shot-stage {
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   padding: 16px;
@@ -713,10 +714,12 @@ h2 {
   background: var(--vp-c-bg-soft);
 }
 
+/* max-* sizing lets both landscape and portrait windows fit the stage without cropping. */
 .shot-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   transition: transform 0.5s var(--site-ease-out);
 }
 
@@ -725,7 +728,7 @@ h2 {
 }
 
 .shot-flat .shot-stage {
-  place-items: end center;
+  align-items: flex-end;
   padding: 24px 24px 0;
 }
 
