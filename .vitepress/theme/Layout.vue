@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, watch, nextTick } from 'vue'
 import { useRoute, useData, useRouter, withBase } from 'vitepress'
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 import { resolveProject } from '../projects'
 import TerminalHighlight from './components/TerminalHighlight.vue'
 import MoneyIntroVideo from './components/MoneyIntroVideo.vue'
@@ -16,24 +16,28 @@ const { frontmatter, site } = useData()
 const base = computed(() => site.value.base)
 const currentProject = computed(() => resolveProject(route.path, base.value))
 
-const defaultTitle = 'Apps'
+const navTitle = computed(() => currentProject.value?.name ?? 'David Weng')
 
-function updateTitle() {
-  const titleLink = document.querySelector('.VPNavBarTitle > a.title') as HTMLAnchorElement | null
-  const titleText = document.querySelector('.VPNavBarTitle .title-text')
-
-  if (currentProject.value) {
-    if (titleLink) titleLink.href = withBase(currentProject.value.overview)
-    if (titleText) titleText.textContent = currentProject.value.name
-  } else {
-    if (titleLink) titleLink.href = withBase('/')
-    if (titleText) titleText.textContent = defaultTitle
+const accentVars = computed(() => {
+  const accent = currentProject.value?.accent
+  if (!accent) return undefined
+  return {
+    '--project-light': accent.light,
+    '--project-dark': accent.dark,
+    '--project-glow-1': accent.glow[0],
+    '--project-glow-2': accent.glow[1],
   }
+})
+
+// The default theme has no option for a per-page title link, so the anchor is patched after render.
+function updateTitleLink() {
+  const titleLink = document.querySelector('.VPNavBarTitle a.title') as HTMLAnchorElement | null
+  if (titleLink) titleLink.href = withBase(currentProject.value?.overview ?? '/')
 }
 
 onMounted(() => {
-  nextTick(updateTitle)
-  watch(() => route.path, () => nextTick(updateTitle))
+  nextTick(updateTitleLink)
+  watch(() => route.path, () => nextTick(updateTitleLink))
 })
 
 const isMoneyHome = computed(() => {
@@ -52,25 +56,30 @@ const isMoneyRoute = computed(() => {
 </script>
 
 <template>
-  <DefaultLayout>
-    <template v-if="isMoneyHome" #home-hero-info-before>
-      <img
-        class="money-hero-logo"
-        :src="`${base}money-icon.webp`"
-        alt="money"
-        width="52"
-        height="52"
-      />
-    </template>
-    <template v-if="isMoneyHome" #home-hero-after>
-      <TerminalHighlight />
-    </template>
-    <template v-if="isMoneyHome" #home-features-before>
-      <MoneyIntroVideo />
-    </template>
-    <template v-if="isMoneyHome" #home-features-after>
-      <MoneyQuickStart />
-      <MoneyDocsCards />
-    </template>
-  </DefaultLayout>
+  <div class="project-theme-root" :class="{ 'project-theme': accentVars }" :style="accentVars">
+    <DefaultLayout>
+      <template #nav-bar-title-after>
+        <span>{{ navTitle }}</span>
+      </template>
+      <template v-if="isMoneyHome" #home-hero-info-before>
+        <img
+          class="money-hero-logo"
+          :src="`${base}money-icon.webp`"
+          alt="money"
+          width="52"
+          height="52"
+        />
+      </template>
+      <template v-if="isMoneyHome" #home-hero-after>
+        <TerminalHighlight />
+      </template>
+      <template v-if="isMoneyHome" #home-features-before>
+        <MoneyIntroVideo />
+      </template>
+      <template v-if="isMoneyHome" #home-features-after>
+        <MoneyQuickStart />
+        <MoneyDocsCards />
+      </template>
+    </DefaultLayout>
+  </div>
 </template>

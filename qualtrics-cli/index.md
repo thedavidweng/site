@@ -17,22 +17,22 @@ hero:
       link: https://github.com/thedavidweng/qualtrics-cli
 
 features:
-  - icon: 📝
+  - icon: lucide:file-code
     title: Offline Survey Compiler
     details: Compile plain-text Markdown survey specs directly to .qsf files with zero API access needed.
-  - icon: 📊
+  - icon: lucide:layout-list
     title: Full Survey Platform
     details: Complete coverage of surveys, questions, blocks, flows, options, distributions, and contacts.
-  - icon: 🔄
+  - icon: lucide:hourglass
     title: Async Response Jobs
     details: Asynchronous response exports and imports with automatic polling, progress, and archive extraction.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Safety Model
     details: --dry-run, --confirm, and --read-only gates on all mutations and destructive actions.
-  - icon: 🤖
+  - icon: lucide:bot
     title: Agent-First Design
     details: Stable JSON envelope, machine-readable error taxonomy, separated stdout/stderr, UUID tracking.
-  - icon: ⚡
+  - icon: lucide:zap
     title: Raw API Passthrough
     details: qualtrics raw <METHOD> <path> for immediate authenticated access to any endpoint.
 ---

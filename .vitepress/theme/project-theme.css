@@ -1,0 +1,74 @@
+/*
+ * Per-project accent. Layout.vue sets --project-* on a wrapper from projects.ts. The default theme
+ * resolves derived tokens (buttons, hero name, code color) at :root, so they are re-declared here
+ * to pick up the overridden brand colors.
+ */
+.project-theme-root {
+  display: contents;
+}
+
+.project-theme {
+  --vp-c-brand-1: var(--project-light);
+  --vp-c-brand-2: color-mix(in srgb, var(--project-light) 86%, #000);
+  --vp-c-brand-3: var(--project-light);
+  --vp-c-brand-soft: color-mix(in srgb, var(--project-light) 12%, transparent);
+}
+
+.dark .project-theme {
+  --vp-c-brand-1: var(--project-dark);
+  --vp-c-brand-2: color-mix(in srgb, var(--project-dark) 85%, #fff);
+  --vp-c-brand-3: var(--project-light);
+  --vp-c-brand-soft: color-mix(in srgb, var(--project-dark) 16%, transparent);
+}
+
+.project-theme {
+  --vp-button-brand-bg: var(--vp-c-brand-3);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-active-bg: var(--vp-c-brand-1);
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-code-link-color: var(--vp-c-brand-1);
+  --vp-code-link-hover-color: var(--vp-c-brand-2);
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--project-glow-1) 50%,
+    var(--project-glow-2) 50%
+  );
+  --vp-home-hero-image-filter: blur(68px) opacity(0.4);
+}
+
+.dark .project-theme {
+  /* brand-2 is link-hover text in dark mode, so it stays light; the button gets its own shade. */
+  --vp-button-brand-hover-bg: color-mix(in srgb, var(--project-light) 86%, #000);
+  --vp-button-brand-active-bg: color-mix(in srgb, var(--project-light) 86%, #000);
+  --vp-home-hero-image-filter: blur(72px) opacity(0.32);
+}
+
+.project-theme .VPHome {
+  background: radial-gradient(
+    ellipse 70% 420px at 72% 0,
+    color-mix(in srgb, var(--project-glow-1) 9%, transparent),
+    transparent 70%
+  );
+}
+
+.project-theme .VPHome .VPFeature {
+  transition: border-color 0.25s var(--site-ease-out);
+}
+
+.project-theme .VPHome .VPFeature:hover {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 45%, transparent);
+}
+
+.project-theme .VPHome .VPFeature .icon {
+  background-color: var(--vp-c-brand-soft);
+}
+
+/* Icon files differ in pixel size; pin the hero icon so every project page has the same scale. */
+.project-theme .VPHero .image-src {
+  width: clamp(144px, 16vw, 200px);
+  height: auto;
+}

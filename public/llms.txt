@@ -30,8 +30,9 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - GitHub: https://github.com/thedavidweng/qualtrics-cli
 
 ### tg-drive
-Turn a Telegram channel into a recoverable, scriptable file tree.
+Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
 - Docs: https://thedavidweng.github.io/site/tg-drive/
+- Site: https://thedavidweng.github.io/tg-drive/
 - GitHub: https://github.com/thedavidweng/tg-drive
 
 ### money
@@ -40,10 +41,22 @@ Local-first, self-hostable personal finance backend for AI agents and power user
 - GitHub: https://github.com/thedavidweng/money
 - Agent JSON: https://thedavidweng.github.io/site/money/agent.json
 
+## Desktop Apps
+
 ### OpenKara
-Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
-- Site: https://openkara.103279.xyz/
+Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, live mixing.
+- Site: https://thedavidweng.github.io/OpenKara/
 - GitHub: https://github.com/thedavidweng/OpenKara
+
+### Sukiru
+Native macOS app that checks and repairs coding agents' skill libraries via npx skills and gh skill.
+- Site: https://thedavidweng.github.io/sukiru/
+- GitHub: https://github.com/thedavidweng/sukiru
+
+### Apple Say
+Native macOS speech synthesis and timed text. Export Plain Text, LRC, and Enhanced LRC with system voices.
+- Site: https://thedavidweng.github.io/apple-say/
+- GitHub: https://github.com/thedavidweng/apple-say
 
 ## Design Principles
 

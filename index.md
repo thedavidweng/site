@@ -1,6 +1,7 @@
 ---
 layout: Hub
 pageClass: tools-hub
-title: Apps
-description: Developer tools by David Weng — CLI utilities, desktop apps, and more
+title: David Weng
+titleTemplate: Software for the terminal and the desktop
+description: Agent-friendly CLI tools and native desktop apps by David Weng. All open source.
 ---

@@ -1,25 +1,34 @@
+export type ProjectKind = 'cli' | 'desktop'
+
 export interface Project {
   slug: string
   name: string
   title: string
   tagline: string
   description: string
-  icon: string
-  iconSrc?: string
+  /** A project can be both, e.g. a CLI that also ships a desktop app. */
+  kinds: ProjectKind[]
+  iconSrc: string
   docsEntry: string
   overview: string
+  /** Standalone landing page, when the overview is the docs on this site. */
+  website?: string
   github: string
-  /** When true, overview and docsEntry are external URLs — not part of the site repo. */
+  platforms: string
+  /** Homebrew install command; casks live in thedavidweng/homebrew-tap. */
+  install?: string
+  /** App screenshot under public/, shown on the hub. */
+  screenshot?: { src: string; width: number; height: number }
+  /** When true, overview is an external landing page, not part of the site repo. */
   external?: boolean
+  /**
+   * Accent for the project's pages, taken from its icon or brand kit. `light` and `dark` must
+   * pass 4.5:1 as text on the page background and behind white button text. `glow` is decorative.
+   */
+  accent?: { light: string; dark: string; glow: [string, string] }
 }
 
-export interface Category {
-  id: string
-  label: string
-  description: string
-  projects: Project[]
-  principles?: string[]
-}
+const cliPlatforms = 'macOS, Linux, Windows'
 
 export const projects: Project[] = [
   {
@@ -28,11 +37,14 @@ export const projects: Project[] = [
     title: 'Canvas LMS CLI',
     tagline: 'Canvas LMS',
     description: '50+ commands for courses, assignments, submissions, grading, and more.',
-    icon: '🎓',
+    kinds: ['cli'],
     iconSrc: 'canvas-cli-icon.webp',
     docsEntry: '/canvas-cli/docs/auth',
     overview: '/canvas-cli/',
     github: 'https://github.com/thedavidweng/canvas-cli',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/canvas',
+    accent: { light: '#c13a22', dark: '#ff8f78', glow: ['#d64129', '#f29a6b'] },
   },
   {
     slug: 'zenodo-cli',
@@ -40,11 +52,14 @@ export const projects: Project[] = [
     title: 'Zenodo/InvenioRDM CLI',
     tagline: 'Zenodo',
     description: 'Record management, file upload, and full InvenioRDM API access.',
-    icon: '🔬',
+    kinds: ['cli'],
     iconSrc: 'zenodo-cli-icon.webp',
     docsEntry: '/zenodo-cli/docs/auth',
     overview: '/zenodo-cli/',
     github: 'https://github.com/thedavidweng/zenodo-cli',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/zenodo',
+    accent: { light: '#0b5cb8', dark: '#5cc0ff', glow: ['#0047a8', '#2bbcff'] },
   },
   {
     slug: 'monarchmoney-cli',
@@ -52,11 +67,14 @@ export const projects: Project[] = [
     title: 'Monarch Money CLI',
     tagline: 'Monarch Money',
     description: 'Accounts, transactions, budgets, and cashflow from your terminal.',
-    icon: '💰',
+    kinds: ['cli'],
     iconSrc: 'monarchmoney-cli-icon.webp',
     docsEntry: '/monarchmoney-cli/docs/auth',
     overview: '/monarchmoney-cli/',
     github: 'https://github.com/thedavidweng/monarchmoney-cli',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/monarchmoney-cli',
+    accent: { light: '#b84a07', dark: '#ff9a5c', glow: ['#ff692d', '#ffb36b'] },
   },
   {
     slug: 'flickr-cli',
@@ -64,23 +82,28 @@ export const projects: Project[] = [
     title: 'Flickr CLI',
     tagline: 'Flickr',
     description: 'Photo management, backup, upload, albums, and full API access.',
-    icon: '📷',
+    kinds: ['cli'],
     iconSrc: 'flickr-cli-icon.webp',
     docsEntry: '/flickr-cli/docs/auth',
     overview: '/flickr-cli/',
     github: 'https://github.com/thedavidweng/flickr-cli',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/flickr',
+    accent: { light: '#cc0069', dark: '#ff6cb4', glow: ['#2856ce', '#fc0a87'] },
   },
   {
     slug: 'money',
     name: 'money',
     title: 'Personal Finance Backend',
-    tagline: 'money',
+    tagline: 'Finance backend',
     description: 'Local-first backend with encrypted SQLite, multi-provider sync, and agent-friendly JSON.',
-    icon: '🏦',
+    kinds: ['cli'],
     iconSrc: 'money-icon.webp',
     docsEntry: '/money/docs/GETTING_STARTED',
     overview: '/money/',
     github: 'https://github.com/thedavidweng/money',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/money',
   },
   {
     slug: 'qualtrics-cli',
@@ -88,58 +111,79 @@ export const projects: Project[] = [
     title: 'Qualtrics CLI',
     tagline: 'Qualtrics',
     description: 'Agent-friendly CLI for the Qualtrics XM Platform & offline survey compiler.',
-    icon: '📋',
+    kinds: ['cli'],
     iconSrc: 'qualtrics-cli-icon.webp',
     docsEntry: '/qualtrics-cli/docs/qsf-spec',
     overview: '/qualtrics-cli/',
     github: 'https://github.com/thedavidweng/qualtrics-cli',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/qualtrics',
+    accent: { light: '#4b3be0', dark: '#a59cff', glow: ['#07a8ed', '#5826e6'] },
   },
   {
     slug: 'tg-drive',
     name: 'tg-drive',
     title: 'Telegram Drive',
     tagline: 'Telegram Drive',
-    description: 'Turn a Telegram channel into a recoverable, scriptable file tree.',
-    icon: '✈️',
+    description: 'Turn a Telegram channel into a recoverable file tree, from the td CLI or the desktop app.',
+    kinds: ['cli', 'desktop'],
     iconSrc: 'tg-drive-icon.webp',
     docsEntry: '/tg-drive/docs/guides/getting-started',
     overview: '/tg-drive/',
+    website: 'https://thedavidweng.github.io/tg-drive/',
     github: 'https://github.com/thedavidweng/tg-drive',
+    platforms: cliPlatforms,
+    install: 'brew install --cask thedavidweng/tap/tg-drive',
+    screenshot: { src: 'hub/tg-drive.webp', width: 1600, height: 1122 },
+    accent: { light: '#1f4fe0', dark: '#8fb0ff', glow: ['#2352e8', '#2aabee'] },
   },
   {
     slug: 'openkara',
     name: 'OpenKara',
     title: 'OpenKara',
     tagline: 'Karaoke',
-    description: 'Turn your music library into a karaoke stage. AI stem separation, lyrics sync, cross-platform desktop app.',
-    icon: '🎤',
+    description: 'Turn your music library into a karaoke stage. On-device stem separation, synced lyrics, and live mixing.',
+    kinds: ['desktop'],
     iconSrc: 'openkara-icon.webp',
-    docsEntry: 'https://openkara.103279.xyz/',
-    overview: 'https://openkara.103279.xyz/',
+    docsEntry: 'https://github.com/thedavidweng/OpenKara#readme',
+    overview: 'https://thedavidweng.github.io/OpenKara/',
     github: 'https://github.com/thedavidweng/OpenKara',
+    platforms: 'macOS, Windows, Linux',
+    install: 'brew install --cask thedavidweng/tap/openkara',
+    screenshot: { src: 'hub/openkara.webp', width: 1368, height: 770 },
     external: true,
   },
-]
-
-export const categories: Category[] = [
   {
-    id: 'cli',
-    label: 'CLI Tools',
-    description: 'Agent-friendly command-line tools — stable JSON output, safety gates, single binaries.',
-    projects: projects.filter((p) => !p.external),
-    principles: [
-      '<strong>Agent-friendly</strong> — stable JSON output, predictable exit codes, distinct stdout/stderr',
-      '<strong>Safety first</strong> — <code>--read-only</code>, <code>--dry-run</code>, <code>--confirm</code> gates on mutations',
-      '<strong>Single binary</strong> — no runtime, no containers, no dependencies',
-      '<strong>Cross-platform</strong> — Linux, macOS, Windows (amd64/arm64)',
-      '<strong>Homebrew distribution</strong> — <code>brew install --cask thedavidweng/tap/&lt;tool&gt;</code>',
-    ],
+    slug: 'sukiru',
+    name: 'Sukiru',
+    title: 'Sukiru',
+    tagline: 'Skill libraries',
+    description: 'Checks and repairs your coding agents\' skill libraries through npx skills and gh skill.',
+    kinds: ['desktop'],
+    iconSrc: 'sukiru-icon.webp',
+    docsEntry: 'https://github.com/thedavidweng/sukiru#readme',
+    overview: 'https://thedavidweng.github.io/sukiru/',
+    github: 'https://github.com/thedavidweng/sukiru',
+    platforms: 'macOS 14+, Apple silicon',
+    install: 'brew install --cask thedavidweng/tap/sukiru',
+    screenshot: { src: 'hub/sukiru.webp', width: 1600, height: 1061 },
+    external: true,
   },
   {
-    id: 'desktop',
-    label: 'Desktop Apps',
-    description: 'Cross-platform desktop applications built with Tauri.',
-    projects: projects.filter((p) => p.external),
+    slug: 'apple-say',
+    name: 'Apple Say',
+    title: 'Apple Say',
+    tagline: 'Speech synthesis',
+    description: 'Speech synthesis and timed text. Preview and export Plain Text, LRC, and Enhanced LRC with system voices.',
+    kinds: ['desktop'],
+    iconSrc: 'apple-say-icon.webp',
+    docsEntry: 'https://github.com/thedavidweng/apple-say#readme',
+    overview: 'https://thedavidweng.github.io/apple-say/',
+    github: 'https://github.com/thedavidweng/apple-say',
+    platforms: 'macOS 14+',
+    install: 'brew install --cask thedavidweng/tap/apple-say',
+    screenshot: { src: 'hub/apple-say.webp', width: 1600, height: 1155 },
+    external: true,
   },
 ]
 

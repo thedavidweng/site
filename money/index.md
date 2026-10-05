@@ -14,22 +14,22 @@ hero:
       link: https://github.com/thedavidweng/money
 
 features:
-  - icon: 🔒
+  - icon: lucide:database
     title: Encrypted SQLite
     details: Financial data at rest in an encrypted local file you control — not plaintext SQLite, not someone else's cloud.
-  - icon: 🔌
+  - icon: lucide:plug
     title: BYOK Providers
     details: Plaid, Bridge, and more as adapters. You bring credentials; no managed proxy or subscription.
-  - icon: 📋
+  - icon: lucide:braces
     title: Stable JSON Contracts
     details: Versioned envelopes, deterministic sorting and pagination — built for scripts, cron, and agents.
-  - icon: 💻
+  - icon: lucide:square-terminal
     title: CLI-First
     details: Human output by default; --json when you need parseable stdout. No web server required.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Explicit Sync Boundary
     details: Read commands use local data only. Network I/O happens when you link or sync — not on every query.
-  - icon: ▶️
+  - icon: lucide:play
     title: Demo Mode
     details: money demo … runs against bundled sample data — no credentials required.
 ---

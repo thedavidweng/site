@@ -17,22 +17,22 @@ hero:
       link: https://github.com/thedavidweng/monarchmoney-cli
 
 features:
-  - icon: 🏦
+  - icon: lucide:landmark
     title: Accounts
     details: List and inspect all financial accounts, balances, and institutions.
-  - icon: 💳
+  - icon: lucide:credit-card
     title: Transactions
     details: Search, filter, list, and manage transactions with full query support.
-  - icon: 📊
+  - icon: lucide:chart-column
     title: Budgets & Cashflow
     details: View budget allocations, spending, and cashflow analysis.
-  - icon: 📋
+  - icon: lucide:split
     title: Rules & Splits
     details: Manage transaction rules and split transactions.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Safety Gates
     details: --dry-run, --confirm, --read-only on all mutations. Audit logging.
-  - icon: 🤖
+  - icon: lucide:bot
     title: Agent-Ready
     details: JSON output, SQLite caching, stable error codes.
 ---

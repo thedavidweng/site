@@ -17,6 +17,13 @@
   --money-term-text: #c9d4c9;
   --money-surface: #171c19;
   --money-border: #2a332c;
+  /* Button tokens resolve at :root, so they need re-declaring to pick up the gold brand. */
+  --vp-button-brand-text: #0a0c0b;
+  --vp-button-brand-hover-text: #0a0c0b;
+  --vp-button-brand-active-text: #0a0c0b;
+  --vp-button-brand-bg: #c9a85c;
+  --vp-button-brand-hover-bg: #d4b76e;
+  --vp-button-brand-active-bg: #b8924a;
 }
 
 .dark .money-zone,

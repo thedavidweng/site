@@ -48,9 +48,12 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - Safety: --read-only, --dry-run, --confirm gates
 
 ### tg-drive
-Turn a Telegram channel into a recoverable, scriptable file tree.
+Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
 - Docs: https://thedavidweng.github.io/site/tg-drive/
+- Site: https://thedavidweng.github.io/tg-drive/
 - GitHub: https://github.com/thedavidweng/tg-drive
+- Install (CLI): brew install --cask thedavidweng/tap/tg-drive
+- Desktop app: Wails v3 (Go + web frontend), same engine as the CLI; drive browser, transfers, Saved Messages import, maintenance
 - Authentication: MTProto user login via td auth login
 - Capabilities: virtual file tree (ls, tree, cp, mv, rm), disaster recovery (scan --full), Saved Messages import
 - Storage: Telegram messages as source of truth, local SQLite cache
@@ -67,12 +70,33 @@ Local-first, self-hostable personal finance backend for AI agents and power user
 - Key commands: accounts list, transactions list, transactions search, categories list, tags list, recurring list, link, sync, setup, doctor, demo
 - License: Apache 2.0
 
+## Desktop Apps
+
 ### OpenKara
-Cross-platform desktop karaoke app. AI stem separation, lyrics sync.
-- Site: https://openkara.103279.xyz/
+Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, live mixing.
+- Site: https://thedavidweng.github.io/OpenKara/
 - GitHub: https://github.com/thedavidweng/OpenKara
 - Built with: Tauri (Rust + web frontend)
-- Features: AI stem separation (Demucs), lyrics sync, cross-platform
+- Platforms: macOS, Windows, Linux
+- Features: 2- or 4-stem AI separation (Demucs), live stem mixing, synced lyrics (LRC, embedded, CD+G), portable self-contained library
+
+### Sukiru
+Native macOS app that checks and repairs coding agents' skill libraries.
+- Site: https://thedavidweng.github.io/sukiru/
+- GitHub: https://github.com/thedavidweng/sukiru
+- Install: brew install --cask thedavidweng/tap/sukiru
+- Requires: macOS 14 Sonoma or later on Apple silicon
+- Features: health checks for stale lock records, broken links, diverged copies, and skills claimed by both installers; one-click fixes routed to the owning installer (npx skills or gh skill); snapshot/rollback for every batch; skill search and install
+- Privacy: no accounts, analytics, or telemetry
+
+### Apple Say
+Native macOS speech synthesis and timed text.
+- Site: https://thedavidweng.github.io/apple-say/
+- GitHub: https://github.com/thedavidweng/apple-say
+- Install: brew install --cask thedavidweng/tap/apple-say
+- Requires: macOS 14 Sonoma or later
+- Features: Plain Text, LRC, and Enhanced LRC (word-level) with automatic rate scaling; System Voice, Siri Natural, and Personal Voice; export AAC, AIFF, WAV, or CAF
+- Privacy: fully local, no network calls or telemetry
 
 ## Documentation Pages
 

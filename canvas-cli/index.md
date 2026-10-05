@@ -17,22 +17,22 @@ hero:
       link: https://github.com/thedavidweng/canvas-cli
 
 features:
-  - icon: 📚
+  - icon: lucide:book-open
     title: Courses & Modules
     details: List, search, and manage courses, modules, and module items.
-  - icon: 📝
+  - icon: lucide:clipboard-check
     title: Assignments & Submissions
     details: Create assignments, submit work, download submissions, grade with rubrics.
-  - icon: 💬
+  - icon: lucide:messages-square
     title: Discussions & Inbox
     details: Read and post discussion replies, send and manage inbox messages.
-  - icon: 📁
+  - icon: lucide:folder
     title: Files & Pages
     details: Upload, download, and manage course files and wiki pages.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Safety Gates
     details: --dry-run, --confirm, --read-only on all mutations. Audit logging.
-  - icon: 🤖
+  - icon: lucide:bot
     title: Agent-Ready
     details: JSON envelope output, stable error codes, secret redaction.
 ---

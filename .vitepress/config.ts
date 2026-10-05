@@ -1,5 +1,16 @@
 import { defineConfig } from 'vitepress'
+import * as lucide from 'lucide-static'
 import { projects } from './projects'
+
+// Home features write `icon: lucide:<name>`; the default theme renders a string icon as HTML.
+function lucideIcon(icon: unknown): unknown {
+  if (typeof icon !== 'string' || !icon.startsWith('lucide:')) return icon
+  const name = icon.slice('lucide:'.length)
+  const exportName = name.replace(/(^|-)([a-z0-9])/g, (_, __, c: string) => c.toUpperCase())
+  const svg = (lucide as Record<string, string>)[exportName]
+  if (!svg) throw new Error(`Unknown Lucide icon "${name}"`)
+  return svg.replace(/\s*\n\s*/g, ' ').replace('stroke-width="2"', 'stroke-width="1.75"')
+}
 
 const projectSidebars = {
   '/canvas-cli/': [
@@ -284,7 +295,7 @@ export default defineConfig({
   title: 'David Weng — Developer Tools',
   description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
   base: '/site/',
-  srcExclude: ['**/README.md'],
+  srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
 
   head: [
@@ -316,6 +327,10 @@ export default defineConfig({
 
   transformPageData(pageData) {
     const rel = pageData.relativePath
+
+    if (Array.isArray(pageData.frontmatter.features)) {
+      for (const feature of pageData.frontmatter.features) feature.icon = lucideIcon(feature.icon)
+    }
     const isMoney = rel === 'money/index.md' || rel.startsWith('money/')
 
     if (isMoney) {
@@ -359,7 +374,20 @@ export default defineConfig({
   },
 
   themeConfig: {
-    nav: [{ component: 'ProjectNavMenu' }],
+    // The title text is rendered per project by the nav-bar-title-after slot in Layout.vue.
+    siteTitle: false,
+
+    nav: [
+      { component: 'ProjectGuideLink' },
+      {
+        text: 'Apps',
+        items: projects.map((project) => ({
+          text: project.name,
+          link: project.overview,
+          ...(project.external ? {} : { activeMatch: `^/${project.slug}/` }),
+        })),
+      },
+    ],
 
     sidebar: projectSidebars,
 

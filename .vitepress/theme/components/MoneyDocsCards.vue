@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
+import { VPLink } from 'vitepress/theme-without-fonts'
 
 const docs = [
   { path: '/money/docs/GETTING_STARTED', name: 'docs/GETTING_STARTED.md', title: 'Getting started', desc: 'Install, setup, demo mode, and provider pricing.' },

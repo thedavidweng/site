@@ -17,22 +17,22 @@ hero:
       link: https://github.com/thedavidweng/zenodo-cli
 
 features:
-  - icon: 📄
+  - icon: lucide:file-text
     title: Records
     details: Create, update, publish, and manage Zenodo records and drafts.
-  - icon: 📁
+  - icon: lucide:folder
     title: Files
     details: Upload, download, and manage files in draft and published records.
-  - icon: 🔍
+  - icon: lucide:search
     title: Search
     details: Search Zenodo records with full query syntax and filters.
-  - icon: 🔑
+  - icon: lucide:link
     title: DOI Management
     details: Reserve DOIs, manage versions, and handle community submissions.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Safety Gates
     details: --dry-run, --confirm, --read-only on all mutations.
-  - icon: 🤖
+  - icon: lucide:bot
     title: Agent-Ready
     details: JSON output, stable error codes, sandbox support for testing.
 ---

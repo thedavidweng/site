@@ -17,22 +17,22 @@ hero:
       link: https://github.com/thedavidweng/flickr-cli
 
 features:
-  - icon: 📷
+  - icon: lucide:camera
     title: Photos
     details: List, search, upload, download, and manage photos with metadata.
-  - icon: 📁
+  - icon: lucide:images
     title: Albums & Galleries
     details: Create and manage albums, galleries, and collections.
-  - icon: 💾
+  - icon: lucide:hard-drive-download
     title: Backup
     details: Full account backup with deduplication and incremental sync.
-  - icon: 🔐
+  - icon: lucide:key-round
     title: OAuth
     details: Secure Flickr OAuth authentication with profile support.
-  - icon: 🛡️
+  - icon: lucide:shield-check
     title: Safety Gates
     details: --dry-run, --confirm, --read-only on all mutations.
-  - icon: 🤖
+  - icon: lucide:bot
     title: Agent-Ready
     details: JSON output, NDJSON events stream, secret redaction.
 ---
