@@ -120,6 +120,16 @@ Desktop app that organizes a Steam library into playlists, with recommendations 
 - Features: manual and rule-based playlists, recommendations, junk cleanup, Steam Deck
 - Safety: dry-run or confirmation before Steam file writes, with a backup taken first
 
+### OpenLoop
+Desktop app that turns a prompt and lyrics into tracks with open models on Apple Silicon. openloop-cli is the command-line interface for the same app.
+- Site: https://openloop.blahaj.uk/
+- Docs: https://github.com/thedavidweng/OpenLoop#readme
+- GitHub: https://github.com/thedavidweng/OpenLoop
+- Install: brew install --cask thedavidweng/tap/openloop
+- Platforms: macOS 15+, Apple Silicon
+- Features: projects and Takes, A/B compare, reproduce, region repaint, on-device ACE-Step
+- Safety: prompts, lyrics, and audio stay on the Mac; generation does not upload them
+
 ## Plugins
 
 ### DeckPad

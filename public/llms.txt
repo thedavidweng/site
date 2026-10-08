@@ -69,6 +69,12 @@ Desktop app that organizes a Steam library into playlists, with recommendations 
 - Docs: https://github.com/thedavidweng/vapourfly/blob/main/docs/tutorials/getting-started.md
 - GitHub: https://github.com/thedavidweng/vapourfly
 
+### OpenLoop
+Desktop app that turns a prompt and lyrics into tracks with open models on Apple Silicon. openloop-cli is the command-line interface for the same app.
+- Site: https://openloop.blahaj.uk/
+- Docs: https://github.com/thedavidweng/OpenLoop#readme
+- GitHub: https://github.com/thedavidweng/OpenLoop
+
 ## Plugins
 
 ### DeckPad
