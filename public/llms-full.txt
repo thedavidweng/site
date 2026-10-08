@@ -49,7 +49,7 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 
 ### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Site: https://thedavidweng.github.io/tg-drive/
+- Site: https://tg-drive.blahaj.uk/
 - Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 - GitHub: https://github.com/thedavidweng/tg-drive
 - Install (CLI): brew install --cask thedavidweng/tap/tg-drive
@@ -74,7 +74,7 @@ Local-first, self-hostable personal finance backend for AI agents and power user
 
 ### OpenKara
 Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, live mixing.
-- Site: https://thedavidweng.github.io/OpenKara/
+- Site: https://openkara.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/OpenKara
 - Built with: Tauri (Rust + web frontend)
 - Platforms: macOS, Windows, Linux
@@ -82,7 +82,7 @@ Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, li
 
 ### Sukiru
 Native macOS app that checks and repairs coding agents' skill libraries.
-- Site: https://thedavidweng.github.io/sukiru/
+- Site: https://sukiru.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/sukiru
 - Install: brew install --cask thedavidweng/tap/sukiru
 - Requires: macOS 14 Sonoma or later on Apple silicon
@@ -91,7 +91,7 @@ Native macOS app that checks and repairs coding agents' skill libraries.
 
 ### Apple Say
 Native macOS speech synthesis and timed text.
-- Site: https://thedavidweng.github.io/apple-say/
+- Site: https://apple-say.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/apple-say
 - Install: brew install --cask thedavidweng/tap/apple-say
 - Requires: macOS 14 Sonoma or later
@@ -100,7 +100,7 @@ Native macOS speech synthesis and timed text.
 
 ### SDF Flash GUI
 Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware.
-- Site: https://thedavidweng.github.io/sdf-flash-gui/
+- Site: https://sdf-flash-gui.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/sdf-flash-gui
 - Install: brew install --cask thedavidweng/tap/sdf-flash-gui
 - Built with: Rust and egui; the site embeds the real UI compiled to WebAssembly with simulated drives
@@ -113,7 +113,7 @@ Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover
 
 ### DeckPad
 Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a PC, phone, or tablet.
-- Site: https://thedavidweng.github.io/DeckPad/
+- Site: https://deckpad.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/DeckPad
 - Install: Decky Loader, then DeckPad.zip from the latest GitHub release. Not in the Decky Plugin Store yet.
 - Platforms: SteamOS (Steam Deck)
@@ -191,7 +191,7 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 - Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
 
 ### tg-drive
-- Site: https://thedavidweng.github.io/tg-drive/
+- Site: https://tg-drive.blahaj.uk/
 - Getting Started: https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md
 - Guides: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 

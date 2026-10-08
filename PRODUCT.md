@@ -30,7 +30,7 @@ One maker, a coherent body of tools: every CLI shares the same contract (stable 
 
 - Stack: VitePress default theme, extended. Prefer framework components and theme CSS variables over hand-written UI so VitePress upgrades stay easy (2.0 is in alpha; the theme already avoids deleted internal components).
 - The landing page and the docs must read as one site, not two.
-- Open decision: an umbrella name for the projects. David plans to move apps to `*.blahaj.uk` subdomains (e.g. `applesay.blahaj.uk`, `sukiru.blahaj.uk`) and floated "Hajware" as an umbrella; personal identity (David Weng) stays primary. "Blahaj" itself must not be used as a brand name (IKEA product).
+- Open decision: an umbrella name for the projects. David floated "Hajware"; personal identity (David Weng) stays primary. "Blahaj" itself must not be used as a brand name (IKEA product). Product sites use DNS-only `*.blahaj.uk` names (`openkara`, `sukiru`, `apple-say`, `sdf-flash-gui`, `tg-drive`, `deckpad`, `adp-shifts`), recorded in the dnscontrol repo. CLI tools stay on this hub.
 
 ## Brand Commitments
 
@@ -40,7 +40,7 @@ One maker, a coherent body of tools: every CLI shares the same contract (stable 
 
 ## Evidence on Hand
 
-- Real app screenshots on the desktop app landing pages: `https://thedavidweng.github.io/sukiru/assets/screenshot.webp`, `https://thedavidweng.github.io/apple-say/assets/screenshot.webp`, OpenKara and tg-drive landing pages.
+- Real app screenshots on the desktop app landing pages: `https://sukiru.blahaj.uk/assets/screenshot.webp`, `https://apple-say.blahaj.uk/assets/screenshot.webp`, OpenKara and tg-drive landing pages.
 - App and CLI icons in `public/*-icon.webp`.
 - No testimonials, user counts, or download numbers; do not invent them.
 

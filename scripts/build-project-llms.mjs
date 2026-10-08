@@ -117,7 +117,7 @@ const projectDetails = [
     name: 'tg-drive',
     description: 'Turn a Telegram channel into a recoverable, scriptable file tree.',
     github: 'https://github.com/thedavidweng/tg-drive',
-    site: 'https://thedavidweng.github.io/tg-drive',
+    site: 'https://tg-drive.blahaj.uk',
     overview: 'Upload local files as ordinary Telegram media, stamp each message with machine-readable metadata, and maintain a rebuildable SQLite index. Telegram remains the source of truth.',
     features: [
       'Virtual file tree with exact ls and tree over local SQLite cache',

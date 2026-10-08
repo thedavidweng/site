@@ -31,7 +31,7 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 
 ### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Site: https://thedavidweng.github.io/tg-drive/
+- Site: https://tg-drive.blahaj.uk/
 - Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 - GitHub: https://github.com/thedavidweng/tg-drive
 
@@ -45,29 +45,29 @@ Local-first, self-hostable personal finance backend for AI agents and power user
 
 ### OpenKara
 Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, live mixing.
-- Site: https://thedavidweng.github.io/OpenKara/
+- Site: https://openkara.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/OpenKara
 
 ### Sukiru
 Native macOS app that checks and repairs coding agents' skill libraries via npx skills and gh skill.
-- Site: https://thedavidweng.github.io/sukiru/
+- Site: https://sukiru.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/sukiru
 
 ### Apple Say
 Native macOS speech synthesis and timed text. Export Plain Text, LRC, and Enhanced LRC with system voices.
-- Site: https://thedavidweng.github.io/apple-say/
+- Site: https://apple-say.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/apple-say
 
 ### SDF Flash GUI
 Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware behind safety gates.
-- Site: https://thedavidweng.github.io/sdf-flash-gui/
+- Site: https://sdf-flash-gui.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/sdf-flash-gui
 
 ## Plugins
 
 ### DeckPad
 Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a PC, phone, or tablet. The host pairs in its own Bluetooth settings. DeckPad presents an Xbox Wireless Controller layout.
-- Site: https://thedavidweng.github.io/DeckPad/
+- Site: https://deckpad.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/DeckPad
 - Install: Decky Loader, then the release zip (not in the Decky Plugin Store yet)
 - Platforms: SteamOS

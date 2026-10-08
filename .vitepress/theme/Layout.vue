@@ -35,7 +35,7 @@ function updateTitleLink() {
   if (titleLink) titleLink.href = withBase(currentProject.value?.overview ?? '/')
 }
 
-const tgDriveSite = 'https://thedavidweng.github.io/tg-drive/'
+const tgDriveSite = 'https://tg-drive.blahaj.uk/'
 
 function isRetiredTgDrivePath(path: string) {
   const prefix = base.value.replace(/\/$/, '')

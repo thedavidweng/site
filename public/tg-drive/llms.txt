@@ -23,8 +23,8 @@ Upload local files as ordinary Telegram media, stamp each message with machine-r
 ## Contact
 
 - GitHub: https://github.com/thedavidweng/tg-drive
-- Site: https://thedavidweng.github.io/tg-drive/
+- Site: https://tg-drive.blahaj.uk/
 
 ## Machine-Readable Endpoints
 
-- Site: https://thedavidweng.github.io/tg-drive/
+- Site: https://tg-drive.blahaj.uk/
