@@ -29,12 +29,6 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - Docs: https://thedavidweng.github.io/site/qualtrics-cli/
 - GitHub: https://github.com/thedavidweng/qualtrics-cli
 
-### tg-drive
-Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Site: https://tg-drive.blahaj.uk/
-- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
-- GitHub: https://github.com/thedavidweng/tg-drive
-
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.
 - Docs: https://thedavidweng.github.io/site/money/
@@ -62,6 +56,12 @@ Native macOS speech synthesis and timed text. Export Plain Text, LRC, and Enhanc
 Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware behind safety gates.
 - Site: https://sdf-flash-gui.blahaj.uk/
 - GitHub: https://github.com/thedavidweng/sdf-flash-gui
+
+### tg-drive
+Desktop app that turns a Telegram channel into a recoverable file tree. td is the command-line interface for the same engine.
+- Site: https://tg-drive.blahaj.uk/
+- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
+- GitHub: https://github.com/thedavidweng/tg-drive
 
 ## Plugins
 

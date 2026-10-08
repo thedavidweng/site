@@ -13,10 +13,9 @@ Published at **https://thedavidweng.github.io/site/**
 | [monarchmoney-cli](https://github.com/thedavidweng/monarchmoney-cli) | Monarch Money CLI |
 | [flickr-cli](https://github.com/thedavidweng/flickr-cli) | Flickr CLI |
 | [qualtrics-cli](https://github.com/thedavidweng/qualtrics-cli) | Qualtrics XM & Offline Survey Compiler CLI |
-| [tg-drive](https://github.com/thedavidweng/tg-drive) | Telegram Drive (`td`, `td-gui`) |
 | [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
-The hub also links to desktop apps with their own landing pages: [OpenKara](https://openkara.blahaj.uk/), [Sukiru](https://sukiru.blahaj.uk/), [Apple Say](https://apple-say.blahaj.uk/), and [SDF Flash GUI](https://sdf-flash-gui.blahaj.uk/). tg-drive also ships a desktop app; see [its site](https://tg-drive.blahaj.uk/). [DeckPad](https://deckpad.blahaj.uk/) is a Decky Loader plugin that turns a Steam Deck into a Bluetooth controller. [ADP Shifts](https://adp-shifts.blahaj.uk/) is a browser extension that copies an ADP Workforce Now schedule into Google Calendar.
+The hub also links to desktop apps with their own landing pages: [OpenKara](https://openkara.blahaj.uk/), [Sukiru](https://sukiru.blahaj.uk/), [Apple Say](https://apple-say.blahaj.uk/), [SDF Flash GUI](https://sdf-flash-gui.blahaj.uk/), and [tg-drive](https://tg-drive.blahaj.uk/). [DeckPad](https://deckpad.blahaj.uk/) is a Decky Loader plugin that turns a Steam Deck into a Bluetooth controller. [ADP Shifts](https://adp-shifts.blahaj.uk/) is a browser extension that copies an ADP Workforce Now schedule into Google Calendar.
 
 ## Development
 

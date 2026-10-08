@@ -23,7 +23,7 @@ One maker, a coherent body of tools: every CLI shares the same contract (stable 
 ## Operating Context
 
 - Docs are synced from each CLI repository (`pnpm sync-docs`) into VitePress; sidebars live in `.vitepress/config.ts`. Fast client-side navigation between docs pages is a requirement (a reason VitePress is kept over Starlight).
-- Desktop apps (OpenKara, Sukiru, Apple Say, SDF Flash GUI, tg-drive's td-gui), DeckPad, and ADP Shifts have their own landing pages; the hub links to them.
+- Desktop apps (OpenKara, Sukiru, Apple Say, SDF Flash GUI, tg-drive), DeckPad, and ADP Shifts have their own landing pages; the hub links to them. A desktop app may also ship a command-line interface; that does not make it a CLI tool in the index.
 - Machine-readable endpoints (`llms.txt`, `llms-full.txt`, sitemap, money `agent.json`) are part of the product for agent users.
 
 ## Capabilities and Constraints

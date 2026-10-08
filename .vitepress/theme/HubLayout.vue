@@ -11,8 +11,8 @@ type Filter = 'all' | ProjectKind
 
 const filters: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All' },
-  { id: 'cli', label: 'CLI tools' },
   { id: 'desktop', label: 'Desktop apps' },
+  { id: 'cli', label: 'CLI tools' },
   { id: 'plugin', label: 'Plugins' },
   { id: 'extension', label: 'Extensions' },
 ]
@@ -31,10 +31,7 @@ const visible = computed(() =>
   filter.value === 'all' ? projects : projects.filter((p) => p.kinds.includes(filter.value as ProjectKind)),
 )
 
-// Desktop-only apps lead; a CLI that also ships an app (tg-drive) follows them.
-const desktopApps = projects
-  .filter((p) => p.kinds.includes('desktop') && p.screenshot)
-  .sort((a, b) => a.kinds.length - b.kinds.length)
+const desktopApps = projects.filter((p) => p.kinds.includes('desktop') && p.screenshot)
 
 const otherShots = projects.filter((p) => p.screenshot && !p.kinds.includes('cli') && !p.kinds.includes('desktop'))
 

@@ -47,18 +47,6 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 - Offline QSF: compile Markdown survey specs to .qsf without API credentials
 - Safety: --read-only, --dry-run, --confirm gates
 
-### tg-drive
-Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Site: https://tg-drive.blahaj.uk/
-- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
-- GitHub: https://github.com/thedavidweng/tg-drive
-- Install (CLI): brew install --cask thedavidweng/tap/tg-drive
-- Desktop app: Wails v3 (Go + web frontend), same engine as the CLI; drive browser, transfers, Saved Messages import, maintenance
-- Authentication: MTProto user login via td auth login
-- Capabilities: virtual file tree (ls, tree, cp, mv, rm), disaster recovery (scan --full), Saved Messages import
-- Storage: Telegram messages as source of truth, local SQLite cache
-- Safety: operation locks, DB transactions, --confirm on mutations
-
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users.
 - Docs: https://thedavidweng.github.io/site/money/
@@ -108,6 +96,19 @@ Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover
 - Safety: MT1959-only platform check, form-factor cross-flash acknowledgement, SHA-256 firmware identity, exclusive flash modes, typed confirmation, dry-run
 - Features: drive probe, firmware dump, flash with progress, boot-token recovery, sdf.bin parser, sdftool or makemkvcon backends, argv-only backend calls
 - License: GPL-2.0-or-later
+
+### tg-drive
+Desktop app that turns a Telegram channel into a recoverable file tree. td is the command-line interface for the same engine.
+- Site: https://tg-drive.blahaj.uk/
+- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
+- GitHub: https://github.com/thedavidweng/tg-drive
+- Install: brew install --cask thedavidweng/tap/tg-drive
+- Built with: Wails v3 (Go + web frontend)
+- Platforms: macOS, Windows, Linux
+- Features: drive browser, transfers, Saved Messages import, maintenance; td covers the same engine from the terminal
+- Authentication: MTProto user login via td auth login
+- Storage: Telegram messages as source of truth, local SQLite cache
+- Safety: operation locks, DB transactions, --confirm on mutations
 
 ## Plugins
 
