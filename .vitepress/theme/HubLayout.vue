@@ -35,6 +35,8 @@ const desktopApps = projects.filter((p) => p.kinds.includes('desktop') && p.scre
 
 const otherShots = projects.filter((p) => p.screenshot && !p.kinds.includes('cli') && !p.kinds.includes('desktop'))
 
+const cliTools = projects.filter((p) => p.kinds.every((k) => k === 'cli'))
+
 const brewPrefix = 'brew install --cask '
 
 function splitInstall(command: string) {
@@ -218,6 +220,9 @@ const contract = [
               <span class="shot-text">
                 <span class="shot-name">{{ app.name }}</span>
                 <span class="shot-desc">{{ app.description }}</span>
+                <span v-if="app.stack" class="stack" :aria-label="`Built with ${app.stack.join(', ')}`">
+                  <span v-for="tech in app.stack" :key="tech" class="stack-tag">{{ tech }}</span>
+                </span>
               </span>
               <VPLink class="shot-link" :href="app.website ?? app.overview" :no-icon="true">
                 Visit site <HubIcon name="arrow-up-right" />
@@ -252,6 +257,9 @@ const contract = [
               <span class="shot-text">
                 <span class="shot-name">{{ app.name }}</span>
                 <span class="shot-desc">{{ app.description }}</span>
+                <span v-if="app.stack" class="stack" :aria-label="`Built with ${app.stack.join(', ')}`">
+                  <span v-for="tech in app.stack" :key="tech" class="stack-tag">{{ tech }}</span>
+                </span>
               </span>
               <VPLink class="shot-link" :href="app.website ?? app.overview" :no-icon="true">
                 Visit site <HubIcon name="arrow-up-right" />
@@ -262,21 +270,38 @@ const contract = [
       </div>
     </section>
 
-    <section class="contract" aria-labelledby="contract-title">
-      <div class="container contract-grid">
-        <div class="section-head contract-head">
-          <h2 id="contract-title">One contract, every CLI</h2>
-          <p>Learn one tool and you know how the rest behave. Scripts and agents get the same guarantees everywhere.</p>
+    <section class="clis" aria-labelledby="clis-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="clis-title">Command-line tools</h2>
+          <p>Written in Go, built for scripts and agents. Each one has full docs on this site.</p>
         </div>
-        <dl class="spec">
-          <div v-for="item in contract" :key="item.term" class="spec-row">
-            <dt class="spec-term">{{ item.term }}</dt>
-            <dd class="spec-detail">
-              <p>{{ item.text }}</p>
-              <code v-if="item.code" class="spec-code">{{ item.code }}</code>
-            </dd>
+        <ul class="cli-strip">
+          <li v-for="cli in cliTools" :key="cli.slug" class="cli">
+            <img class="cli-icon" :src="asset(cli.iconSrc)" alt="" width="40" height="40" loading="lazy" />
+            <VPLink class="cli-name" :href="cli.overview" :no-icon="true">{{ cli.name }}</VPLink>
+            <span class="cli-tagline">{{ cli.tagline }}</span>
+            <span v-if="cli.stack" class="stack" :aria-label="`Built with ${cli.stack.join(', ')}`">
+              <span v-for="tech in cli.stack" :key="tech" class="stack-tag">{{ tech }}</span>
+            </span>
+          </li>
+        </ul>
+
+        <div class="contract-grid">
+          <div class="contract-head">
+            <h3 class="contract-title">One shared contract</h3>
+            <p>Learn one tool and you know how the rest behave. Scripts and agents get the same guarantees everywhere.</p>
           </div>
-        </dl>
+          <dl class="spec">
+            <div v-for="item in contract" :key="item.term" class="spec-row">
+              <dt class="spec-term">{{ item.term }}</dt>
+              <dd class="spec-detail">
+                <p>{{ item.text }}</p>
+                <code v-if="item.code" class="spec-code">{{ item.code }}</code>
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
     </section>
 
@@ -706,7 +731,7 @@ h2 {
 
 /* Sections */
 .apps,
-.contract {
+.clis {
   padding-top: 112px;
 }
 
@@ -840,10 +865,122 @@ h2 {
   color: var(--vp-c-brand-2);
 }
 
+/* Stack tags */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.stack-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--vp-c-default-soft);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--vp-c-text-2);
+}
+
+/* Command-line tools */
+.cli-strip {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 24px;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--vp-c-divider);
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+@media (min-width: 640px) {
+  .cli-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .cli-strip {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.cli {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 24px 0;
+}
+
+.cli-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.28));
+  transition: transform 0.3s var(--site-ease-out);
+}
+
+.cli:hover .cli-icon {
+  transform: translateY(-2px);
+}
+
+.cli-name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--vp-c-text-1);
+  transition: color 0.2s;
+}
+
+.cli-name:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* The whole item is the link target. */
+.cli-name::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cli-tagline {
+  font-size: 13px;
+  color: var(--vp-c-text-3);
+}
+
 /* Contract */
 .contract-grid {
   display: grid;
-  gap: 32px;
+  gap: 24px;
+  margin-top: 72px;
+}
+
+.contract-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--vp-c-text-1);
+}
+
+.contract-head p {
+  margin: 10px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--vp-c-text-2);
 }
 
 @media (min-width: 960px) {
@@ -957,11 +1094,13 @@ h2 {
   .row-move,
   .row-enter-active,
   .row-leave-active,
-  .shot-image {
+  .shot-image,
+  .cli-icon {
     transition: none;
   }
 
-  .shot-stage:hover .shot-image {
+  .shot-stage:hover .shot-image,
+  .cli:hover .cli-icon {
     transform: none;
   }
 }

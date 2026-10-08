@@ -33,8 +33,8 @@ Defined in `.vitepress/theme/custom.css`.
 
 1. Statement headline, one paragraph, brand and alt buttons.
 2. Index: every project on one row grammar (icon, name and tagline, description and platforms, copyable `brew install` command, Docs and GitHub). Filterable by kind (desktop, CLI, plugin, extension), in the same order as the index. The filter animates row moves. A project without a Homebrew cask leaves the install cell empty. The filter wraps when the chips do not fit the row.
-3. Desktop apps: one wide screenshot, then a three-column row. Plugin and extension projects with a screenshot follow in the same frame. CLI tools have no screenshot.
-4. The shared CLI contract as a definition list.
+3. Desktop apps: one wide screenshot, then a three-column row. Plugin and extension projects with a screenshot follow in the same frame. Each caption carries small neutral stack tags (language first, then UI framework) from `stack` in `.vitepress/projects.ts`. CLI tools have no screenshot.
+4. Command-line tools: every CLI-only project in one row (icon, name, tagline, stack tag), then the shared CLI contract as a definition list below it.
 5. Closing band with GitHub, Homebrew tap, and `llms.txt` links.
 
 Project data, install commands, and screenshots live in `.vitepress/projects.ts`.

@@ -17,6 +17,8 @@ export interface Project {
   platforms: string
   /** Homebrew install command; casks live in thedavidweng/homebrew-tap. */
   install?: string
+  /** Language first, then the UI framework; shown as tags on the hub. */
+  stack?: string[]
   /** App screenshot under public/, shown on the hub. */
   screenshot?: { src: string; width: number; height: number }
   /** When true, overview is an external landing page, not part of the site repo. */
@@ -44,6 +46,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/OpenKara',
     platforms: 'macOS, Windows, Linux',
     install: 'brew install --cask thedavidweng/tap/openkara',
+    stack: ['Rust', 'Tauri'],
     screenshot: { src: 'hub/openkara.webp', width: 1368, height: 770 },
     external: true,
   },
@@ -60,6 +63,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/sukiru',
     platforms: 'macOS 14+, Apple silicon',
     install: 'brew install --cask thedavidweng/tap/sukiru',
+    stack: ['Swift', 'SwiftUI'],
     screenshot: { src: 'hub/sukiru.webp', width: 1600, height: 1061 },
     external: true,
   },
@@ -76,6 +80,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/apple-say',
     platforms: 'macOS 14+',
     install: 'brew install --cask thedavidweng/tap/apple-say',
+    stack: ['Swift', 'SwiftUI'],
     screenshot: { src: 'hub/apple-say.webp', width: 1600, height: 1155 },
     external: true,
   },
@@ -92,6 +97,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/sdf-flash-gui',
     platforms: 'macOS, Windows, Linux',
     install: 'brew install --cask thedavidweng/tap/sdf-flash-gui',
+    stack: ['Rust', 'egui'],
     screenshot: { src: 'hub/sdf-flash-gui.webp', width: 1040, height: 1588 },
     external: true,
   },
@@ -109,6 +115,7 @@ export const projects: Project[] = [
     external: true,
     platforms: 'macOS, Windows, Linux',
     install: 'brew install --cask thedavidweng/tap/tg-drive',
+    stack: ['Go', 'Wails 3'],
     screenshot: { src: 'hub/tg-drive.webp', width: 1600, height: 1122 },
     accent: { light: '#1f4fe0', dark: '#8fb0ff', glow: ['#2352e8', '#2aabee'] },
   },
@@ -125,6 +132,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/vapourfly',
     platforms: 'macOS, Windows, Linux',
     install: 'brew install --cask thedavidweng/tap/vapourfly',
+    stack: ['Rust', 'GPUI'],
     screenshot: { src: 'hub/vapourfly.webp', width: 1440, height: 921 },
     external: true,
   },
@@ -141,6 +149,7 @@ export const projects: Project[] = [
     github: 'https://github.com/thedavidweng/OpenLoop',
     platforms: 'macOS 15+, Apple Silicon',
     install: 'brew install --cask thedavidweng/tap/openloop',
+    stack: ['Swift', 'SwiftUI'],
     screenshot: { src: 'hub/openloop.webp', width: 1599, height: 899 },
     external: true,
   },
@@ -156,6 +165,7 @@ export const projects: Project[] = [
     overview: '/canvas-cli/',
     github: 'https://github.com/thedavidweng/canvas-cli',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/canvas',
     accent: { light: '#c13a22', dark: '#ff8f78', glow: ['#d64129', '#f29a6b'] },
   },
@@ -171,6 +181,7 @@ export const projects: Project[] = [
     overview: '/zenodo-cli/',
     github: 'https://github.com/thedavidweng/zenodo-cli',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/zenodo',
     accent: { light: '#0b5cb8', dark: '#5cc0ff', glow: ['#0047a8', '#2bbcff'] },
   },
@@ -186,6 +197,7 @@ export const projects: Project[] = [
     overview: '/monarchmoney-cli/',
     github: 'https://github.com/thedavidweng/monarchmoney-cli',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/monarchmoney-cli',
     accent: { light: '#b84a07', dark: '#ff9a5c', glow: ['#ff692d', '#ffb36b'] },
   },
@@ -201,6 +213,7 @@ export const projects: Project[] = [
     overview: '/flickr-cli/',
     github: 'https://github.com/thedavidweng/flickr-cli',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/flickr',
     accent: { light: '#cc0069', dark: '#ff6cb4', glow: ['#2856ce', '#fc0a87'] },
   },
@@ -216,6 +229,7 @@ export const projects: Project[] = [
     overview: '/money/',
     github: 'https://github.com/thedavidweng/money',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/money',
   },
   {
@@ -230,6 +244,7 @@ export const projects: Project[] = [
     overview: '/qualtrics-cli/',
     github: 'https://github.com/thedavidweng/qualtrics-cli',
     platforms: cliPlatforms,
+    stack: ['Go'],
     install: 'brew install --cask thedavidweng/tap/qualtrics',
     accent: { light: '#4b3be0', dark: '#a59cff', glow: ['#07a8ed', '#5826e6'] },
   },
@@ -245,6 +260,7 @@ export const projects: Project[] = [
     overview: 'https://deckpad.blahaj.uk/',
     github: 'https://github.com/thedavidweng/DeckPad',
     platforms: 'SteamOS',
+    stack: ['Python', 'TypeScript', 'Decky'],
     screenshot: { src: 'hub/deckpad.webp', width: 1600, height: 831 },
     external: true,
   },
@@ -260,6 +276,7 @@ export const projects: Project[] = [
     overview: 'https://adp-shifts.blahaj.uk/',
     github: 'https://github.com/thedavidweng/adp-calendar',
     platforms: 'Chrome, Edge, Brave',
+    stack: ['TypeScript', 'WXT'],
     screenshot: { src: 'hub/adp-shifts.webp', width: 1280, height: 800 },
     external: true,
   },
