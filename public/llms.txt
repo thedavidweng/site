@@ -63,6 +63,12 @@ Desktop app that turns a Telegram channel into a recoverable file tree. td is th
 - Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 - GitHub: https://github.com/thedavidweng/tg-drive
 
+### Vapourfly
+Desktop app that organizes a Steam library into playlists, with recommendations and junk cleanup. vapourfly is the command-line interface for the same app.
+- Site: https://vapourfly.blahaj.uk/
+- Docs: https://github.com/thedavidweng/vapourfly/blob/main/docs/tutorials/getting-started.md
+- GitHub: https://github.com/thedavidweng/vapourfly
+
 ## Plugins
 
 ### DeckPad

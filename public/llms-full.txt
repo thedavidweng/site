@@ -110,6 +110,16 @@ Desktop app that turns a Telegram channel into a recoverable file tree. td is th
 - Storage: Telegram messages as source of truth, local SQLite cache
 - Safety: operation locks, DB transactions, --confirm on mutations
 
+### Vapourfly
+Desktop app that organizes a Steam library into playlists, with recommendations and junk cleanup. vapourfly is the command-line interface for the same app.
+- Site: https://vapourfly.blahaj.uk/
+- Docs: https://github.com/thedavidweng/vapourfly/blob/main/docs/tutorials/getting-started.md
+- GitHub: https://github.com/thedavidweng/vapourfly
+- Install: brew install --cask thedavidweng/tap/vapourfly
+- Platforms: macOS, Windows, Linux
+- Features: manual and rule-based playlists, recommendations, junk cleanup, Steam Deck
+- Safety: dry-run or confirmation before Steam file writes, with a backup taken first
+
 ## Plugins
 
 ### DeckPad

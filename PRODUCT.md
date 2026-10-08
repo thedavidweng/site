@@ -23,14 +23,14 @@ One maker, a coherent body of tools: every CLI shares the same contract (stable 
 ## Operating Context
 
 - Docs are synced from each CLI repository (`pnpm sync-docs`) into VitePress; sidebars live in `.vitepress/config.ts`. Fast client-side navigation between docs pages is a requirement (a reason VitePress is kept over Starlight).
-- Desktop apps (OpenKara, Sukiru, Apple Say, SDF Flash GUI, tg-drive), DeckPad, and ADP Shifts have their own landing pages; the hub links to them. A desktop app may also ship a command-line interface; that does not make it a CLI tool in the index.
+- Desktop apps (OpenKara, Sukiru, Apple Say, SDF Flash GUI, tg-drive, Vapourfly), DeckPad, and ADP Shifts have their own landing pages; the hub links to them. A desktop app may also ship a command-line interface; that does not make it a CLI tool in the index.
 - Machine-readable endpoints (`llms.txt`, `llms-full.txt`, sitemap, money `agent.json`) are part of the product for agent users.
 
 ## Capabilities and Constraints
 
 - Stack: VitePress default theme, extended. Prefer framework components and theme CSS variables over hand-written UI so VitePress upgrades stay easy (2.0 is in alpha; the theme already avoids deleted internal components).
 - The landing page and the docs must read as one site, not two.
-- Open decision: an umbrella name for the projects. David floated "Hajware"; personal identity (David Weng) stays primary. "Blahaj" itself must not be used as a brand name (IKEA product). Product sites use DNS-only `*.blahaj.uk` names (`openkara`, `sukiru`, `apple-say`, `sdf-flash-gui`, `tg-drive`, `deckpad`, `adp-shifts`), recorded in the dnscontrol repo. CLI tools stay on this hub.
+- Open decision: an umbrella name for the projects. David floated "Hajware"; personal identity (David Weng) stays primary. "Blahaj" itself must not be used as a brand name (IKEA product). Product sites use DNS-only `*.blahaj.uk` names (`openkara`, `sukiru`, `apple-say`, `sdf-flash-gui`, `tg-drive`, `vapourfly`, `deckpad`, `adp-shifts`), recorded in the dnscontrol repo. CLI tools stay on this hub.
 
 ## Brand Commitments
 
