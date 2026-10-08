@@ -32,8 +32,8 @@ Defined in `.vitepress/theme/custom.css`.
 ## Hub structure
 
 1. Statement headline, one paragraph, brand and alt buttons.
-2. Index: every project on one row grammar (icon, name and tagline, description and platforms, copyable `brew install` command, Docs and GitHub). Filterable by kind; a project with both kinds (tg-drive) appears once and counts under both filters; the filter animates row moves.
-3. Desktop apps: one wide screenshot, then a three-column row.
+2. Index: every project on one row grammar (icon, name and tagline, description and platforms, copyable `brew install` command, Docs and GitHub). Filterable by kind (CLI, desktop, plugin, extension); a project with both kinds (tg-drive) appears once and counts under both filters; the filter animates row moves. A project without a Homebrew cask leaves the install cell empty. The filter wraps when the chips do not fit the row.
+3. Desktop apps: one wide screenshot, then a three-column row. Plugin and extension projects with a screenshot follow in the same frame. CLI tools have no screenshot.
 4. The shared CLI contract as a definition list.
 5. Closing band with GitHub, Homebrew tap, and `llms.txt` links.
 

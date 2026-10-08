@@ -1,6 +1,6 @@
 # David Weng — Developer Tools
 
-> Agent-friendly CLI tools, desktop apps, and a personal finance backend. All open-source, all single-binary where possible.
+> Agent-friendly CLI tools, desktop apps, a Steam Deck plugin, a browser extension, and a personal finance backend. All open-source, all single-binary where possible.
 
 ## Projects
 
@@ -31,8 +31,8 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 
 ### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Docs: https://thedavidweng.github.io/site/tg-drive/
 - Site: https://thedavidweng.github.io/tg-drive/
+- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 - GitHub: https://github.com/thedavidweng/tg-drive
 
 ### money
@@ -62,6 +62,26 @@ Native macOS speech synthesis and timed text. Export Plain Text, LRC, and Enhanc
 Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware behind safety gates.
 - Site: https://thedavidweng.github.io/sdf-flash-gui/
 - GitHub: https://github.com/thedavidweng/sdf-flash-gui
+
+## Plugins
+
+### DeckPad
+Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a PC, phone, or tablet. The host pairs in its own Bluetooth settings. DeckPad presents an Xbox Wireless Controller layout.
+- Site: https://thedavidweng.github.io/DeckPad/
+- GitHub: https://github.com/thedavidweng/DeckPad
+- Install: Decky Loader, then the release zip (not in the Decky Plugin Store yet)
+- Platforms: SteamOS
+
+## Extensions
+
+### ADP Shifts
+Browser extension that copies an ADP Workforce Now schedule into a Google Calendar the extension creates and owns, then keeps that calendar current. A separate userscript only exports an .ics file.
+- Site: https://adp-shifts.blahaj.uk/
+- GitHub: https://github.com/thedavidweng/adp-calendar
+- Install: https://chromewebstore.google.com/detail/adp-shifts/obccfkjmkfhljjnamibiiolagcpmjklj
+- Userscript: https://greasyfork.org/scripts/599050-adp-schedule-export
+- Platforms: Chrome, Edge, Brave, and other Chromium browsers. The userscript runs in any browser with a userscript manager.
+- Privacy: no servers, no analytics, never sees the ADP password. Google access is limited to calendar.app.created.
 
 ## Design Principles
 

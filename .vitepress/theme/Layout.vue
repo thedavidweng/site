@@ -35,9 +35,26 @@ function updateTitleLink() {
   if (titleLink) titleLink.href = withBase(currentProject.value?.overview ?? '/')
 }
 
+const tgDriveSite = 'https://thedavidweng.github.io/tg-drive/'
+
+function isRetiredTgDrivePath(path: string) {
+  const prefix = base.value.replace(/\/$/, '')
+  let routePath = path.startsWith(prefix) ? path.slice(prefix.length) || '/' : path
+  routePath = routePath.replace(/\.html$/, '').replace(/\/$/, '') || '/'
+  return routePath === '/tg-drive' || routePath.startsWith('/tg-drive/')
+}
+
+function redirectRetiredTgDrive() {
+  if (isRetiredTgDrivePath(route.path)) window.location.replace(tgDriveSite)
+}
+
 onMounted(() => {
   nextTick(updateTitleLink)
-  watch(() => route.path, () => nextTick(updateTitleLink))
+  redirectRetiredTgDrive()
+  watch(() => route.path, () => {
+    nextTick(updateTitleLink)
+    redirectRetiredTgDrive()
+  })
 })
 
 const isMoneyHome = computed(() => {

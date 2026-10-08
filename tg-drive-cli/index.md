@@ -3,7 +3,7 @@ title: Moved
 head:
   - - meta
     - http-equiv: refresh
-      content: "0; url=/site/tg-drive/"
+      content: "0; url=https://thedavidweng.github.io/tg-drive/"
 ---
 
-This project moved to [tg-drive](/tg-drive/).
+tg-drive has moved to [its own site](https://thedavidweng.github.io/tg-drive/).

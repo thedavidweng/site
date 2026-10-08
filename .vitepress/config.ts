@@ -238,55 +238,6 @@ const projectSidebars = {
       ],
     },
   ],
-
-  '/tg-drive/': [
-    {
-      text: 'Guides',
-      items: [
-        { text: 'Overview', link: '/tg-drive/' },
-        { text: 'Getting Started', link: '/tg-drive/docs/guides/getting-started' },
-        { text: 'How td Works', link: '/tg-drive/docs/guides/how-td-works' },
-        { text: 'CLI Reference', link: '/tg-drive/docs/guides/cli-reference' },
-        { text: 'Organize Files', link: '/tg-drive/docs/guides/organize-files' },
-        { text: 'Share & Navigate', link: '/tg-drive/docs/guides/share-and-navigate' },
-        { text: 'Adopt an Existing Channel', link: '/tg-drive/docs/guides/adopt-an-existing-channel' },
-        { text: 'Import Saved Messages', link: '/tg-drive/docs/guides/import-saved' },
-        { text: 'Recover the Index', link: '/tg-drive/docs/guides/recover-the-index' },
-        { text: 'Script with JSON', link: '/tg-drive/docs/guides/script-with-json' },
-        { text: 'Troubleshoot', link: '/tg-drive/docs/guides/troubleshoot' },
-      ],
-    },
-    {
-      text: 'Contracts',
-      items: [
-        { text: 'CLI Contract', link: '/tg-drive/docs/contracts/cli-contract' },
-        { text: 'JSON Contract', link: '/tg-drive/docs/contracts/json-contract' },
-        { text: 'Storage Contract', link: '/tg-drive/docs/contracts/storage-contract' },
-        { text: 'Config Contract', link: '/tg-drive/docs/contracts/config-contract' },
-      ],
-    },
-    {
-      text: 'Architecture & Reference',
-      items: [
-        { text: 'Architecture', link: '/tg-drive/docs/architecture' },
-        { text: 'Decisions (DECISIONS.md)', link: '/tg-drive/DECISIONS' },
-        { text: 'Context (CONTEXT.md)', link: '/tg-drive/CONTEXT' },
-        { text: 'Testing', link: '/tg-drive/docs/testing' },
-        { text: 'Release and CI', link: '/tg-drive/docs/release-and-ci' },
-      ],
-    },
-    {
-      text: 'ADR',
-      collapsed: true,
-      items: [
-        { text: 'ADR-0001: Resumable and concurrent uploads', link: '/tg-drive/docs/adr/0001-resumable-and-concurrent-uploads' },
-        { text: 'ADR-0002: JSON envelope and error categories', link: '/tg-drive/docs/adr/0002-json-envelope-and-error-categories' },
-        { text: 'ADR-0018: Comment thread manifests', link: '/tg-drive/docs/adr/0018-comment-thread-manifests' },
-        { text: 'ADR-0031: Wails desktop GUI', link: '/tg-drive/docs/adr/0031-wails-desktop-gui' },
-        { text: 'ADR-0037: Rename to tg-drive', link: '/tg-drive/docs/adr/0037-rename-to-tg-drive' },
-      ],
-    },
-  ],
 }
 
 const siteUrl = 'https://thedavidweng.github.io/site'

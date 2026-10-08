@@ -13,6 +13,8 @@ const filters: { id: Filter; label: string }[] = [
   { id: 'all', label: 'All' },
   { id: 'cli', label: 'CLI tools' },
   { id: 'desktop', label: 'Desktop apps' },
+  { id: 'plugin', label: 'Plugins' },
+  { id: 'extension', label: 'Extensions' },
 ]
 
 const filter = ref<Filter>('all')
@@ -21,6 +23,8 @@ const counts = computed(() => ({
   all: projects.length,
   cli: projects.filter((p) => p.kinds.includes('cli')).length,
   desktop: projects.filter((p) => p.kinds.includes('desktop')).length,
+  plugin: projects.filter((p) => p.kinds.includes('plugin')).length,
+  extension: projects.filter((p) => p.kinds.includes('extension')).length,
 }))
 
 const visible = computed(() =>
@@ -31,6 +35,8 @@ const visible = computed(() =>
 const desktopApps = projects
   .filter((p) => p.kinds.includes('desktop') && p.screenshot)
   .sort((a, b) => a.kinds.length - b.kinds.length)
+
+const otherShots = projects.filter((p) => p.screenshot && !p.kinds.includes('cli') && !p.kinds.includes('desktop'))
 
 const brewPrefix = 'brew install --cask '
 
@@ -97,8 +103,9 @@ const contract = [
       <div class="container">
         <h1 class="hero-title">Software for the terminal and the desktop.</h1>
         <p class="hero-lead">
-          I'm David Weng. I build agent-friendly command-line tools that share one contract, and
-          native desktop apps for macOS, Windows, and Linux. All of it is open source.
+          I'm David Weng. I build agent-friendly command-line tools that share one contract,
+          native desktop apps for macOS, Windows, and Linux, a Steam Deck plugin, and a browser
+          extension. All of it is open source.
         </p>
         <div class="hero-actions">
           <VPButton tag="a" size="big" theme="brand" text="Browse the index" href="#index" />
@@ -203,6 +210,40 @@ const contract = [
                 class="shot-image"
                 :src="asset(app.screenshot!.src)"
                 :alt="`${app.name} app window`"
+                :width="app.screenshot!.width"
+                :height="app.screenshot!.height"
+                loading="lazy"
+                decoding="async"
+              />
+            </VPLink>
+            <figcaption class="shot-caption">
+              <img class="shot-icon" :src="asset(app.iconSrc)" alt="" width="28" height="28" loading="lazy" />
+              <span class="shot-text">
+                <span class="shot-name">{{ app.name }}</span>
+                <span class="shot-desc">{{ app.description }}</span>
+              </span>
+              <VPLink class="shot-link" :href="app.website ?? app.overview" :no-icon="true">
+                Visit site <HubIcon name="arrow-up-right" />
+              </VPLink>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section v-if="otherShots.length" class="apps" aria-labelledby="other-shots-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="other-shots-title">Plugin and extension</h2>
+          <p>A Steam Deck plugin and a browser extension. Each has its own site.</p>
+        </div>
+        <div class="shots">
+          <figure v-for="app in otherShots" :key="app.slug" class="shot">
+            <VPLink class="shot-stage" :href="app.website ?? app.overview" :no-icon="true" :aria-label="`${app.name} website`">
+              <img
+                class="shot-image"
+                :src="asset(app.screenshot!.src)"
+                :alt="app.name"
                 :width="app.screenshot!.width"
                 :height="app.screenshot!.height"
                 loading="lazy"
@@ -358,6 +399,8 @@ h2 {
 
 .filter {
   display: inline-flex;
+  flex-wrap: wrap;
+  max-width: 100%;
   padding: 3px;
   border-radius: 10px;
   background: var(--vp-c-bg-soft);

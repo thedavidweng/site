@@ -16,7 +16,7 @@ Published at **https://thedavidweng.github.io/site/**
 | [tg-drive](https://github.com/thedavidweng/tg-drive) | Telegram Drive (`td`, `td-gui`) |
 | [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
-The hub also links to desktop apps with their own landing pages: [OpenKara](https://thedavidweng.github.io/OpenKara/), [Sukiru](https://thedavidweng.github.io/sukiru/), [Apple Say](https://thedavidweng.github.io/apple-say/), and [SDF Flash GUI](https://thedavidweng.github.io/sdf-flash-gui/). tg-drive also ships a desktop app; see [its site](https://thedavidweng.github.io/tg-drive/).
+The hub also links to desktop apps with their own landing pages: [OpenKara](https://thedavidweng.github.io/OpenKara/), [Sukiru](https://thedavidweng.github.io/sukiru/), [Apple Say](https://thedavidweng.github.io/apple-say/), and [SDF Flash GUI](https://thedavidweng.github.io/sdf-flash-gui/). tg-drive also ships a desktop app; see [its site](https://thedavidweng.github.io/tg-drive/). [DeckPad](https://thedavidweng.github.io/DeckPad/) is a Decky Loader plugin that turns a Steam Deck into a Bluetooth controller. [ADP Shifts](https://adp-shifts.blahaj.uk/) is a browser extension that copies an ADP Workforce Now schedule into Google Calendar.
 
 ## Development
 
@@ -29,12 +29,12 @@ pnpm dev
 
 ## Sync documentation
 
-Documentation is synced from each CLI repository's `docs/` directory (not hand-written). Re-run after upstream doc changes:
+Documentation is synced from each CLI repository's `docs/` directory (not hand-written). Re-run after upstream doc changes. tg-drive is not synced: its site is [thedavidweng.github.io/tg-drive](https://thedavidweng.github.io/tg-drive/), and its guides stay in that repository.
 
 ```bash
 # Clone or update CLI repos (example)
 mkdir -p /tmp/cli-docs-sync
-for repo in canvas-cli zenodo-cli monarchmoney-cli flickr-cli qualtrics-cli tg-drive money; do
+for repo in canvas-cli zenodo-cli monarchmoney-cli flickr-cli qualtrics-cli money; do
   gh repo clone thedavidweng/$repo /tmp/cli-docs-sync/$repo -- --depth=1
 done
 

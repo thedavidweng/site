@@ -117,6 +117,7 @@ const projectDetails = [
     name: 'tg-drive',
     description: 'Turn a Telegram channel into a recoverable, scriptable file tree.',
     github: 'https://github.com/thedavidweng/tg-drive',
+    site: 'https://thedavidweng.github.io/tg-drive',
     overview: 'Upload local files as ordinary Telegram media, stamp each message with machine-readable metadata, and maintain a rebuildable SQLite index. Telegram remains the source of truth.',
     features: [
       'Virtual file tree with exact ls and tree over local SQLite cache',
@@ -127,19 +128,17 @@ const projectDetails = [
       'Single Go binary, cross-platform with WASM support',
     ],
     docs: [
-      ['Getting Started', '/docs/guides/getting-started'],
-      ['How td Works', '/docs/guides/how-td-works'],
-      ['CLI Reference', '/docs/guides/cli-reference'],
-      ['Organize Files', '/docs/guides/organize-files'],
-      ['Scripting with JSON', '/docs/guides/script-with-json'],
-      ['Architecture', '/docs/architecture'],
+      ['Getting Started', 'https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md'],
+      ['Guides', 'https://github.com/thedavidweng/tg-drive/tree/main/docs/guides'],
     ],
   },
 ]
 
 for (const project of projectDetails) {
-  const projectUrl = `${siteUrl}/${project.slug}`
-  const docs = project.docs.map(([name, path]) => `- ${name}: ${projectUrl}${path}`).join('\n')
+  const projectUrl = project.site?.replace(/\/$/, '') ?? `${siteUrl}/${project.slug}`
+  const docs = project.docs
+    .map(([name, path]) => `- ${name}: ${path.startsWith('http') ? path : `${projectUrl}${path}`}`)
+    .join('\n')
 
   const llmsTxt = `# ${project.name}
 

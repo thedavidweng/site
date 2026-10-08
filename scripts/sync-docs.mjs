@@ -39,10 +39,6 @@ const PROJECTS = {
     repo: 'qualtrics-cli',
     rootFiles: ROOT_FILES,
   },
-  'tg-drive': {
-    repo: 'tg-drive',
-    rootFiles: ['CONTEXT.md', 'DECISIONS.md'],
-  },
 }
 
 const sourceArg = process.argv.find((arg) => arg.startsWith('--source='))

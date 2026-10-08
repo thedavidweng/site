@@ -1,6 +1,6 @@
 # David Weng — Developer Tools (Full Reference)
 
-> Agent-friendly CLI tools, desktop apps, and a personal finance backend. All open-source, all single-binary where possible.
+> Agent-friendly CLI tools, desktop apps, a Steam Deck plugin, a browser extension, and a personal finance backend. All open-source, all single-binary where possible.
 
 ## Projects
 
@@ -49,8 +49,8 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 
 ### tg-drive
 Turn a Telegram channel into a recoverable, scriptable file tree. Ships as the td CLI and the td-gui desktop app.
-- Docs: https://thedavidweng.github.io/site/tg-drive/
 - Site: https://thedavidweng.github.io/tg-drive/
+- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 - GitHub: https://github.com/thedavidweng/tg-drive
 - Install (CLI): brew install --cask thedavidweng/tap/tg-drive
 - Desktop app: Wails v3 (Go + web frontend), same engine as the CLI; drive browser, transfers, Saved Messages import, maintenance
@@ -109,6 +109,33 @@ Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover
 - Features: drive probe, firmware dump, flash with progress, boot-token recovery, sdf.bin parser, sdftool or makemkvcon backends, argv-only backend calls
 - License: GPL-2.0-or-later
 
+## Plugins
+
+### DeckPad
+Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a PC, phone, or tablet.
+- Site: https://thedavidweng.github.io/DeckPad/
+- GitHub: https://github.com/thedavidweng/DeckPad
+- Install: Decky Loader, then DeckPad.zip from the latest GitHub release. Not in the Decky Plugin Store yet.
+- Platforms: SteamOS (Steam Deck)
+- Hosts: pairs through the host's own Bluetooth settings. Requires Bluetooth Low Energy HID over GATT. Tested on Linux, where it appears as an Xbox Wireless Controller.
+- Controls sent: face buttons, bumpers, analog triggers, both sticks and stick clicks, D-pad, View, Menu. Steam button becomes Guide; Quick Access becomes Share. Rear buttons, trackpads, gyro, and rumble are not sent.
+- Behavior: Controller Mode changes bluetoothd in memory and is undone when the mode turns off. It is off after a reboot. Quit combo is Menu + View + L1 + R1.
+- License: BSD 3-Clause
+
+## Extensions
+
+### ADP Shifts
+Browser extension that copies an ADP Workforce Now schedule into a Google Calendar the extension creates and owns, then keeps that calendar current.
+- Site: https://adp-shifts.blahaj.uk/
+- GitHub: https://github.com/thedavidweng/adp-calendar
+- Install: Chrome Web Store (ADP Shifts). Automatic sync into a calendar named ADP Shifts. Export .ics is also in the toolbar popup.
+- Userscript: Greasy Fork, ADP Schedule Export. Adds an Export .ics button on Workforce Now and does not use a Google account.
+- Platforms: Chrome, Edge, Brave, Arc, and other Chromium browsers for the extension. The userscript needs Tampermonkey, Violentmonkey, or another userscript manager.
+- Sync: checks daily and when Workforce Now is open. Runs when the last successful sync is more than three and a half days old. Sync now updates immediately.
+- Scope: Google calendar.app.created only. It cannot read or change any other calendar. Past shifts are not rewritten.
+- Privacy: no servers and no analytics. The extension uses the existing ADP session and never asks for the ADP password. Disconnect revokes Google access and erases local data.
+- License: MIT
+
 ## Documentation Pages
 
 ### canvas-cli
@@ -164,12 +191,9 @@ Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover
 - Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
 
 ### tg-drive
-- Overview: https://thedavidweng.github.io/site/tg-drive/
-- Getting Started: https://thedavidweng.github.io/site/tg-drive/docs/guides/getting-started
-- How td Works: https://thedavidweng.github.io/site/tg-drive/docs/guides/how-td-works
-- CLI Reference: https://thedavidweng.github.io/site/tg-drive/docs/guides/cli-reference
-- Contracts: https://thedavidweng.github.io/site/tg-drive/docs/contracts/cli-contract
-- Architecture: https://thedavidweng.github.io/site/tg-drive/docs/architecture
+- Site: https://thedavidweng.github.io/tg-drive/
+- Getting Started: https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md
+- Guides: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 
 ## Design Principles
 

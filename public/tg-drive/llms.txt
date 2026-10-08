@@ -17,18 +17,14 @@ Upload local files as ordinary Telegram media, stamp each message with machine-r
 
 ## Documentation
 
-- Getting Started: https://thedavidweng.github.io/site/tg-drive/docs/guides/getting-started
-- How td Works: https://thedavidweng.github.io/site/tg-drive/docs/guides/how-td-works
-- CLI Reference: https://thedavidweng.github.io/site/tg-drive/docs/guides/cli-reference
-- Organize Files: https://thedavidweng.github.io/site/tg-drive/docs/guides/organize-files
-- Scripting with JSON: https://thedavidweng.github.io/site/tg-drive/docs/guides/script-with-json
-- Architecture: https://thedavidweng.github.io/site/tg-drive/docs/architecture
+- Getting Started: https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md
+- Guides: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
 
 ## Contact
 
 - GitHub: https://github.com/thedavidweng/tg-drive
-- Site: https://thedavidweng.github.io/site/tg-drive/
+- Site: https://thedavidweng.github.io/tg-drive/
 
 ## Machine-Readable Endpoints
 
-- Site: https://thedavidweng.github.io/site/tg-drive/
+- Site: https://thedavidweng.github.io/tg-drive/
