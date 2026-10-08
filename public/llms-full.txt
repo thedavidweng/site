@@ -218,11 +218,9 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 
 ## Design Principles
 
-- Agent-friendly — stable JSON output, predictable exit codes, distinct stdout/stderr
+- Agent-friendly — versioned JSON on stdout, logs on stderr, documented exit codes
 - Safety first — --read-only, --dry-run, --confirm gates on mutations
 - Single binary — no runtime, no containers, no dependencies
-- Cross-platform — Linux, macOS, Windows (amd64/arm64)
-- Homebrew distribution — brew install --cask thedavidweng/tap/<tool>
 
 ## Contact
 

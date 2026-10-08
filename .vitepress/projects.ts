@@ -150,7 +150,7 @@ export const projects: Project[] = [
     platforms: 'macOS 15+, Apple Silicon',
     install: 'brew install --cask thedavidweng/tap/openloop',
     stack: ['Swift', 'SwiftUI'],
-    screenshot: { src: 'hub/openloop.webp', width: 1599, height: 899 },
+    screenshot: { src: 'hub/openloop.webp', width: 1848, height: 1064 },
     external: true,
   },
   {

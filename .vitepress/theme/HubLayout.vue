@@ -72,7 +72,7 @@ function asset(src: string) {
 const contract = [
   {
     term: 'Stable JSON',
-    text: 'Versioned JSON on stdout, logs on stderr, and documented exit codes, so scripts and agents can parse every result.',
+    text: 'Versioned JSON on stdout, logs on stderr, and documented exit codes.',
     code: '--json',
   },
   {
@@ -83,15 +83,6 @@ const contract = [
   {
     term: 'Single binary',
     text: 'No runtime, no containers, no dependencies to install first.',
-  },
-  {
-    term: 'Cross-platform',
-    text: 'Linux, macOS, and Windows, on amd64 and arm64.',
-  },
-  {
-    term: 'Homebrew',
-    text: 'Every CLI installs from one tap.',
-    code: 'brew tap thedavidweng/homebrew-tap',
   },
 ]
 </script>
@@ -291,9 +282,18 @@ const contract = [
           <div class="contract-head">
             <h3 class="contract-title">One shared contract</h3>
             <p>Learn one tool and you know how the rest behave. Scripts and agents get the same guarantees everywhere.</p>
+            <dl class="spec">
+              <div class="spec-row">
+                <dt class="spec-term">{{ contract[0].term }}</dt>
+                <dd class="spec-detail">
+                  <p>{{ contract[0].text }}</p>
+                  <code v-if="contract[0].code" class="spec-code">{{ contract[0].code }}</code>
+                </dd>
+              </div>
+            </dl>
           </div>
           <dl class="spec">
-            <div v-for="item in contract" :key="item.term" class="spec-row">
+            <div v-for="item in contract.slice(1)" :key="item.term" class="spec-row">
               <dt class="spec-term">{{ item.term }}</dt>
               <dd class="spec-detail">
                 <p>{{ item.text }}</p>
@@ -793,13 +793,13 @@ h2 {
 }
 
 .shot-flat .shot-stage {
-  align-items: flex-end;
-  padding: 24px 24px 0;
+  align-items: center;
+  padding: 28px 32px;
 }
 
 .shot-flat .shot-image {
   height: auto;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.22);
 }
 
@@ -809,7 +809,7 @@ h2 {
   }
 
   .shot-flat .shot-stage {
-    padding: 48px 64px 0;
+    padding: 36px 72px;
   }
 
   .shot-flat .shot-image {
@@ -983,16 +983,15 @@ h2 {
   color: var(--vp-c-text-2);
 }
 
+.contract-head .spec {
+  margin-top: 28px;
+}
+
 @media (min-width: 960px) {
   .contract-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
-    gap: 64px;
-  }
-
-  .contract-head {
-    position: sticky;
-    top: calc(var(--vp-nav-height) + 32px);
-    align-self: start;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px 72px;
+    align-items: start;
   }
 }
 
