@@ -2,7 +2,7 @@
   "name": "site",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@12",
+  "packageManager": "pnpm@12.10.1",
   "scripts": {
     "dev": "vitepress dev",
     "build:agent-files": "node scripts/build-money-agent-files.mjs && node scripts/build-project-llms.mjs && node scripts/build-sitemap.mjs",
