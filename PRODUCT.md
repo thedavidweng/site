@@ -30,11 +30,11 @@ One maker, a coherent body of tools: every CLI shares the same contract (stable 
 
 - Stack: VitePress default theme, extended. Prefer framework components and theme CSS variables over hand-written UI so VitePress upgrades stay easy (2.0 is in alpha; the theme already avoids deleted internal components).
 - The landing page and the docs must read as one site, not two.
-- Open decision: an umbrella name for the projects. David floated "Hajware"; personal identity (David Weng) stays primary. "Blahaj" itself must not be used as a brand name (IKEA product). Product sites use DNS-only `*.blahaj.uk` names (`openkara`, `sukiru`, `apple-say`, `sdf-flash-gui`, `tg-drive`, `vapourfly`, `openloop`, `deckpad`, `adp-shifts`), recorded in the dnscontrol repo. CLI tools stay on this hub.
+- Umbrella brand: Hajware, the label David Weng publishes his software under. Personal identity (David Weng) stays visible in the hero copy, the footer, and the schema.org author. "Blahaj" itself must not be used as a brand name (IKEA product). Product sites use DNS-only `*.blahaj.uk` names (`openkara`, `sukiru`, `apple-say`, `sdf-flash-gui`, `tg-drive`, `vapourfly`, `openloop`, `deckpad`, `adp-shifts`), recorded in the dnscontrol repo. CLI tools stay on this hub.
 
 ## Brand Commitments
 
-- Personal identity: David Weng.
+- Brand: Hajware, by David Weng. The mark is a single-line shark (`components/HajwareMark.vue`).
 - No emoji as icons or decoration.
 - Should feel like a funded product company's site, not a toy or template.
 

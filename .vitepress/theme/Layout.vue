@@ -7,6 +7,7 @@ import TerminalHighlight from './components/TerminalHighlight.vue'
 import MoneyIntroVideo from './components/MoneyIntroVideo.vue'
 import MoneyQuickStart from './components/MoneyQuickStart.vue'
 import MoneyDocsCards from './components/MoneyDocsCards.vue'
+import HajwareMark from './components/HajwareMark.vue'
 
 const { Layout: DefaultLayout } = DefaultTheme
 const route = useRoute()
@@ -16,7 +17,7 @@ const { frontmatter, site } = useData()
 const base = computed(() => site.value.base)
 const currentProject = computed(() => resolveProject(route.path, base.value))
 
-const navTitle = computed(() => currentProject.value?.name ?? 'David Weng')
+const navTitle = computed(() => currentProject.value?.name ?? 'Hajware')
 
 const accentVars = computed(() => {
   const accent = currentProject.value?.accent
@@ -76,6 +77,7 @@ const isMoneyRoute = computed(() => {
   <div class="project-theme-root" :class="{ 'project-theme': accentVars }" :style="accentVars">
     <DefaultLayout>
       <template #nav-bar-title-after>
+        <HajwareMark class="nav-mark" />
         <span>{{ navTitle }}</span>
       </template>
       <template v-if="isMoneyHome" #home-hero-info-before>

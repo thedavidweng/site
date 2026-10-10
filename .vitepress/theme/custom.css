@@ -64,3 +64,13 @@ html {
   height: 22px;
   color: var(--vp-c-brand-1);
 }
+
+/* The Hajware mark leads the nav title on every page; project pages pair it with the project name. */
+.VPNavBarTitle .nav-mark {
+  width: 34px;
+  height: auto;
+  margin-right: 10px;
+  color: var(--vp-c-text-1);
+  --mark-stroke: 1.6px;
+  --mark-eye: 3px;
+}

@@ -4,6 +4,7 @@ import { useData, withBase } from 'vitepress'
 import { VPButton, VPLink } from 'vitepress/theme-without-fonts'
 import { projects, type Project, type ProjectKind } from '../projects'
 import HubIcon from './components/HubIcon.vue'
+import HajwareMark from './components/HajwareMark.vue'
 
 const { site } = useData()
 
@@ -90,17 +91,21 @@ const contract = [
 <template>
   <div class="Hub">
     <section class="hero">
-      <div class="container">
-        <h1 class="hero-title">Software for the terminal and the desktop.</h1>
-        <p class="hero-lead">
-          I'm David Weng. I build agent-friendly command-line tools that share one contract,
-          native desktop apps for macOS, Windows, and Linux, a Steam Deck plugin, and a browser
-          extension. All of it is open source.
-        </p>
-        <div class="hero-actions">
-          <VPButton tag="a" size="big" theme="brand" text="Browse the index" href="#index" />
-          <VPButton tag="a" size="big" theme="alt" text="GitHub" href="https://github.com/thedavidweng" />
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 class="hero-title">Software for the terminal and the desktop.</h1>
+          <p class="hero-lead">
+            Hajware is the label I publish my software under. I'm David Weng: I build
+            agent-friendly command-line tools that share one contract, native desktop apps for
+            macOS, Windows, and Linux, a Steam Deck plugin, and a browser extension. All of it is
+            open source.
+          </p>
+          <div class="hero-actions">
+            <VPButton tag="a" size="big" theme="brand" text="Browse the index" href="#index" />
+            <VPButton tag="a" size="big" theme="alt" text="GitHub" href="https://github.com/thedavidweng" />
+          </div>
         </div>
+        <HajwareMark class="hero-mark" title="Hajware" />
       </div>
     </section>
 
@@ -308,6 +313,7 @@ const contract = [
     <section class="close">
       <div class="container close-inner">
         <div>
+          <HajwareMark class="close-mark" />
           <h2 class="close-title">Built in the open.</h2>
           <p class="close-text">
             Source, issues, and releases for every project live on GitHub. Agents can read the whole
@@ -398,6 +404,67 @@ h2 {
 @media (min-width: 960px) {
   .hero {
     padding: 104px 0 72px;
+  }
+}
+
+/* The mark is drawn in once, as a single line, then the eye lands. Dashes need strokes in the
+   mark's own units, so the hero sets widths in viewBox units (1 unit is about 0.33px here). */
+.hero-inner {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+}
+
+.hero-mark {
+  width: 132px;
+  height: auto;
+  color: var(--vp-c-text-1);
+  --mark-stroke: 4.5;
+  --mark-eye: 12;
+}
+
+.hero-mark :deep(path) {
+  vector-effect: none;
+}
+
+.hero-mark :deep(.hajware-mark-body) {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mark-draw 1.6s var(--site-ease-out) 0.15s forwards;
+}
+
+.hero-mark :deep(.hajware-mark-eye) {
+  opacity: 0;
+  animation: mark-eye 0.4s var(--site-ease-out) 1.2s forwards;
+}
+
+@keyframes mark-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes mark-eye {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+    align-items: center;
+    gap: 64px;
+  }
+
+  .hero-mark {
+    width: 100%;
+    max-width: 440px;
+    justify-self: end;
+    /* About 1.1px per unit at full width. */
+    --mark-stroke: 1.6;
+    --mark-eye: 6.5;
   }
 }
 
@@ -1063,6 +1130,15 @@ h2 {
   }
 }
 
+.close-mark {
+  width: 44px;
+  height: auto;
+  margin-bottom: 20px;
+  color: var(--vp-c-text-1);
+  --mark-stroke: 1.5px;
+  --mark-eye: 3px;
+}
+
 .close-title {
   font-size: clamp(2rem, 1.5rem + 2vw, 2.75rem);
   letter-spacing: -0.03em;
@@ -1101,6 +1177,13 @@ h2 {
   .shot-stage:hover .shot-image,
   .cli:hover .cli-icon {
     transform: none;
+  }
+
+  .hero-mark :deep(.hajware-mark-body),
+  .hero-mark :deep(.hajware-mark-eye) {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 1;
   }
 }
 </style>

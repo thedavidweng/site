@@ -1,6 +1,6 @@
-# David Weng — Developer Tools
+# Hajware
 
-> Agent-friendly CLI tools, desktop apps, a Steam Deck plugin, a browser extension, and a personal finance backend. All open-source, all single-binary where possible.
+> Hajware is David Weng's software label. Agent-friendly CLI tools, desktop apps, a Steam Deck plugin, a browser extension, and a personal finance backend. All open-source, all single-binary where possible.
 
 ## Projects
 

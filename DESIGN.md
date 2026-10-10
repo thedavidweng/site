@@ -19,6 +19,13 @@ Defined in `.vitepress/theme/custom.css`.
 - Radius: 14px (`--site-radius`) for screenshot stages, 8–10px for controls. Project icons are not clipped in CSS: each `public/*-icon.webp` file carries its own superellipse (n=5) shape on transparency, so every icon has the same outline.
 - Motion: `--site-ease-out` (`cubic-bezier(0.16, 1, 0.3, 1)`); disabled under `prefers-reduced-motion`.
 
+## Mark
+
+- Hajware's mark is a single-line shark, monochrome in `--vp-c-text-1`. It never takes the accent color, a fill, or a container.
+- Use `components/HajwareMark.vue` (inline SVG, `currentColor`). Strokes don't scale with the box: set `--mark-stroke` and `--mark-eye` in px so the line weight stays near the body-text stroke at every size.
+- Placements: before the nav title on every page (with "Hajware" on the hub, the project name elsewhere), large beside the hub hero headline (drawn in once on load, static under reduced motion), small above the closing band.
+- Favicon: `public/hajware.svg`, with thicker strokes and a dark-scheme color, on every page that is not a project page.
+
 ## Rules
 
 - Color strategy is restrained: neutral grounds, one cobalt accent for actions, links, focus, and selection.

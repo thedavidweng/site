@@ -243,29 +243,30 @@ const projectSidebars = {
 const siteUrl = 'https://thedavidweng.github.io/site'
 
 export default defineConfig({
-  title: 'David Weng — Developer Tools',
-  description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
+  title: 'Hajware',
+  description: 'Hajware is David Weng\'s software label: agent-friendly CLI tools, desktop apps, and a personal finance backend.',
   base: '/site/',
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
 
   head: [
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'David Weng — Developer Tools' }],
+    ['meta', { property: 'og:title', content: 'Hajware' }],
     ['meta', { property: 'og:description', content: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend.' }],
     ['meta', { property: 'og:url', content: siteUrl }],
-    ['meta', { property: 'og:site_name', content: 'David Weng — Developer Tools' }],
+    ['meta', { property: 'og:site_name', content: 'Hajware' }],
     ['meta', { name: 'twitter:card', content: 'summary' }],
-    ['meta', { name: 'twitter:title', content: 'David Weng — Developer Tools' }],
+    ['meta', { name: 'twitter:title', content: 'Hajware' }],
     ['meta', { name: 'twitter:description', content: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend.' }],
     ['link', { rel: 'sitemap', type: 'application/xml', href: `${siteUrl}/sitemap.xml` }],
     ['link', { rel: 'alternate', type: 'text/plain', href: `${siteUrl}/llms.txt`, title: 'LLMs.txt' }],
     ['script', { type: 'application/ld+json' }, JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'David Weng — Developer Tools',
+      name: 'Hajware',
+      alternateName: 'Hajware by David Weng',
       url: siteUrl,
-      description: 'Agent-friendly CLI tools, desktop apps, and a personal finance backend by David Weng.',
+      description: 'Hajware is David Weng\'s software label: agent-friendly CLI tools, desktop apps, and a personal finance backend.',
       inLanguage: 'en',
       author: {
         '@type': 'Person',
@@ -295,15 +296,6 @@ export default defineConfig({
       ])
     }
 
-    // Hub page: personal avatar favicon
-    if (rel === 'index.md') {
-      pageData.frontmatter.head ??= []
-      pageData.frontmatter.head.push([
-        'link',
-        { rel: 'icon', type: 'image/png', href: '/site/hub-favicon.png' },
-      ])
-    }
-
     const project = projects.find((item) => {
       return rel === `${item.slug}/index.md` || rel.startsWith(`${item.slug}/`)
     })
@@ -315,6 +307,12 @@ export default defineConfig({
         'link',
         { rel: 'icon', type: 'image/png', href: `/site/${project.slug}-favicon.png` },
       ])
+    }
+
+    // Everything outside a project (the hub, 404) carries the Hajware mark.
+    if (!project && !isMoney) {
+      pageData.frontmatter.head ??= []
+      pageData.frontmatter.head.push(['link', { rel: 'icon', type: 'image/svg+xml', href: '/site/hajware.svg' }])
     }
 
     if (rel === 'money/index.md') {
@@ -348,7 +346,7 @@ export default defineConfig({
 
     footer: {
       message: 'Built with VitePress',
-      copyright: '© 2025 David Weng',
+      copyright: '© 2025–2026 David Weng. Published as Hajware.',
     },
 
     editLink: {
