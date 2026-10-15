@@ -6,34 +6,34 @@
 
 ### canvas-cli
 50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
-- Docs: https://thedavidweng.github.io/site/canvas-cli/
+- Docs: https://app.blahaj.uk/canvas-cli/
 - GitHub: https://github.com/thedavidweng/canvas-cli
 
 ### zenodo-cli
 Record management, file upload, and full InvenioRDM API access for Zenodo.
-- Docs: https://thedavidweng.github.io/site/zenodo-cli/
+- Docs: https://app.blahaj.uk/zenodo-cli/
 - GitHub: https://github.com/thedavidweng/zenodo-cli
 
 ### monarchmoney-cli
 Accounts, transactions, budgets, and cashflow from your terminal.
-- Docs: https://thedavidweng.github.io/site/monarchmoney-cli/
+- Docs: https://app.blahaj.uk/monarchmoney-cli/
 - GitHub: https://github.com/thedavidweng/monarchmoney-cli
 
 ### flickr-cli
 Photo management, backup, upload, albums, and full Flickr API access.
-- Docs: https://thedavidweng.github.io/site/flickr-cli/
+- Docs: https://app.blahaj.uk/flickr-cli/
 - GitHub: https://github.com/thedavidweng/flickr-cli
 
 ### qualtrics-cli
 Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
-- Docs: https://thedavidweng.github.io/site/qualtrics-cli/
+- Docs: https://app.blahaj.uk/qualtrics-cli/
 - GitHub: https://github.com/thedavidweng/qualtrics-cli
 
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.
-- Docs: https://thedavidweng.github.io/site/money/
+- Docs: https://app.blahaj.uk/money/
 - GitHub: https://github.com/thedavidweng/money
-- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
+- Agent JSON: https://app.blahaj.uk/money/agent.json
 
 ## Desktop Apps
 
@@ -104,10 +104,10 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 ## Contact
 
 - GitHub: https://github.com/thedavidweng
-- Site: https://thedavidweng.github.io/site/
+- Site: https://app.blahaj.uk/
 
 ## Machine-Readable Endpoints
 
-- Full content: https://thedavidweng.github.io/site/llms-full.txt
-- Sitemap: https://thedavidweng.github.io/site/sitemap.xml
-- money agent JSON: https://thedavidweng.github.io/site/money/agent.json
+- Full content: https://app.blahaj.uk/llms-full.txt
+- Sitemap: https://app.blahaj.uk/sitemap.xml
+- money agent JSON: https://app.blahaj.uk/money/agent.json

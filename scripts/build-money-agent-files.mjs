@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = join(__dirname, '..')
 const outDir = join(siteRoot, 'public', 'money')
 
-const siteUrl = 'https://thedavidweng.github.io/site/money'
+const siteUrl = 'https://app.blahaj.uk/money'
 const repo = 'https://github.com/thedavidweng/money'
 
 const llmsTxt = `# money

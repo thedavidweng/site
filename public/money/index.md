@@ -24,11 +24,11 @@ money sync
 
 ## Documentation
 
-- [Getting Started](https://thedavidweng.github.io/site/money/docs/GETTING_STARTED)
-- [Architecture](https://thedavidweng.github.io/site/money/docs/ARCHITECTURE)
-- [Schema](https://thedavidweng.github.io/site/money/docs/SCHEMA)
-- [Configuration](https://thedavidweng.github.io/site/money/docs/CONFIG)
-- [Roadmap](https://thedavidweng.github.io/site/money/docs/ROADMAP)
+- [Getting Started](https://app.blahaj.uk/money/docs/GETTING_STARTED)
+- [Architecture](https://app.blahaj.uk/money/docs/ARCHITECTURE)
+- [Schema](https://app.blahaj.uk/money/docs/SCHEMA)
+- [Configuration](https://app.blahaj.uk/money/docs/CONFIG)
+- [Roadmap](https://app.blahaj.uk/money/docs/ROADMAP)
 
 ## Contact
 

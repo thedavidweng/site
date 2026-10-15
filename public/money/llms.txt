@@ -34,7 +34,7 @@ It does not embed AI chat, model providers, hosted billing, telemetry, or a requ
 
 ## Machine-Readable Endpoints
 
-- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
-- Full content: https://thedavidweng.github.io/site/money/llms-full.txt
-- Markdown homepage: https://thedavidweng.github.io/site/money/index.md
-- Site: https://thedavidweng.github.io/site/money/
+- Agent JSON: https://app.blahaj.uk/money/agent.json
+- Full content: https://app.blahaj.uk/money/llms-full.txt
+- Markdown homepage: https://app.blahaj.uk/money/index.md
+- Site: https://app.blahaj.uk/money/

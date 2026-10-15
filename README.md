@@ -2,7 +2,7 @@
 
 Landing pages and documentation for CLI projects. Built with VitePress.
 
-Published at **https://thedavidweng.github.io/site/**
+Published at **https://app.blahaj.uk/**
 
 ## Projects
 
@@ -13,7 +13,7 @@ Published at **https://thedavidweng.github.io/site/**
 | [monarchmoney-cli](https://github.com/thedavidweng/monarchmoney-cli) | Monarch Money CLI |
 | [flickr-cli](https://github.com/thedavidweng/flickr-cli) | Flickr CLI |
 | [qualtrics-cli](https://github.com/thedavidweng/qualtrics-cli) | Qualtrics XM & Offline Survey Compiler CLI |
-| [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://thedavidweng.github.io/site/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
+| [money](https://github.com/thedavidweng/money) | Personal finance backend — [docs on unified site](https://app.blahaj.uk/money/) (Astro landing at [thedavidweng.github.io/money](https://thedavidweng.github.io/money/) still active during migration) |
 
 The hub also links to desktop apps with their own landing pages: [OpenKara](https://openkara.blahaj.uk/), [Sukiru](https://sukiru.blahaj.uk/), [Apple Say](https://apple-say.blahaj.uk/), [SDF Flash GUI](https://sdf-flash-gui.blahaj.uk/), [tg-drive](https://tg-drive.blahaj.uk/), [Vapourfly](https://vapourfly.blahaj.uk/), and [OpenLoop](https://openloop.blahaj.uk/). [DeckPad](https://deckpad.blahaj.uk/) is a Decky Loader plugin that turns a Steam Deck into a Bluetooth controller. [ADP Shifts](https://adp-shifts.blahaj.uk/) is a browser extension that copies an ADP Workforce Now schedule into Google Calendar.
 

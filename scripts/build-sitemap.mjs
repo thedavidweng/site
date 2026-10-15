@@ -2,7 +2,7 @@
 import { writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 
-const siteUrl = 'https://thedavidweng.github.io/site'
+const siteUrl = 'https://app.blahaj.uk'
 const today = new Date().toISOString().slice(0, 10)
 
 const pages = [

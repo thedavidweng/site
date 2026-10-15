@@ -6,7 +6,7 @@
 
 ### canvas-cli
 50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
-- Docs: https://thedavidweng.github.io/site/canvas-cli/
+- Docs: https://app.blahaj.uk/canvas-cli/
 - GitHub: https://github.com/thedavidweng/canvas-cli
 - Authentication: OAuth2 token via canvas-cli auth
 - JSON output: --json flag on all commands
@@ -15,7 +15,7 @@
 
 ### zenodo-cli
 Record management, file upload, and full InvenioRDM API access for Zenodo.
-- Docs: https://thedavidweng.github.io/site/zenodo-cli/
+- Docs: https://app.blahaj.uk/zenodo-cli/
 - GitHub: https://github.com/thedavidweng/zenodo-cli
 - Authentication: API token via zenodo-cli auth
 - Capabilities: records, deposits, files, communities, grants
@@ -23,7 +23,7 @@ Record management, file upload, and full InvenioRDM API access for Zenodo.
 
 ### monarchmoney-cli
 Accounts, transactions, budgets, and cashflow from your terminal.
-- Docs: https://thedavidweng.github.io/site/monarchmoney-cli/
+- Docs: https://app.blahaj.uk/monarchmoney-cli/
 - GitHub: https://github.com/thedavidweng/monarchmoney-cli
 - Authentication: session token via monarchmoney-cli auth
 - JSON output: --json flag, versioned JSON envelope
@@ -31,7 +31,7 @@ Accounts, transactions, budgets, and cashflow from your terminal.
 
 ### flickr-cli
 Photo management, backup, upload, albums, and full Flickr API access.
-- Docs: https://thedavidweng.github.io/site/flickr-cli/
+- Docs: https://app.blahaj.uk/flickr-cli/
 - GitHub: https://github.com/thedavidweng/flickr-cli
 - Authentication: OAuth1 via flickr-cli auth
 - Capabilities: photos, albums, galleries, favorites, backup, upload
@@ -40,7 +40,7 @@ Photo management, backup, upload, albums, and full Flickr API access.
 
 ### qualtrics-cli
 Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
-- Docs: https://thedavidweng.github.io/site/qualtrics-cli/
+- Docs: https://app.blahaj.uk/qualtrics-cli/
 - GitHub: https://github.com/thedavidweng/qualtrics-cli
 - Authentication: API token via qualtrics auth
 - Capabilities: surveys, definitions, async response export/import, distributions, contacts, webhooks, raw API
@@ -49,9 +49,9 @@ Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
 
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users.
-- Docs: https://thedavidweng.github.io/site/money/
+- Docs: https://app.blahaj.uk/money/
 - GitHub: https://github.com/thedavidweng/money
-- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
+- Agent JSON: https://app.blahaj.uk/money/agent.json
 - Install: brew install --cask thedavidweng/tap/money
 - Go install: go install github.com/thedavidweng/money/cmd/money@latest
 - Features: encrypted SQLite, BYOK providers (Plaid, Bridge), stable JSON contracts, CLI-first, demo mode
@@ -160,56 +160,56 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 ## Documentation Pages
 
 ### canvas-cli
-- Overview: https://thedavidweng.github.io/site/canvas-cli/
-- Auth: https://thedavidweng.github.io/site/canvas-cli/docs/auth
-- Commands: https://thedavidweng.github.io/site/canvas-cli/docs/command-spec
-- JSON Contract: https://thedavidweng.github.io/site/canvas-cli/docs/json-contract
-- Safety: https://thedavidweng.github.io/site/canvas-cli/docs/safety-model
-- Architecture: https://thedavidweng.github.io/site/canvas-cli/docs/architecture
-- Agent Domain: https://thedavidweng.github.io/site/canvas-cli/docs/agents/domain
+- Overview: https://app.blahaj.uk/canvas-cli/
+- Auth: https://app.blahaj.uk/canvas-cli/docs/auth
+- Commands: https://app.blahaj.uk/canvas-cli/docs/command-spec
+- JSON Contract: https://app.blahaj.uk/canvas-cli/docs/json-contract
+- Safety: https://app.blahaj.uk/canvas-cli/docs/safety-model
+- Architecture: https://app.blahaj.uk/canvas-cli/docs/architecture
+- Agent Domain: https://app.blahaj.uk/canvas-cli/docs/agents/domain
 
 ### zenodo-cli
-- Overview: https://thedavidweng.github.io/site/zenodo-cli/
-- Auth: https://thedavidweng.github.io/site/zenodo-cli/docs/auth
-- Capabilities: https://thedavidweng.github.io/site/zenodo-cli/docs/capabilities
-- Safety: https://thedavidweng.github.io/site/zenodo-cli/docs/safety
-- Agent Guide: https://thedavidweng.github.io/site/zenodo-cli/docs/agent-guide
-- Architecture: https://thedavidweng.github.io/site/zenodo-cli/docs/ARCHITECTURE
+- Overview: https://app.blahaj.uk/zenodo-cli/
+- Auth: https://app.blahaj.uk/zenodo-cli/docs/auth
+- Capabilities: https://app.blahaj.uk/zenodo-cli/docs/capabilities
+- Safety: https://app.blahaj.uk/zenodo-cli/docs/safety
+- Agent Guide: https://app.blahaj.uk/zenodo-cli/docs/agent-guide
+- Architecture: https://app.blahaj.uk/zenodo-cli/docs/ARCHITECTURE
 
 ### monarchmoney-cli
-- Overview: https://thedavidweng.github.io/site/monarchmoney-cli/
-- Capabilities: https://thedavidweng.github.io/site/monarchmoney-cli/docs/capabilities
-- Auth: https://thedavidweng.github.io/site/monarchmoney-cli/docs/auth
-- Safety: https://thedavidweng.github.io/site/monarchmoney-cli/docs/safety
-- Agent Guide: https://thedavidweng.github.io/site/monarchmoney-cli/docs/agent-guide
-- JSON Schema: https://thedavidweng.github.io/site/monarchmoney-cli/docs/json-schema
+- Overview: https://app.blahaj.uk/monarchmoney-cli/
+- Capabilities: https://app.blahaj.uk/monarchmoney-cli/docs/capabilities
+- Auth: https://app.blahaj.uk/monarchmoney-cli/docs/auth
+- Safety: https://app.blahaj.uk/monarchmoney-cli/docs/safety
+- Agent Guide: https://app.blahaj.uk/monarchmoney-cli/docs/agent-guide
+- JSON Schema: https://app.blahaj.uk/monarchmoney-cli/docs/json-schema
 
 ### flickr-cli
-- Overview: https://thedavidweng.github.io/site/flickr-cli/
-- Auth: https://thedavidweng.github.io/site/flickr-cli/docs/auth
-- Capabilities: https://thedavidweng.github.io/site/flickr-cli/docs/capabilities
-- Upload: https://thedavidweng.github.io/site/flickr-cli/docs/upload
-- Backup: https://thedavidweng.github.io/site/flickr-cli/docs/backup
-- Safety: https://thedavidweng.github.io/site/flickr-cli/docs/safety
-- Agent Guide: https://thedavidweng.github.io/site/flickr-cli/docs/agent-guide
-- Piwigo: https://thedavidweng.github.io/site/flickr-cli/docs/piwigo
-- Architecture: https://thedavidweng.github.io/site/flickr-cli/docs/ARCHITECTURE
+- Overview: https://app.blahaj.uk/flickr-cli/
+- Auth: https://app.blahaj.uk/flickr-cli/docs/auth
+- Capabilities: https://app.blahaj.uk/flickr-cli/docs/capabilities
+- Upload: https://app.blahaj.uk/flickr-cli/docs/upload
+- Backup: https://app.blahaj.uk/flickr-cli/docs/backup
+- Safety: https://app.blahaj.uk/flickr-cli/docs/safety
+- Agent Guide: https://app.blahaj.uk/flickr-cli/docs/agent-guide
+- Piwigo: https://app.blahaj.uk/flickr-cli/docs/piwigo
+- Architecture: https://app.blahaj.uk/flickr-cli/docs/ARCHITECTURE
 
 ### money
-- Overview: https://thedavidweng.github.io/site/money/
-- Getting Started: https://thedavidweng.github.io/site/money/docs/GETTING_STARTED
-- Architecture: https://thedavidweng.github.io/site/money/docs/ARCHITECTURE
-- Contracts: https://thedavidweng.github.io/site/money/docs/CONTRACTS
-- Schema: https://thedavidweng.github.io/site/money/docs/SCHEMA
-- Config: https://thedavidweng.github.io/site/money/docs/CONFIG
-- Roadmap: https://thedavidweng.github.io/site/money/docs/ROADMAP
+- Overview: https://app.blahaj.uk/money/
+- Getting Started: https://app.blahaj.uk/money/docs/GETTING_STARTED
+- Architecture: https://app.blahaj.uk/money/docs/ARCHITECTURE
+- Contracts: https://app.blahaj.uk/money/docs/CONTRACTS
+- Schema: https://app.blahaj.uk/money/docs/SCHEMA
+- Config: https://app.blahaj.uk/money/docs/CONFIG
+- Roadmap: https://app.blahaj.uk/money/docs/ROADMAP
 
 ### qualtrics-cli
-- Overview: https://thedavidweng.github.io/site/qualtrics-cli/
-- QSF Spec: https://thedavidweng.github.io/site/qualtrics-cli/docs/qsf-spec
-- Commands: https://thedavidweng.github.io/site/qualtrics-cli/COMMANDS
-- JSON Schema: https://thedavidweng.github.io/site/qualtrics-cli/JSON_SCHEMA
-- Context: https://thedavidweng.github.io/site/qualtrics-cli/CONTEXT
+- Overview: https://app.blahaj.uk/qualtrics-cli/
+- QSF Spec: https://app.blahaj.uk/qualtrics-cli/docs/qsf-spec
+- Commands: https://app.blahaj.uk/qualtrics-cli/COMMANDS
+- JSON Schema: https://app.blahaj.uk/qualtrics-cli/JSON_SCHEMA
+- Context: https://app.blahaj.uk/qualtrics-cli/CONTEXT
 
 ### tg-drive
 - Site: https://tg-drive.blahaj.uk/
@@ -225,4 +225,4 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 ## Contact
 
 - GitHub: https://github.com/thedavidweng
-- Site: https://thedavidweng.github.io/site/
+- Site: https://app.blahaj.uk/

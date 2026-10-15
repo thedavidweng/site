@@ -240,12 +240,12 @@ const projectSidebars = {
   ],
 }
 
-const siteUrl = 'https://thedavidweng.github.io/site'
+const siteUrl = 'https://app.blahaj.uk'
 
 export default defineConfig({
   title: 'Hajware',
   description: 'Hajware is David Weng\'s software label: agent-friendly CLI tools, desktop apps, and a personal finance backend.',
-  base: '/site/',
+  base: '/',
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
 

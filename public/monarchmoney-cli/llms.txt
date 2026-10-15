@@ -15,17 +15,17 @@ Accounts, transactions, budgets, and cashflow from your terminal.
 
 ## Documentation
 
-- Capabilities: https://thedavidweng.github.io/site/monarchmoney-cli/docs/capabilities
-- Authentication: https://thedavidweng.github.io/site/monarchmoney-cli/docs/auth
-- Safety Model: https://thedavidweng.github.io/site/monarchmoney-cli/docs/safety
-- Agent Guide: https://thedavidweng.github.io/site/monarchmoney-cli/docs/agent-guide
-- JSON Schema: https://thedavidweng.github.io/site/monarchmoney-cli/docs/json-schema
+- Capabilities: https://app.blahaj.uk/monarchmoney-cli/docs/capabilities
+- Authentication: https://app.blahaj.uk/monarchmoney-cli/docs/auth
+- Safety Model: https://app.blahaj.uk/monarchmoney-cli/docs/safety
+- Agent Guide: https://app.blahaj.uk/monarchmoney-cli/docs/agent-guide
+- JSON Schema: https://app.blahaj.uk/monarchmoney-cli/docs/json-schema
 
 ## Contact
 
 - GitHub: https://github.com/thedavidweng/monarchmoney-cli
-- Site: https://thedavidweng.github.io/site/monarchmoney-cli/
+- Site: https://app.blahaj.uk/monarchmoney-cli/
 
 ## Machine-Readable Endpoints
 
-- Site: https://thedavidweng.github.io/site/monarchmoney-cli/
+- Site: https://app.blahaj.uk/monarchmoney-cli/

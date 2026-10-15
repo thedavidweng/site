@@ -34,17 +34,17 @@ It does not embed AI chat, model providers, hosted billing, telemetry, or a requ
 
 ## Machine-Readable Endpoints
 
-- Agent JSON: https://thedavidweng.github.io/site/money/agent.json
-- Full content: https://thedavidweng.github.io/site/money/llms-full.txt
-- Markdown homepage: https://thedavidweng.github.io/site/money/index.md
-- Site: https://thedavidweng.github.io/site/money/
+- Agent JSON: https://app.blahaj.uk/money/agent.json
+- Full content: https://app.blahaj.uk/money/llms-full.txt
+- Markdown homepage: https://app.blahaj.uk/money/index.md
+- Site: https://app.blahaj.uk/money/
 
 
 ## Documentation (on unified site)
 
-- Getting Started: https://thedavidweng.github.io/site/money/docs/GETTING_STARTED
-- Architecture: https://thedavidweng.github.io/site/money/docs/ARCHITECTURE
-- Contracts: https://thedavidweng.github.io/site/money/docs/CONTRACTS
-- Schema: https://thedavidweng.github.io/site/money/docs/SCHEMA
-- Config: https://thedavidweng.github.io/site/money/docs/CONFIG
-- Roadmap: https://thedavidweng.github.io/site/money/docs/ROADMAP
+- Getting Started: https://app.blahaj.uk/money/docs/GETTING_STARTED
+- Architecture: https://app.blahaj.uk/money/docs/ARCHITECTURE
+- Contracts: https://app.blahaj.uk/money/docs/CONTRACTS
+- Schema: https://app.blahaj.uk/money/docs/SCHEMA
+- Config: https://app.blahaj.uk/money/docs/CONFIG
+- Roadmap: https://app.blahaj.uk/money/docs/ROADMAP

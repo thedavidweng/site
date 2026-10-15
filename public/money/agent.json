@@ -2,7 +2,7 @@
   "identity": {
     "name": "money",
     "description": "A local-first, self-hostable personal finance backend for AI agents and power users.",
-    "url": "https://thedavidweng.github.io/site/money",
+    "url": "https://app.blahaj.uk/money",
     "repository": "https://github.com/thedavidweng/money",
     "license": "Apache-2.0",
     "version": "0.x (pre-release)"
@@ -43,27 +43,27 @@
     "documentation": [
       {
         "name": "Getting Started",
-        "url": "https://thedavidweng.github.io/site/money/docs/GETTING_STARTED"
+        "url": "https://app.blahaj.uk/money/docs/GETTING_STARTED"
       },
       {
         "name": "Architecture",
-        "url": "https://thedavidweng.github.io/site/money/docs/ARCHITECTURE"
+        "url": "https://app.blahaj.uk/money/docs/ARCHITECTURE"
       },
       {
         "name": "Contracts",
-        "url": "https://thedavidweng.github.io/site/money/docs/CONTRACTS"
+        "url": "https://app.blahaj.uk/money/docs/CONTRACTS"
       },
       {
         "name": "Schema",
-        "url": "https://thedavidweng.github.io/site/money/docs/SCHEMA"
+        "url": "https://app.blahaj.uk/money/docs/SCHEMA"
       },
       {
         "name": "Config",
-        "url": "https://thedavidweng.github.io/site/money/docs/CONFIG"
+        "url": "https://app.blahaj.uk/money/docs/CONFIG"
       },
       {
         "name": "Roadmap",
-        "url": "https://thedavidweng.github.io/site/money/docs/ROADMAP"
+        "url": "https://app.blahaj.uk/money/docs/ROADMAP"
       }
     ]
   },
@@ -73,7 +73,7 @@
   },
   "meta": {
     "schema": "1.0.0",
-    "generated": "2026-09-22T08:45:25.765Z",
+    "generated": "2026-10-15T23:09:33.546Z",
     "deploy": "GitHub Pages (site repo)",
     "framework": "VitePress"
   }
