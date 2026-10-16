@@ -242,10 +242,14 @@ const projectSidebars = {
 
 const siteUrl = 'https://app.blahaj.uk'
 
+// Must stay in sync with `base` below; favicon hrefs are built from it.
+const siteBase = '/'
+const basePath = (path: string) => `${siteBase}${path.replace(/^\//, '')}`
+
 export default defineConfig({
   title: 'Hajware',
   description: 'Hajware is David Weng\'s software label: agent-friendly CLI tools, desktop apps, and a personal finance backend.',
-  base: '/',
+  base: siteBase,
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
 
@@ -292,7 +296,7 @@ export default defineConfig({
       pageData.frontmatter.head ??= []
       pageData.frontmatter.head.push([
         'link',
-        { rel: 'icon', type: 'image/png', href: '/site/money-favicon.png' },
+        { rel: 'icon', type: 'image/png', href: basePath('/money-favicon.png') },
       ])
     }
 
@@ -305,14 +309,14 @@ export default defineConfig({
       pageData.frontmatter.head ??= []
       pageData.frontmatter.head.push([
         'link',
-        { rel: 'icon', type: 'image/png', href: `/site/${project.slug}-favicon.png` },
+        { rel: 'icon', type: 'image/png', href: basePath(`/${project.slug}-favicon.png`) },
       ])
     }
 
     // Everything outside a project (the hub, 404) carries the Hajware mark.
     if (!project && !isMoney) {
       pageData.frontmatter.head ??= []
-      pageData.frontmatter.head.push(['link', { rel: 'icon', type: 'image/svg+xml', href: '/site/hajware.svg' }])
+      pageData.frontmatter.head.push(['link', { rel: 'icon', type: 'image/svg+xml', href: basePath('/hajware.svg') }])
     }
 
     if (rel === 'money/index.md') {
