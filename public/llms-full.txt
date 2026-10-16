@@ -130,6 +130,16 @@ Desktop app that turns a prompt and lyrics into tracks with open models on Apple
 - Features: projects and Takes, A/B compare, reproduce, region repaint, on-device ACE-Step
 - Safety: prompts, lyrics, and audio stay on the Mac; generation does not upload them
 
+### Rainforest
+Unofficial desktop client for Amazon Photos. One-time upload, one-way folder backup, and verified restore of originals.
+- Site: https://rainforest.blahaj.uk/
+- Docs: https://github.com/thedavidweng/rainforest#documentation
+- GitHub: https://github.com/thedavidweng/rainforest
+- Built with: Go and MyGo (pure-Go desktop framework)
+- Platforms: macOS, Windows, Linux
+- Features: preflight upload inspection, strictly one-way folder backup with source-unavailable protection, persistent transfer queue with MD5 reconciliation, verified recovery download
+- License: AGPL-3.0-only
+
 ## Plugins
 
 ### DeckPad

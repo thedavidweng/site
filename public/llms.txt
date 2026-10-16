@@ -75,6 +75,11 @@ Desktop app that turns a prompt and lyrics into tracks with open models on Apple
 - Docs: https://github.com/thedavidweng/OpenLoop#readme
 - GitHub: https://github.com/thedavidweng/OpenLoop
 
+### Rainforest
+Unofficial desktop client for Amazon Photos. One-time upload, one-way folder backup, and verified restore of originals.
+- Site: https://rainforest.blahaj.uk/
+- GitHub: https://github.com/thedavidweng/rainforest
+
 ## Plugins
 
 ### DeckPad
