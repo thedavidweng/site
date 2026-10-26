@@ -2,7 +2,7 @@
   "name": "site",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@12.10.1",
+  "packageManager": "pnpm@12.15.0",
   "scripts": {
     "dev": "vitepress dev",
     "build:agent-files": "node scripts/build-money-agent-files.mjs && node scripts/build-project-llms.mjs && node scripts/build-sitemap.mjs",
@@ -15,9 +15,9 @@
   "devDependencies": {
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "knip": "^6.41.0",
-    "lucide-static": "^1.59.0",
-    "oxlint": "^1.88.0",
+    "knip": "^6.43.0",
+    "lucide-static": "^1.61.0",
+    "oxlint": "^1.89.0",
     "vitepress": "^1.6.4"
   }
 }
