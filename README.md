@@ -19,11 +19,11 @@ The hub also links to desktop apps with their own landing pages: [OpenKara](http
 
 ## Development
 
-Requires [pnpm](https://pnpm.io/) 10+.
+Requires [Bun](https://bun.com/) 1.4.4 and Node.js 24 for the development server and documentation sync.
 
 ```bash
-pnpm install
-pnpm dev
+bun install
+bun run dev
 ```
 
 ## Sync documentation
@@ -37,7 +37,7 @@ for repo in canvas-cli zenodo-cli monarchmoney-cli flickr-cli qualtrics-cli mone
   gh repo clone thedavidweng/$repo /tmp/cli-docs-sync/$repo -- --depth=1
 done
 
-pnpm sync-docs -- --source=/tmp/cli-docs-sync
+bun run sync-docs --source=/tmp/cli-docs-sync
 ```
 
 Or with a custom source path:
@@ -49,9 +49,9 @@ node scripts/sync-docs.mjs --source=/path/to/parent/containing/repos
 ## Build
 
 ```bash
-pnpm build:agent-files   # regenerate money llms.txt / agent.json
-pnpm build
-pnpm preview
+bun run build:agent-files   # regenerate money llms.txt / agent.json
+bun run build
+bun run preview
 ```
 
 ## License
