@@ -1,7 +1,7 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Sync documentation from CLI repos into the VitePress site.
- * Usage: node scripts/sync-docs.mjs [--source /path/to/cli-docs-sync]
+ * Usage: bun scripts/sync-docs.mjs [--source /path/to/cli-docs-sync]
  */
 
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs'
