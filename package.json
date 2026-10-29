@@ -7,7 +7,7 @@
     "build:agent-files": "bun scripts/build-money-agent-files.mjs && bun scripts/build-project-llms.mjs && bun scripts/build-sitemap.mjs",
     "build": "bun run build:agent-files && vitepress build",
     "preview": "vitepress preview",
-    "sync-docs": "node scripts/sync-docs.mjs",
+    "sync-docs": "bun scripts/sync-docs.mjs",
     "lint": "oxlint .vitepress scripts",
     "lint:fix": "oxlint .vitepress scripts --fix"
   },
