@@ -89,7 +89,7 @@ const contract = [
 </script>
 
 <template>
-  <div class="Hub">
+  <main class="Hub" id="main-content">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
@@ -143,6 +143,7 @@ const contract = [
               width="40"
               height="40"
               loading="lazy"
+              decoding="async"
             />
             <div class="row-who">
               <VPLink class="row-name" :href="project.overview" :no-icon="true">{{ project.name }}</VPLink>
@@ -333,7 +334,7 @@ const contract = [
         </div>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>
@@ -529,7 +530,11 @@ h2 {
 .filter-count {
   font-size: 12px;
   font-variant-numeric: tabular-nums;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
+}
+
+.dark .filter-count {
+  color: #b0b0b8;
 }
 
 .index-columns {
@@ -596,7 +601,7 @@ h2 {
 
 .row-tagline {
   font-size: 13px;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .row-desc {
@@ -611,7 +616,7 @@ h2 {
   display: block;
   margin-top: 4px;
   font-size: 13px;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 .row-get {
@@ -1024,7 +1029,7 @@ h2 {
 
 .cli-tagline {
   font-size: 13px;
-  color: var(--vp-c-text-3);
+  color: var(--vp-c-text-2);
 }
 
 /* Contract */
