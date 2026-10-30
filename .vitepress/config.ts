@@ -252,9 +252,6 @@ export default defineConfig({
   base: siteBase,
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
-  router: {
-    prefetchLinks: false,
-  },
 
   head: [
     ['meta', { property: 'og:type', content: 'website' }],
