@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import * as lucide from 'lucide-static'
 import { projects } from './projects.ts'
@@ -252,6 +253,13 @@ export default defineConfig({
   base: siteBase,
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
+  vite: {
+    resolve: {
+      alias: [
+        { find: /^\.\/VPHome\.vue$/, replacement: fileURLToPath(new URL('./theme/components/VPHomeMain.vue', import.meta.url)) },
+      ],
+    },
+  },
 
   head: [
     ['meta', { property: 'og:type', content: 'website' }],
