@@ -16,16 +16,16 @@ Query surveys, definitions, asynchronous response exports and imports, distribut
 
 ## Documentation
 
-- QSF Spec: https://app.blahaj.uk/qualtrics-cli/docs/qsf-spec
-- Commands: https://app.blahaj.uk/qualtrics-cli/COMMANDS
-- JSON Schema: https://app.blahaj.uk/qualtrics-cli/JSON_SCHEMA
-- Context: https://app.blahaj.uk/qualtrics-cli/CONTEXT
+- [QSF Spec](https://app.blahaj.uk/qualtrics-cli/docs/qsf-spec)
+- [Commands](https://app.blahaj.uk/qualtrics-cli/COMMANDS)
+- [JSON Schema](https://app.blahaj.uk/qualtrics-cli/JSON_SCHEMA)
+- [Context](https://app.blahaj.uk/qualtrics-cli/CONTEXT)
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng/qualtrics-cli
-- Site: https://app.blahaj.uk/qualtrics-cli/
+- [GitHub](https://github.com/thedavidweng/qualtrics-cli)
+- [Site](https://app.blahaj.uk/qualtrics-cli/)
 
 ## Machine-Readable Endpoints
 
-- Site: https://app.blahaj.uk/qualtrics-cli/
+- [Site](https://app.blahaj.uk/qualtrics-cli/)

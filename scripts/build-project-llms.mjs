@@ -137,7 +137,7 @@ const projectDetails = [
 for (const project of projectDetails) {
   const projectUrl = project.site?.replace(/\/$/, '') ?? `${siteUrl}/${project.slug}`
   const docs = project.docs
-    .map(([name, path]) => `- ${name}: ${path.startsWith('http') ? path : `${projectUrl}${path}`}`)
+    .map(([name, path]) => `- [${name}](${path.startsWith('http') ? path : `${projectUrl}${path}`})`)
     .join('\n')
 
   const llmsTxt = `# ${project.name}
@@ -158,12 +158,12 @@ ${docs}
 
 ## Contact
 
-- GitHub: ${project.github}
-- Site: ${projectUrl}/
+- [GitHub](${project.github})
+- [Site](${projectUrl}/)
 
 ## Machine-Readable Endpoints
 
-- Site: ${projectUrl}/
+- [Site](${projectUrl}/)
 `
 
   const outDir = join(import.meta.dirname, '..', 'public', project.slug)
