@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vitepress'
 import * as lucide from 'lucide-static'
 import { projects } from './projects.ts'
@@ -252,6 +253,13 @@ export default defineConfig({
   base: siteBase,
   srcExclude: ['**/README.md', 'PRODUCT.md', 'DESIGN.md', '.impeccable/**'],
   ignoreDeadLinks: true,
+  vite: {
+    resolve: {
+      alias: [
+        { find: /^\.\/VPHome\.vue$/, replacement: fileURLToPath(new URL('./theme/components/VPHomeMain.vue', import.meta.url)) },
+      ],
+    },
+  },
 
   head: [
     ['meta', { property: 'og:type', content: 'website' }],
@@ -280,6 +288,24 @@ export default defineConfig({
       },
     })],
   ],
+
+  transformHead({ assets }) {
+    const geistLatin = assets.find((file) => /geist-latin-wght-normal\.[^.]+\.woff2$/.test(file))
+    if (geistLatin) {
+      return [
+        [
+          'link',
+          {
+            rel: 'preload',
+            href: `${siteBase}${geistLatin.replace(/^\//, '')}`,
+            as: 'font',
+            type: 'font/woff2',
+            crossorigin: '',
+          },
+        ],
+      ]
+    }
+  },
 
   transformPageData(pageData) {
     const rel = pageData.relativePath

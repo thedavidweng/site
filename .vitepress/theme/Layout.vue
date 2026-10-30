@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed, onMounted, watch, nextTick } from 'vue'
+import { computed, defineAsyncComponent, onMounted, watch, nextTick } from 'vue'
 import { useRoute, useData, useRouter, withBase } from 'vitepress'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import { resolveProject } from '../projects'
-import TerminalHighlight from './components/TerminalHighlight.vue'
-import MoneyIntroVideo from './components/MoneyIntroVideo.vue'
-import MoneyQuickStart from './components/MoneyQuickStart.vue'
-import MoneyDocsCards from './components/MoneyDocsCards.vue'
 import HajwareMark from './components/HajwareMark.vue'
+
+const TerminalHighlight = defineAsyncComponent(() => import('./components/TerminalHighlight.vue'))
+const MoneyIntroVideo = defineAsyncComponent(() => import('./components/MoneyIntroVideo.vue'))
+const MoneyQuickStart = defineAsyncComponent(() => import('./components/MoneyQuickStart.vue'))
+const MoneyDocsCards = defineAsyncComponent(() => import('./components/MoneyDocsCards.vue'))
 
 const { Layout: DefaultLayout } = DefaultTheme
 const route = useRoute()
