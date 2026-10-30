@@ -74,3 +74,7 @@ html {
   --mark-stroke: 1.6px;
   --mark-eye: 3px;
 }
+
+div[class*='language-'] > span.lang {
+  color: var(--vp-c-text-2);
+}
