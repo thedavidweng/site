@@ -14,10 +14,11 @@
   "devDependencies": {
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
-    "knip": "^6.43.0",
-    "lucide-static": "^1.61.0",
+    "knip": "^6.44.0",
+    "lucide-static": "^1.64.0",
     "oxlint": "^1.90.0",
-    "vitepress": "^1.6.4"
+    "vite": "^8.3.5",
+    "vitepress": "2.0.0-alpha.21"
   },
   "trustedDependencies": [
     "esbuild"

@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import * as lucide from 'lucide-static'
-import { projects } from './projects'
+import { projects } from './projects.ts'
 
 // Home features write `icon: lucide:<name>`; the default theme renders a string icon as HTML.
 function lucideIcon(icon: unknown): unknown {
