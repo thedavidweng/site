@@ -16,17 +16,17 @@
 
 ## Documentation
 
-- Authentication: https://app.blahaj.uk/canvas-cli/docs/auth
-- Command Reference: https://app.blahaj.uk/canvas-cli/docs/command-spec
-- JSON Contract: https://app.blahaj.uk/canvas-cli/docs/json-contract
-- Safety Model: https://app.blahaj.uk/canvas-cli/docs/safety-model
-- Architecture: https://app.blahaj.uk/canvas-cli/docs/architecture
+- [Authentication](https://app.blahaj.uk/canvas-cli/docs/auth)
+- [Command Reference](https://app.blahaj.uk/canvas-cli/docs/command-spec)
+- [JSON Contract](https://app.blahaj.uk/canvas-cli/docs/json-contract)
+- [Safety Model](https://app.blahaj.uk/canvas-cli/docs/safety-model)
+- [Architecture](https://app.blahaj.uk/canvas-cli/docs/architecture)
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng/canvas-cli
-- Site: https://app.blahaj.uk/canvas-cli/
+- [GitHub](https://github.com/thedavidweng/canvas-cli)
+- [Site](https://app.blahaj.uk/canvas-cli/)
 
 ## Machine-Readable Endpoints
 
-- Site: https://app.blahaj.uk/canvas-cli/
+- [Site](https://app.blahaj.uk/canvas-cli/)

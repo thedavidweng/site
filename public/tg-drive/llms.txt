@@ -17,14 +17,14 @@ Upload local files as ordinary Telegram media, stamp each message with machine-r
 
 ## Documentation
 
-- Getting Started: https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md
-- Guides: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
+- [Getting Started](https://github.com/thedavidweng/tg-drive/blob/main/docs/guides/getting-started.md)
+- [Guides](https://github.com/thedavidweng/tg-drive/tree/main/docs/guides)
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng/tg-drive
-- Site: https://tg-drive.blahaj.uk/
+- [GitHub](https://github.com/thedavidweng/tg-drive)
+- [Site](https://tg-drive.blahaj.uk/)
 
 ## Machine-Readable Endpoints
 
-- Site: https://tg-drive.blahaj.uk/
+- [Site](https://tg-drive.blahaj.uk/)

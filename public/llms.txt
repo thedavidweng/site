@@ -6,86 +6,86 @@
 
 ### canvas-cli
 50+ commands for Canvas LMS — courses, assignments, submissions, grading, and more.
-- Docs: https://app.blahaj.uk/canvas-cli/
-- GitHub: https://github.com/thedavidweng/canvas-cli
+- [Docs](https://app.blahaj.uk/canvas-cli/)
+- [GitHub](https://github.com/thedavidweng/canvas-cli)
 
 ### zenodo-cli
 Record management, file upload, and full InvenioRDM API access for Zenodo.
-- Docs: https://app.blahaj.uk/zenodo-cli/
-- GitHub: https://github.com/thedavidweng/zenodo-cli
+- [Docs](https://app.blahaj.uk/zenodo-cli/)
+- [GitHub](https://github.com/thedavidweng/zenodo-cli)
 
 ### monarchmoney-cli
 Accounts, transactions, budgets, and cashflow from your terminal.
-- Docs: https://app.blahaj.uk/monarchmoney-cli/
-- GitHub: https://github.com/thedavidweng/monarchmoney-cli
+- [Docs](https://app.blahaj.uk/monarchmoney-cli/)
+- [GitHub](https://github.com/thedavidweng/monarchmoney-cli)
 
 ### flickr-cli
 Photo management, backup, upload, albums, and full Flickr API access.
-- Docs: https://app.blahaj.uk/flickr-cli/
-- GitHub: https://github.com/thedavidweng/flickr-cli
+- [Docs](https://app.blahaj.uk/flickr-cli/)
+- [GitHub](https://github.com/thedavidweng/flickr-cli)
 
 ### qualtrics-cli
 Agent-friendly CLI for Qualtrics XM Platform & offline survey compiler.
-- Docs: https://app.blahaj.uk/qualtrics-cli/
-- GitHub: https://github.com/thedavidweng/qualtrics-cli
+- [Docs](https://app.blahaj.uk/qualtrics-cli/)
+- [GitHub](https://github.com/thedavidweng/qualtrics-cli)
 
 ### money
 Local-first, self-hostable personal finance backend for AI agents and power users. Encrypted SQLite, multi-provider sync, stable JSON contracts.
-- Docs: https://app.blahaj.uk/money/
-- GitHub: https://github.com/thedavidweng/money
-- Agent JSON: https://app.blahaj.uk/money/agent.json
+- [Docs](https://app.blahaj.uk/money/)
+- [GitHub](https://github.com/thedavidweng/money)
+- [Agent JSON](https://app.blahaj.uk/money/agent.json)
 
 ## Desktop Apps
 
 ### OpenKara
 Cross-platform desktop karaoke app. On-device stem separation, synced lyrics, live mixing.
-- Site: https://openkara.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/OpenKara
+- [Site](https://openkara.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/OpenKara)
 
 ### Sukiru
 Native macOS app that checks and repairs coding agents' skill libraries via npx skills and gh skill.
-- Site: https://sukiru.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/sukiru
+- [Site](https://sukiru.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/sukiru)
 
 ### Apple Say
 Native macOS speech synthesis and timed text. Export Plain Text, LRC, and Enhanced LRC with system voices.
-- Site: https://apple-say.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/apple-say
+- [Site](https://apple-say.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/apple-say)
 
 ### SDF Flash GUI
 Cross-platform desktop front end for MakeMKV's sdftool. Dump, flash, and recover MT1959 (LG and ASUS) Blu-ray drive firmware behind safety gates.
-- Site: https://sdf-flash-gui.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/sdf-flash-gui
+- [Site](https://sdf-flash-gui.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/sdf-flash-gui)
 
 ### tg-drive
 Desktop app that turns a Telegram channel into a recoverable file tree. td is the command-line interface for the same engine.
-- Site: https://tg-drive.blahaj.uk/
-- Docs: https://github.com/thedavidweng/tg-drive/tree/main/docs/guides
-- GitHub: https://github.com/thedavidweng/tg-drive
+- [Site](https://tg-drive.blahaj.uk/)
+- [Docs](https://github.com/thedavidweng/tg-drive/tree/main/docs/guides)
+- [GitHub](https://github.com/thedavidweng/tg-drive)
 
 ### Vapourfly
 Desktop app that organizes a Steam library into playlists, with recommendations and junk cleanup. vapourfly is the command-line interface for the same app.
-- Site: https://vapourfly.blahaj.uk/
-- Docs: https://github.com/thedavidweng/vapourfly/blob/main/docs/tutorials/getting-started.md
-- GitHub: https://github.com/thedavidweng/vapourfly
+- [Site](https://vapourfly.blahaj.uk/)
+- [Docs](https://github.com/thedavidweng/vapourfly/blob/main/docs/tutorials/getting-started.md)
+- [GitHub](https://github.com/thedavidweng/vapourfly)
 
 ### OpenLoop
 Desktop app that turns a prompt and lyrics into tracks with open models on Apple Silicon. openloop-cli is the command-line interface for the same app.
-- Site: https://openloop.blahaj.uk/
-- Docs: https://github.com/thedavidweng/OpenLoop#readme
-- GitHub: https://github.com/thedavidweng/OpenLoop
+- [Site](https://openloop.blahaj.uk/)
+- [Docs](https://github.com/thedavidweng/OpenLoop#readme)
+- [GitHub](https://github.com/thedavidweng/OpenLoop)
 
 ### Rainforest
 Unofficial desktop client for Amazon Photos. One-time upload, one-way folder backup, and verified restore of originals.
-- Site: https://rainforest.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/rainforest
+- [Site](https://rainforest.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/rainforest)
 
 ## Plugins
 
 ### DeckPad
 Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a PC, phone, or tablet. The host pairs in its own Bluetooth settings. DeckPad presents an Xbox Wireless Controller layout.
-- Site: https://deckpad.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/DeckPad
+- [Site](https://deckpad.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/DeckPad)
 - Install: Decky Loader, then the release zip (not in the Decky Plugin Store yet)
 - Platforms: SteamOS
 
@@ -93,10 +93,10 @@ Decky Loader plugin that uses a Steam Deck as a Bluetooth game controller for a 
 
 ### ADP Shifts
 Browser extension that copies an ADP Workforce Now schedule into a Google Calendar the extension creates and owns, then keeps that calendar current. A separate userscript only exports an .ics file.
-- Site: https://adp-shifts.blahaj.uk/
-- GitHub: https://github.com/thedavidweng/adp-calendar
-- Install: https://chromewebstore.google.com/detail/adp-shifts/obccfkjmkfhljjnamibiiolagcpmjklj
-- Userscript: https://greasyfork.org/scripts/599050-adp-schedule-export
+- [Site](https://adp-shifts.blahaj.uk/)
+- [GitHub](https://github.com/thedavidweng/adp-calendar)
+- [Install](https://chromewebstore.google.com/detail/adp-shifts/obccfkjmkfhljjnamibiiolagcpmjklj)
+- [Userscript](https://greasyfork.org/scripts/599050-adp-schedule-export)
 - Platforms: Chrome, Edge, Brave, and other Chromium browsers. The userscript runs in any browser with a userscript manager.
 - Privacy: no servers, no analytics, never sees the ADP password. Google access is limited to calendar.app.created.
 
@@ -108,11 +108,11 @@ Browser extension that copies an ADP Workforce Now schedule into a Google Calend
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng
-- Site: https://app.blahaj.uk/
+- [GitHub](https://github.com/thedavidweng)
+- [Site](https://app.blahaj.uk/)
 
 ## Machine-Readable Endpoints
 
-- Full content: https://app.blahaj.uk/llms-full.txt
-- Sitemap: https://app.blahaj.uk/sitemap.xml
-- money agent JSON: https://app.blahaj.uk/money/agent.json
+- [Full content](https://app.blahaj.uk/llms-full.txt)
+- [Sitemap](https://app.blahaj.uk/sitemap.xml)
+- [money agent JSON](https://app.blahaj.uk/money/agent.json)

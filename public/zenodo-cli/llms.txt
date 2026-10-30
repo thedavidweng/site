@@ -16,17 +16,17 @@ Record management, file upload, and full InvenioRDM API access for Zenodo.
 
 ## Documentation
 
-- Authentication: https://app.blahaj.uk/zenodo-cli/docs/auth
-- Capabilities: https://app.blahaj.uk/zenodo-cli/docs/capabilities
-- Safety: https://app.blahaj.uk/zenodo-cli/docs/safety
-- Agent Guide: https://app.blahaj.uk/zenodo-cli/docs/agent-guide
-- Architecture: https://app.blahaj.uk/zenodo-cli/docs/ARCHITECTURE
+- [Authentication](https://app.blahaj.uk/zenodo-cli/docs/auth)
+- [Capabilities](https://app.blahaj.uk/zenodo-cli/docs/capabilities)
+- [Safety](https://app.blahaj.uk/zenodo-cli/docs/safety)
+- [Agent Guide](https://app.blahaj.uk/zenodo-cli/docs/agent-guide)
+- [Architecture](https://app.blahaj.uk/zenodo-cli/docs/ARCHITECTURE)
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng/zenodo-cli
-- Site: https://app.blahaj.uk/zenodo-cli/
+- [GitHub](https://github.com/thedavidweng/zenodo-cli)
+- [Site](https://app.blahaj.uk/zenodo-cli/)
 
 ## Machine-Readable Endpoints
 
-- Site: https://app.blahaj.uk/zenodo-cli/
+- [Site](https://app.blahaj.uk/zenodo-cli/)

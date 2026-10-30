@@ -17,20 +17,20 @@ Photo management, backup, upload, albums, and full Flickr API access.
 
 ## Documentation
 
-- Authentication: https://app.blahaj.uk/flickr-cli/docs/auth
-- Capabilities: https://app.blahaj.uk/flickr-cli/docs/capabilities
-- Upload: https://app.blahaj.uk/flickr-cli/docs/upload
-- Backup: https://app.blahaj.uk/flickr-cli/docs/backup
-- Safety: https://app.blahaj.uk/flickr-cli/docs/safety
-- Agent Guide: https://app.blahaj.uk/flickr-cli/docs/agent-guide
-- Piwigo Import: https://app.blahaj.uk/flickr-cli/docs/piwigo
-- Architecture: https://app.blahaj.uk/flickr-cli/docs/ARCHITECTURE
+- [Authentication](https://app.blahaj.uk/flickr-cli/docs/auth)
+- [Capabilities](https://app.blahaj.uk/flickr-cli/docs/capabilities)
+- [Upload](https://app.blahaj.uk/flickr-cli/docs/upload)
+- [Backup](https://app.blahaj.uk/flickr-cli/docs/backup)
+- [Safety](https://app.blahaj.uk/flickr-cli/docs/safety)
+- [Agent Guide](https://app.blahaj.uk/flickr-cli/docs/agent-guide)
+- [Piwigo Import](https://app.blahaj.uk/flickr-cli/docs/piwigo)
+- [Architecture](https://app.blahaj.uk/flickr-cli/docs/ARCHITECTURE)
 
 ## Contact
 
-- GitHub: https://github.com/thedavidweng/flickr-cli
-- Site: https://app.blahaj.uk/flickr-cli/
+- [GitHub](https://github.com/thedavidweng/flickr-cli)
+- [Site](https://app.blahaj.uk/flickr-cli/)
 
 ## Machine-Readable Endpoints
 
-- Site: https://app.blahaj.uk/flickr-cli/
+- [Site](https://app.blahaj.uk/flickr-cli/)
