@@ -18,7 +18,7 @@
     "@fontsource/jetbrains-mono": "^5.3.0",
     "knip": "^6.46.1",
     "lucide-static": "^1.76.0",
-    "oxlint": "^1.93.0",
+    "oxlint": "^1.94.0",
     "vitepress": "2.0.0-alpha.21"
   }
 }
